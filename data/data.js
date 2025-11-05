@@ -115,21 +115,21 @@ export const projectsData = [
         describe: "Flask + Telegram automation that provisions hotspot users, syncs MikroTik profiles, approves payments, and prunes expired accounts without touching WinBox.",
         url: "https://github.com/mrun1corn/mikrotik-hotspot-manager",
         ctaLabel: "View on GitHub",
-        img: "assets/project-joy-cinemas.jpg"
+        img: "assets/mikrotik-icon.png"
     },
     {
         title: "Community Savings Platform",
         describe: "Full-stack monorepo (Express API, Vite web app, Expo mobile client) handling deposits, dues, CSV exports, authentication, and role-based workflows for savings groups.",
         url: "https://github.com/mrun1corn/mca",
         ctaLabel: "Explore monorepo",
-        img: "assets/project-alo-network.jpg"
+        img: "assets/savings.png"
     },
     {
         title: "ShareBuddy Android Share Target",
         describe: "Jetpack Compose Material 3 app that intercepts Android shares, normalizes links, queues reminders, and ships via CLI builds so the APK can be produced fully on Ubuntu.",
         url: "https://github.com/mrun1corn/ShareBuddy",
         ctaLabel: "See the app",
-        img: "assets/project-ist-labs.jpg"
+        img: "assets/android.png"
     },
 
 ]
