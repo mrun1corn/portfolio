@@ -10,7 +10,7 @@
 //=========================================
 export const introductionData = {
     // Hi, my name is....
-    yourName: "Robin Mia", // Insert your name
+    yourName: "Robin", // Insert your name
     tagline: "IT Executive & Assistant Network Engineer",
     headline: "I keep distributed teams online by hardening networks, automating support, and turning incident-prone systems into reliable services.",
     contactLink: "mailto:robin424123@gmail.com",
