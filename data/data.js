@@ -10,22 +10,31 @@
 //=========================================
 export const introductionData = {
     // Hi, my name is....
-    yourName: "Robin", // Insert your name
+    yourName: "Robin Mia", // Insert your name
+    tagline: "IT Executive & Assistant Network Engineer",
+    headline: "I keep distributed teams online by hardening networks, automating support, and turning incident-prone systems into reliable services.",
+    contactLink: "mailto:robin424123@gmail.com",
+    contactLabel: "Let's Connect",
     socialNetwork: [
         {
             icon: "fa fa-envelope-o",  // find other icon in https://fontawesome.com/v4.7/icons/
             nameSocialNetwork: "Email",  // label name
-            url: "robin424123@gmail.com"  //  url of the Social Network
+            url: "mailto:robin424123@gmail.com"  //  url of the Social Network
+        },
+        {
+            icon: "fa fa-phone",
+            nameSocialNetwork: "Phone",
+            url: "tel:+8801716708463"
         },
         {
             icon: "fa fa-facebook-square", // find other icon in https://fontawesome.com/v4.7/icons/
             nameSocialNetwork: "Facebook",
-            url: "facebook.com/mrun1orn"
+            url: "https://facebook.com/mrun1orn"
         },
         {
             icon: "fa fa-github-alt",   // find other icon in https://fontawesome.com/v4.7/icons/
             nameSocialNetwork: "Github",
-            url: "github.com/mrun1corn"
+            url: "https://github.com/mrun1corn"
         }
 
 
@@ -57,9 +66,9 @@ export const introductionData = {
 //=========================================
 export const aboutMeData = {
     title: "About Me",
-    description: "Hello there! I'm Robin, an Assistant Network Engineer with a passion for technology and a knack for self-learning. I thrive on the challenges of troubleshooting network issues and optimizing systems for peak performance. Whether it's configuring routers, ensuring network security, or staying updated with the latest advancements in the field, I'm always eager to expand my knowledge and skills. Outside of work, you can find me diving into online courses, experimenting with new networking concepts, or simply enjoying a good book on technology. Let's connect and explore the ever-evolving world of networking together!",
-    titleURL: "View CV",
-    urlCV: "#"
+    description: "I'm an infrastructure-focused technologist who blends three years of hands-on experience with a curiosity for every layer of the stack. From replacing legacy CCTV systems at Joy Cinemas to keeping ISP subscribers online at ALO Communication, I thrive in roles that demand rapid troubleshooting, precise documentation, and empathetic support. I'm currently completing my BSc in CSE while sharpening automation and virtualization skills to deliver smoother rollouts and faster recoveries.",
+    titleURL: "Download CV",
+    urlCV: "assets/Robin_Mia_Resume.pdf"
 }
 
 
@@ -72,17 +81,29 @@ export const skillsData = [
 
 
     {
-        img: "assets/ru.png",  // card image  > insert the svg image in the assets folder
-        nameSkill: "Ubuntu"      //  card name
+        img: "assets/icon-it-support.svg",  // card image  > insert the svg image in the assets folder
+        nameSkill: "IT Support & Troubleshooting"      //  card name
     },
     {
-        img: "assets/m.png",
-        nameSkill: "Router"
+        img: "assets/icon-network.svg",
+        nameSkill: "Network Monitoring & Maintenance"
     },
     {
-        img: "assets/a.png",
-        nameSkill: "Android Rom Development"
+        img: "assets/icon-automation.svg",
+        nameSkill: "MikroTik & Cisco Configuration"
     },
+    {
+        img: "assets/icon-cctv.svg",
+        nameSkill: "CCTV Installation & Maintenance"
+    },
+    {
+        img: "assets/icon-server.svg",
+        nameSkill: "Server & VPS Administration"
+    },
+    {
+        img: "assets/icon-os.svg",
+        nameSkill: "Linux & Windows Operations"
+    }
 
 ]
 //=========================================
@@ -90,24 +111,25 @@ export const skillsData = [
 //=========================================
 export const projectsData = [
     {
-        title: "Bash Scripting",    // card image  > insert the svg image in the assets folder
-        describe: "Proficient in Bash scripting, I utilize this skill to automate various tasks, streamline processes, and enhance efficiency within network environments. I have hands-on experience creating custom scripts tailored to specific needs, whether it's automating routine maintenance tasks, deploying software packages, or configuring network devices.",
-        url: "github.com/mrun1corn/server_scripts",  // url of the Github repository
-        img: "assets/project1.jpg"  //image Project
+        title: "MikroTik Hotspot Manager",
+        describe: "Flask + Telegram automation that provisions hotspot users, syncs MikroTik profiles, approves payments, and prunes expired accounts without touching WinBox.",
+        url: "https://github.com/mrun1corn/mikrotik-hotspot-manager",
+        ctaLabel: "View on GitHub",
+        img: "assets/project-joy-cinemas.jpg"
     },
     {
-        title: "Hypervisor Technologies",
-        describe: "Virtualization technology has become increasingly prevalent in modern computing environments, enabling efficient resource utilization, enhanced security, and simplified infrastructure management. Hypervisors play a pivotal role in virtualization by abstracting physical hardware resources and facilitating the creation and management of virtual machines (VMs). This project aims to conduct a comprehensive comparative analysis of prominent hypervisor technologies, including VirtualBox, VMware, and Cockpit, to evaluate their features, performance, and suitability for various use cases.",
-        url: "#",
-        img: "assets/h.jpg"
+        title: "Community Savings Platform",
+        describe: "Full-stack monorepo (Express API, Vite web app, Expo mobile client) handling deposits, dues, CSV exports, authentication, and role-based workflows for savings groups.",
+        url: "https://github.com/mrun1corn/mca",
+        ctaLabel: "Explore monorepo",
+        img: "assets/project-alo-network.jpg"
+    },
+    {
+        title: "ShareBuddy Android Share Target",
+        describe: "Jetpack Compose Material 3 app that intercepts Android shares, normalizes links, queues reminders, and ships via CLI builds so the APK can be produced fully on Ubuntu.",
+        url: "https://github.com/mrun1corn/ShareBuddy",
+        ctaLabel: "See the app",
+        img: "assets/project-ist-labs.jpg"
     },
 
 ]
-
-
-
-
-
-
-
-

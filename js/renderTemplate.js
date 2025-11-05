@@ -1,167 +1,153 @@
-import { introductionData, skillsData,projectsData,aboutMeData } from '../data/data.js';
-
+import { introductionData, skillsData, projectsData, aboutMeData } from '../data/data.js';
 
 function render() {
+    /* INTRODUCTION ----------------------------------------------------- */
+    const heroWindow = document.querySelector(".header-apresentation");
+    if (heroWindow) {
+        const {
+            yourName,
+            tagline,
+            headline,
+            contactLink,
+            contactLabel
+        } = introductionData;
 
-    //=====================================================================
-    //                INTRODUCTION 
-    //======================================================================
+        const taglineMarkup = tagline ? `<p class="hero-tagline">${tagline}</p>` : "";
+        const headlineMarkup = headline ? `<p class="hero-lead">${headline}</p>` : "";
+        const contactHref = contactLink || "";
+        const contactLabelText = contactLabel || "Let's connect";
+        const contactAttrs = contactHref && !contactHref.startsWith("mailto:")
+            ? ' target="_blank" rel="noopener"'
+            : "";
+        const contactMarkup = contactHref
+            ? `<a class="button ghost" href="${contactHref}"${contactAttrs}>${contactLabelText}</a>`
+            : "";
 
-    // TEMPLATE YOURNAME <.header-apresentation>
-    //---------------------------------------------------
-    const templateNameApresentation = function (data) { //yourName
-        return `
-    Hi, my name is <span class="gradient">${data}</span>
-    `
-    }
-
-    const $windowNameApresentation = document.querySelector(".header-apresentation")
-
-    $windowNameApresentation.innerHTML = templateNameApresentation(introductionData.yourName)
-
-
-    //  TEMPLATE ICONS SOCIAL NETWORKS  <.header-icons>
-    //---------------------------------------------------------
-    const templateSocialNetwors = function (data) {   // socialNetwork
-        return `
-        <a class="icon gradient fade" aria-label="${data.nameSocialNetwork}" target="_blank" href="${data.url}">
-        <i class="${data.icon}"></i>
-    </a>
-        `
-    }
-
-    const $windowIconSocialNetworks = document.querySelector(".header-icons")
-
-    $windowIconSocialNetworks.innerHTML = introductionData.socialNetwork.map((data) => {
-        return templateSocialNetwors(data);
-    }).join("");
-
-
-    //  TEMPLATE OPTIONS NAV  <.nav>
-    //---------------------------------------------------------
-
-    const templateNav = function (data) { // nav
-        return `
-        <a class="btn" href="#${data.idSection}">
-        ${data.optionNav}
-    </a>
-        `
-    }
-
-    const $windowNav = document.querySelector(".nav")
-
-    $windowNav.innerHTML = introductionData.nav.map((data) => {
-        return templateNav(data);
-    }).join("");
-
-
-
-    //==================================================
-    //                      ABOUT ME
-    //==================================================
-
-    const templateAboutMe = function (data) {  //description
-        return `
-        <div class="container">
-        <h2 class="section-title">${data.title}</h2>
-
-        <div class="description">
-           <p> ${data.description}</p>
-        </div>
-        <!--<a href="assets/Resume.pdf" target="_blank"><button class="project-button gradient-btn fade" ><h4>My Resume</h4></button></a>-->
-        <section class="buttons">
-            <div class="container-btn">
-
-                <a href="${data.urlCV}" class="btn-cv btn-1">
-                    <svg>
-                        <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                    </svg>
-                   ${data.titleURL}
-                </a>
-
+        heroWindow.innerHTML = `
+            ${taglineMarkup}
+            <h1 class="hero-title">Hi, I'm <span class="gradient">${yourName}</span></h1>
+            ${headlineMarkup}
+            <div class="hero-actions">
+                <a class="button primary" href="#projects">View Projects</a>
+                ${contactMarkup}
             </div>
-        </section>
-    
-    </div>
-        `
+        `;
     }
 
-    const $windowAboutMe = document.querySelector(".section-style")
-
-    $windowAboutMe.innerHTML = templateAboutMe(aboutMeData);
-  
-
-
-
-
-    //==================================================
-    //                       SKILLS
-    //==================================================
-
-    //  TEMPLATE SKILLS <.cards-main>
-    //---------------------------------------------------------
-    const templateSkills = function (data) {
-        return `
-        <div class="card shadow">
-        <div>
-            <img class="img-card" src="${data.img}" alt="logo python">
-            <p>${data.nameSkill}</p>
-        </div>
-    </div>
-        `
+    const socialWindow = document.querySelector(".header-icons");
+    if (socialWindow) {
+        socialWindow.innerHTML = introductionData.socialNetwork.map((data) => {
+            const isMail = data.url && data.url.startsWith("mailto:");
+            const target = isMail ? "" : ' target="_blank" rel="noopener"';
+            return `
+            <a class="icon hero-icon" aria-label="${data.nameSocialNetwork}" href="${data.url}"${target}>
+                <i class="${data.icon}"></i>
+            </a>
+            `;
+        }).join("");
     }
 
-    const $windowSkills = document.querySelector(".cards-main")
+    const navWindow = document.querySelector(".nav");
+    if (navWindow) {
+        navWindow.innerHTML = introductionData.nav.map((data) => `
+            <a class="nav-link" href="#${data.idSection}">
+                ${data.optionNav}
+            </a>
+        `).join("");
+    }
 
-    $windowSkills.innerHTML = skillsData.map((data) => {
-        return templateSkills(data);
-    }).join("");
-
-
- //==================================================
-    //                    PROJECTS
-    //==================================================
-
-    //  TEMPLATE PROJECTS  <.projects-main>
-    //---------------------------------------------------------
-    const templateProjects = function (data) {
-        return `
-        <div class="project">
-        <div class="project-informations" data-aos="fade-right">
-            <h3>${data.title}</h3>
-            <p>${data.describe}</p>
-
-            <!--<button class="project-button gradient-btn fade" onclick="alert('Will be updated soon.');">See more</button>-->
-            <div class="wrapper">
-                <div class="link_wrapper">
-                    <a href="${data.url}">View Project</a>
-                    <div class="project-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
-                            <path
-                                d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z" />
-                        </svg>
-                    </div>
+    /* ABOUT ------------------------------------------------------------ */
+    const aboutWindow = document.querySelector(".section-style");
+    if (aboutWindow) {
+        const hasCV = Boolean(aboutMeData.urlCV);
+        const cvAttrs = hasCV && aboutMeData.urlCV && !aboutMeData.urlCV.startsWith("mailto:")
+            ? ' target="_blank" rel="noopener"'
+            : "";
+        const cvMarkup = hasCV
+            ? `
+                <div class="about-actions">
+                    <a class="button primary" href="${aboutMeData.urlCV}"${cvAttrs}>
+                        ${aboutMeData.titleURL}
+                    </a>
                 </div>
+            `
+            : "";
+
+        aboutWindow.innerHTML = `
+            <div class="container about-container">
+                <h2 class="section-title">${aboutMeData.title}</h2>
+                <p class="description">${aboutMeData.description}</p>
+                ${cvMarkup}
             </div>
-        </div>
-        <div class="project-img" data-aos="fade-left">
-            <img class="shadow" src="${data.img}" alt="code">
-        </div>
-    </div>
-        `
+        `;
     }
 
-    const $windowProject = document.querySelector(".projects-main")
+    /* SKILLS ----------------------------------------------------------- */
+    const skillsWindow = document.querySelector(".cards-main");
+    if (skillsWindow) {
+        skillsWindow.innerHTML = skillsData.map((data) => `
+            <div class="card shadow">
+                <img class="img-card" src="${data.img}" alt="${data.nameSkill}">
+                <p>${data.nameSkill}</p>
+            </div>
+        `).join("");
+    }
 
-    $windowProject.innerHTML = projectsData.map((data) => {
-        return templateProjects(data);
-    }).join("");
+    /* PROJECTS --------------------------------------------------------- */
+    const projectsWindow = document.querySelector(".projects-main");
+    if (projectsWindow) {
+        projectsWindow.innerHTML = projectsData.map((data) => {
+            const hasLink = Boolean(data.url);
+            const linkAttrs = hasLink && data.url && !data.url.startsWith("mailto:")
+                ? ' target="_blank" rel="noopener"'
+                : "";
+            const linkText = data.ctaLabel || "View project";
+            const linkMarkup = hasLink
+                ? `
+                    <a class="project-link" href="${data.url}"${linkAttrs}>
+                        ${linkText}
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                    </a>
+                `
+                : "";
 
+            return `
+                <article class="project-card" data-aos="fade-up">
+                    <div class="project-visual" role="presentation">
+                        <img src="${data.img}" alt="${data.title}">
+                    </div>
+                    <div class="project-content">
+                        <h3>${data.title}</h3>
+                        <p>${data.describe}</p>
+                        ${linkMarkup}
+                    </div>
+                </article>
+            `;
+        }).join("");
+    }
 
+    /* NAV TOGGLE ------------------------------------------------------- */
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav");
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navMenu.classList.toggle("nav-open");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+        });
 
+        navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("nav-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
 
-
+    /* FOOTER YEAR ------------------------------------------------------ */
+    const footerYear = document.querySelector(".footer-year");
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
 }
 
 render();
-
