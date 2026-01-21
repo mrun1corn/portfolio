@@ -4,31 +4,73 @@ html {
 
 .gradient {
   background: linear-gradient(135deg, #38bdf8 0%, #6366f1 45%, #ec4899 100%);
+  background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  animation: hue-rotate 10s linear infinite;
+}
+
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .fade {
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 }
 
 .bounce {
-  animation: bounce 1.6s infinite;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-effect {
+  animation: float 6s ease-in-out infinite;
+}
+
+.delay-1 {
+  animation-delay: 1s;
+}
+
+.delay-2 {
+  animation-delay: 2s;
 }
 
 .shadow {
@@ -37,9 +79,21 @@ html {
 }
 
 .shadow:hover {
-  box-shadow: 0 24px 48px -26px rgba(99, 102, 241, 0.38);
+  box-shadow: 0 24px 48px -26px rgba(99, 102, 241, 0.5);
 }
 
 .load-hidden {
   visibility: hidden;
+}
+
+/* 3D Tilt Utility Class - Modified by JS */
+.tilt-card {
+  transition: transform 0.1s ease-out;
+  /* Fast transition for movement */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.tilt-content {
+  transform: translateZ(20px);
 }

@@ -86,7 +86,7 @@ function render() {
     const skillsWindow = document.querySelector(".cards-main");
     if (skillsWindow) {
         skillsWindow.innerHTML = skillsData.map((data) => `
-            <div class="card shadow">
+            <div class="card shadow tilt-card">
                 <img class="img-card" src="${data.img}" alt="${data.nameSkill}">
                 <p>${data.nameSkill}</p>
             </div>
@@ -112,7 +112,7 @@ function render() {
                 : "";
 
             return `
-                <article class="project-card" data-aos="fade-up">
+                <article class="project-card tilt-card" data-aos="fade-up">
                     <div class="project-visual" role="presentation">
                         <img src="${data.img}" alt="${data.title}">
                     </div>
