@@ -15,7 +15,8 @@
     <link href="style/footer.css" type="text/css" rel="stylesheet">
     <link href="style/projects.css" type="text/css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Roboto+Mono&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Roboto+Mono&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -25,6 +26,41 @@
     <script type="module" src="js/renderTemplate.js"></script>
 
     <title>Robin | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Robin (mrun1corn) - Web Developer & IT Specialist. Showcasing skills, projects, and contact info.">
+    <meta name="keywords"
+        content="robin, mrun1corn, mrunicorn, portfolio, web developer, software engineer, it specialist">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mrunicorn.xyz/">
+    <meta property="og:title" content="Robin | Portfolio">
+    <meta property="og:description" content="Portfolio of Robin (mrun1corn) - Web Developer & IT Specialist.">
+    <meta property="og:image" content="https://github.com/mrun1corn.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mrunicorn.xyz/">
+    <meta property="twitter:title" content="Robin | Portfolio">
+    <meta property="twitter:description" content="Portfolio of Robin (mrun1corn) - Web Developer & IT Specialist.">
+    <meta property="twitter:image" content="https://github.com/mrun1corn.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Robin",
+      "alternateName": ["mrun1corn", "mrunicorn"],
+      "url": "https://mrunicorn.xyz",
+      "image": "https://github.com/mrun1corn.png",
+      "sameAs": [
+        "https://facebook.com/mrun1corn",
+        "https://t.me/mrun1corn",
+        "https://github.com/mrun1corn"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -51,7 +87,8 @@
                     <!-- Rendered in file ./js/renderTemplate > TEMPLATE ICONS SOCIAL NETWORKS <.header-icons> -->
                 </div>
             </div>
-            <a class="icon bounce gradient fade" id="down" href="#about" data-scroll aria-label="Scroll to about section">
+            <a class="icon bounce gradient fade" id="down" href="#about" data-scroll
+                aria-label="Scroll to about section">
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </a>
         </section>
