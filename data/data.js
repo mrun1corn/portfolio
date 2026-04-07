@@ -82,27 +82,33 @@ export const skillsData = [
 
     {
         img: "assets/icon-it-support.svg",  // card image  > insert the svg image in the assets folder
-        nameSkill: "IT Support & Troubleshooting"      //  card name
+        nameSkill: "IT Support & Troubleshooting",      //  card name
+        alt: "IT Support and Troubleshooting skill icon"
     },
     {
         img: "assets/icon-network.svg",
-        nameSkill: "Network Monitoring & Maintenance"
+        nameSkill: "Network Monitoring & Maintenance",
+        alt: "Network Monitoring and Maintenance skill icon"
     },
     {
         img: "assets/icon-automation.svg",
-        nameSkill: "MikroTik & Cisco Configuration"
+        nameSkill: "MikroTik & Cisco Configuration",
+        alt: "MikroTik and Cisco Configuration skill icon"
     },
     {
         img: "assets/icon-cctv.svg",
-        nameSkill: "CCTV Installation & Maintenance"
+        nameSkill: "CCTV Installation & Maintenance",
+        alt: "CCTV Installation and Maintenance skill icon"
     },
     {
         img: "assets/icon-server.svg",
-        nameSkill: "Server & VPS Administration"
+        nameSkill: "Server & VPS Administration",
+        alt: "Server and VPS Administration skill icon"
     },
     {
         img: "assets/icon-os.svg",
-        nameSkill: "Linux & Windows Operations"
+        nameSkill: "Linux & Windows Operations",
+        alt: "Linux and Windows Operations skill icon"
     }
 
 ]
@@ -115,21 +121,24 @@ export const projectsData = [
         describe: "Flask + Telegram automation that provisions hotspot users, syncs MikroTik profiles, approves payments, and prunes expired accounts without touching WinBox.",
         url: "https://github.com/mrun1corn/mikrotik-hotspot-manager",
         ctaLabel: "View on GitHub",
-        img: "assets/mikrotik-icon.png"
+        img: "assets/mikrotik-icon.png",
+        alt: "MikroTik Hotspot Manager project screenshot"
     },
     {
         title: "Community Savings Platform",
         describe: "Full-stack monorepo (Express API, Vite web app, Expo mobile client) handling deposits, dues, CSV exports, authentication, and role-based workflows for savings groups.",
         url: "https://github.com/mrun1corn/mca",
         ctaLabel: "Explore monorepo",
-        img: "assets/savings.png"
+        img: "assets/savings.png",
+        alt: "Community Savings Platform project screenshot"
     },
     {
         title: "ShareBuddy Android Share Target",
         describe: "Jetpack Compose Material 3 app that intercepts Android shares, normalizes links, queues reminders, and ships via CLI builds so the APK can be produced fully on Ubuntu.",
         url: "https://github.com/mrun1corn/ShareBuddy",
         ctaLabel: "See the app",
-        img: "assets/android.png"
+        img: "assets/android.png",
+        alt: "ShareBuddy Android app screenshot"
     },
 
 ]

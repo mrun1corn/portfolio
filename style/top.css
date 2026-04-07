@@ -14,6 +14,31 @@
     --font-body: 'Manrope', 'Inter', 'Roboto Mono', sans-serif;
 }
 
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: var(--color-bg);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--color-accent-secondary);
+    outline-offset: 2px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
 *,
 *::before,
 *::after {

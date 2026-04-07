@@ -87,7 +87,7 @@ function render() {
     if (skillsWindow) {
         skillsWindow.innerHTML = skillsData.map((data) => `
             <div class="card shadow tilt-card">
-                <img class="img-card" src="${data.img}" alt="${data.nameSkill}">
+                <img class="img-card" src="${data.img}" alt="${data.alt || data.nameSkill}">
                 <p>${data.nameSkill}</p>
             </div>
         `).join("");
@@ -114,7 +114,7 @@ function render() {
             return `
                 <article class="project-card tilt-card" data-aos="fade-up">
                     <div class="project-visual" role="presentation">
-                        <img src="${data.img}" alt="${data.title}">
+                        <img src="${data.img}" alt="${data.alt || data.title}" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>${data.title}</h3>
