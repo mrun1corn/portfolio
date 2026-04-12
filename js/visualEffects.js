@@ -1,67 +1,91 @@
-/**
- * visualEffects.js
- * Implements Parallax and 3D Tilt effects
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    initParallax();
-    initTilt();
+    const header = document.querySelector('.site-header');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const sections = navLinks
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    const updateHeader = () => {
+        if (header) {
+            header.classList.toggle('is-scrolled', window.scrollY > 8);
+        }
+    };
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+
+    const getSavedTheme = () => localStorage.getItem('portfolio-theme');
+    const getCurrentTheme = () => {
+        const savedTheme = getSavedTheme();
+        return savedTheme || (systemTheme.matches ? 'dark' : 'light');
+    };
+
+    const updateThemeColor = (theme) => {
+        const lightMeta = document.querySelector('meta[name="theme-color"][media*="light"]');
+        const darkMeta = document.querySelector('meta[name="theme-color"][media*="dark"]');
+        if (!lightMeta || !darkMeta) return;
+
+        const activeColor = theme === 'dark' ? '#101713' : '#f7faf8';
+        lightMeta.setAttribute('content', activeColor);
+        darkMeta.setAttribute('content', activeColor);
+    };
+
+    const applyThemeState = () => {
+        if (!themeToggle) return;
+
+        const currentTheme = getCurrentTheme();
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        themeToggle.classList.toggle('is-dark', currentTheme === 'dark');
+        themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+        themeToggle.setAttribute('title', `Switch to ${nextTheme} theme`);
+        updateThemeColor(currentTheme);
+    };
+
+    if (themeToggle) {
+        applyThemeState();
+
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = nextTheme;
+            localStorage.setItem('portfolio-theme', nextTheme);
+            applyThemeState();
+        });
+
+        systemTheme.addEventListener('change', () => {
+            if (!getSavedTheme()) {
+                applyThemeState();
+            }
+        });
+    }
+
+    if (!sections.length || !navLinks.length) return;
+
+    const setActiveLink = (id) => {
+        navLinks.forEach((link) => {
+            link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+        });
+    };
+
+    const updateActiveSection = () => {
+        const headerOffset = (header?.offsetHeight || 0) + 80;
+        const currentSection = sections.reduce((activeSection, section) => {
+            const sectionTop = section.offsetTop - headerOffset;
+            return window.scrollY >= sectionTop ? section : activeSection;
+        }, sections[0]);
+
+        setActiveLink(currentSection.id);
+    };
+
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            const id = link.getAttribute('href').slice(1);
+            setActiveLink(id);
+        });
+    });
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
 });
-
-function initParallax() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const layers = document.querySelectorAll('.hero-icon, .hero-tagline');
-
-    hero.addEventListener('mousemove', (e) => {
-        const x = (window.innerWidth - e.pageX * 2) / 100;
-        const y = (window.innerHeight - e.pageY * 2) / 100;
-
-        layers.forEach((layer, index) => {
-            const speed = (index + 1) * 2;
-            const xOffset = x * speed;
-            const yOffset = y * speed;
-            layer.style.transform = `translateX(${xOffset}px) translateY(${yOffset}px)`;
-        });
-    });
-
-    // Reset on mouse leave
-    hero.addEventListener('mouseleave', () => {
-        layers.forEach((layer) => {
-            // Check if it has a hover transform (like hero-icon) we need to be careful not to overwrite hover states aggressively
-            // Ideally simply removing the inline style lets CSS hover take over
-            layer.style.transform = '';
-        });
-    });
-}
-
-function initTilt() {
-    const cards = document.querySelectorAll('.tilt-card');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', handleHover);
-        card.addEventListener('mouseleave', handleLeave);
-    });
-
-    function handleHover(e) {
-        const card = this;
-        const rect = card.getBoundingClientRect();
-
-        // Calculate mouse position relative to the card center
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
-        const rotateY = ((x - centerX) / centerX) * 10;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    }
-
-    function handleLeave() {
-        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-    }
-}
