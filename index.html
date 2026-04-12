@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="Robin (mrun1corn)">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7faf8">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101713">
@@ -38,45 +38,60 @@
 
     <script type="module" src="js/renderTemplate.js"></script>
 
-    <title>Robin | IT Executive & Assistant Network Engineer Portfolio</title>
+    <title>Robin Mia | Network Engineer & IT Support Portfolio</title>
     <meta name="description"
-        content="Portfolio of Robin (mrun1corn) - IT Executive & Assistant Network Engineer with 3+ years experience in network administration, IT support, MikroTik & Cisco configuration, CCTV systems, and server administration. View projects, skills, and contact info.">
+        content="Robin Mia is an IT Executive and Assistant Network Engineer in Bangladesh with 3+ years in networks, MikroTik, Cisco, CCTV, servers, and IT support.">
     <meta name="keywords"
         content="robin, mrun1corn, mrunicorn, portfolio, IT executive, assistant network engineer, network administrator, IT support, MikroTik, Cisco, CCTV, server administration, Linux, Windows, IT specialist, Bangladesh">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Robin Mia Portfolio">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://mrunicorn.xyz/">
-    <meta property="og:title" content="Robin | IT Executive & Assistant Network Engineer Portfolio">
-    <meta property="og:description" content="IT Executive & Assistant Network Engineer with 3+ years experience in network administration, IT support, MikroTik & Cisco configuration, CCTV systems, and server administration.">
+    <meta property="og:title" content="Robin Mia | Network Engineer & IT Support Portfolio">
+    <meta property="og:description" content="IT Executive and Assistant Network Engineer in Bangladesh with 3+ years in network administration, MikroTik, Cisco, CCTV, servers, and IT support.">
     <meta property="og:image" content="https://mrunicorn.xyz/assets/m.png">
+    <meta property="og:image:alt" content="Robin Mia portfolio logo">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary">
     <meta property="twitter:url" content="https://mrunicorn.xyz/">
-    <meta property="twitter:title" content="Robin | IT Executive & Assistant Network Engineer Portfolio">
-    <meta property="twitter:description" content="IT Executive & Assistant Network Engineer with 3+ years experience in network administration, IT support, MikroTik & Cisco configuration, CCTV systems, and server administration.">
+    <meta property="twitter:title" content="Robin Mia | Network Engineer & IT Support Portfolio">
+    <meta property="twitter:description" content="IT Executive and Assistant Network Engineer in Bangladesh with 3+ years in network administration, MikroTik, Cisco, CCTV, servers, and IT support.">
     <meta property="twitter:image" content="https://mrunicorn.xyz/assets/m.png">
+    <meta name="twitter:image:alt" content="Robin Mia portfolio logo">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Robin",
+      "@id": "https://mrunicorn.xyz/#person",
+      "name": "Robin Mia",
       "alternateName": ["mrun1corn", "mrunicorn"],
       "url": "https://mrunicorn.xyz",
       "image": "https://mrunicorn.xyz/assets/m.png",
       "jobTitle": "IT Executive & Assistant Network Engineer",
+      "description": "IT Executive and Assistant Network Engineer in Bangladesh with 3+ years of experience across network administration, MikroTik and Cisco configuration, CCTV systems, server administration, and IT support.",
       "email": "robin424123@gmail.com",
       "telephone": "+8801716708463",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Bangladesh"
       },
+      "knowsAbout": [
+        "Network administration",
+        "MikroTik configuration",
+        "Cisco networking",
+        "IT support",
+        "CCTV installation",
+        "Server administration",
+        "Linux operations",
+        "Windows operations"
+      ],
       "sameAs": [
         "https://facebook.com/mrun1orn",
-        "https://t.me/mrun1corn",
         "https://github.com/mrun1corn"
       ]
     }
@@ -84,14 +99,37 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Robin Portfolio",
+      "@type": "ProfilePage",
+      "@id": "https://mrunicorn.xyz/#profile",
+      "name": "Robin Mia Portfolio",
       "url": "https://mrunicorn.xyz",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://mrunicorn.xyz/{search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "description": "Portfolio of Robin Mia, an IT Executive and Assistant Network Engineer focused on network administration, IT support, MikroTik, Cisco, CCTV, servers, and automation.",
+      "about": {
+        "@id": "https://mrunicorn.xyz/#person"
+      },
+      "mainEntity": {
+        "@id": "https://mrunicorn.xyz/#person"
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "MikroTik Hotspot Manager",
+          "url": "https://github.com/mrun1corn/mikrotik-hotspot-manager",
+          "description": "Flask and Telegram automation for MikroTik hotspot user provisioning, profile sync, payment approval, and expired-account cleanup."
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Community Savings Platform",
+          "url": "https://github.com/mrun1corn/mca",
+          "description": "Full-stack monorepo for savings group deposits, dues, CSV exports, authentication, and role-based workflows."
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "ShareBuddy Android Share Target",
+          "url": "https://github.com/mrun1corn/ShareBuddy",
+          "description": "Android share target app for normalizing links, queuing reminders, and CLI-based builds."
+        }
+      ]
     }
     </script>
     <script type="module" src="js/visualEffects.js"></script>
@@ -99,6 +137,13 @@
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <noscript>
+        <section class="noscript-summary">
+            <h1>Robin Mia - IT Executive & Assistant Network Engineer</h1>
+            <p>Bangladesh-based IT Executive and Assistant Network Engineer with 3+ years of experience in network administration, IT support, MikroTik, Cisco, CCTV systems, Linux, Windows, and server administration.</p>
+            <p><a href="mailto:robin424123@gmail.com">Contact Robin Mia</a></p>
+        </section>
+    </noscript>
 
     <header class="site-header">
         <div class="wrapper">

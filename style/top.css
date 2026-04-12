@@ -150,6 +150,26 @@ main {
     top: 0;
 }
 
+.noscript-summary {
+    width: var(--container-width);
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    background: var(--color-glass);
+    color: var(--color-text);
+}
+
+.noscript-summary h1,
+.noscript-summary p {
+    margin: 0 0 0.75rem;
+}
+
+.noscript-summary a {
+    color: var(--color-accent);
+    font-weight: 800;
+}
+
 :focus-visible {
     outline: 3px solid rgba(19, 121, 91, 0.45);
     outline-offset: 3px;
