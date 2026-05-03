@@ -435,17 +435,28 @@ main {
     margin: 0;
     color: var(--color-ink);
     font-family: var(--font-heading);
-    font-size: 3.3rem;
-    line-height: 1.08;
-    letter-spacing: 0;
+    font-size: clamp(2.8rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.hero-lead,
+.hero-lead {
+    margin: 0.5rem 0 0;
+    max-width: 52ch;
+    color: var(--color-text);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
 .hero-summary {
     margin: 0;
-    max-width: 66ch;
-    color: var(--color-text);
-    font-size: 1.08rem;
+    max-width: 60ch;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 .hero-summary {

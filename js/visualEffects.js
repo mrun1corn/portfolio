@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
     const navLinks = [...document.querySelectorAll('.nav-link')];
-    const sections = navLinks
-        .map((link) => document.querySelector(link.getAttribute('href')))
-        .filter(Boolean);
+    const allSections = [...document.querySelectorAll('section')];
 
     const updateHeader = () => {
         if (header) {
@@ -41,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
         themeToggle.setAttribute('title', `Switch to ${nextTheme} theme`);
         updateThemeColor(currentTheme);
+
+        // Sync 3D Scene
+        if (window.portfolioScene) {
+            window.portfolioScene.updateTheme();
+        }
     };
 
     if (themeToggle) {
@@ -60,22 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (!sections.length || !navLinks.length) return;
-
     const setActiveLink = (id) => {
-        navLinks.forEach((link) => {
+        const links = [...document.querySelectorAll('.nav-link')];
+        links.forEach((link) => {
             link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
         });
     };
 
     const updateActiveSection = () => {
         const headerOffset = (header?.offsetHeight || 0) + 80;
-        const currentSection = sections.reduce((activeSection, section) => {
+        const currentSection = allSections.reduce((activeSection, section) => {
             const sectionTop = section.offsetTop - headerOffset;
             return window.scrollY >= sectionTop ? section : activeSection;
-        }, sections[0]);
+        }, allSections[0]);
 
-        setActiveLink(currentSection.id);
+        if (currentSection) {
+            setActiveLink(currentSection.id);
+        }
+        
+        // Reveal sections as they become active or are already in view
+        allSections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+            if (isVisible) {
+                section.classList.add('is-visible');
+            }
+        });
     };
 
     navLinks.forEach((link) => {
@@ -85,7 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    updateActiveSection();
+    // Run once on load to show initial sections, with a slight delay to ensure rendering is complete
+    setTimeout(() => {
+        updateActiveSection();
+    }, 50);
+
     window.addEventListener('scroll', updateActiveSection, { passive: true });
     window.addEventListener('resize', updateActiveSection);
 });

@@ -27,6 +27,92 @@
   visibility: hidden;
 }
 
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure background transparency for 3D walkthrough */
+body {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+html {
+  background-color: var(--color-bg);
+}
+
+.hero, .section-style, .skills, .projects-section, .experience-section, .contact-section {
+  background: transparent !important;
+}
+
+.about-list li, .focus-item, .skill-card, .project-card, .experience-item, .hero-visual, .button {
+  background: color-mix(in srgb, var(--color-glass) 88%, var(--color-bg)) !important;
+  backdrop-filter: blur(16px);
+  will-change: transform, box-shadow;
+  transition: 
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+  border: 1px solid color-mix(in srgb, var(--color-line) 40%, transparent) !important;
+}
+
+/* Senior-level "Hover Active" State */
+.about-list li:hover, 
+.focus-item:hover, 
+.skill-card:hover, 
+.project-card:hover, 
+.experience-item:hover, 
+.hero-visual:hover, 
+.button:hover {
+  transform: translateY(-6px) scale(1.005);
+  background: color-mix(in srgb, var(--color-glass) 94%, var(--color-bg)) !important;
+  border-color: color-mix(in srgb, var(--color-accent) 30%, var(--color-line)) !important;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 0 0 1px color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+/* Enhanced contrast for text inside glass cards */
+.about-list li, .focus-item h3, .skill-card h3, .project-card h3, .experience-item h3 {
+  color: var(--color-ink) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.about-list li::before {
+  z-index: 1; /* Ensure bullets stay above glass */
+}
+
+/* Remove pop-out effect for card children */
+.about-list li > *, .focus-item > *, .skill-card > *, .project-card > *, .experience-item > *, .hero-visual > *, .button > * {
+  pointer-events: none;
+}
+
+/* Perspective containers - removed or kept subtle for scroll effects */
+.about-list, .focus-grid, .cards-main, .projects-main, .experience-main, .hero-container, .hero-actions {
+  perspective: none;
+}
+
+/* Scroll reveal effect */
+section:not(.hero) {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+section.is-visible, section.hero {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

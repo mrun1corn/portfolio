@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mrunicorn.xyz/sitemap.xml
+Sitemap: https://mrun1corn.xyz/sitemap.xml
