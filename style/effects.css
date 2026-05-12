@@ -37,6 +37,19 @@
   pointer-events: none;
 }
 
+#bg-canvas.bg-fallback {
+  background: var(--gradient-accent);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  opacity: 0.15;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Ensure background transparency for 3D walkthrough */
 body {
   background-color: transparent !important;

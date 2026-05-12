@@ -23,12 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <link href="style/top.css" type="text/css" rel="stylesheet">
-    <link href="style/effects.css" type="text/css" rel="stylesheet">
-    <link href="style/skills.css" type="text/css" rel="stylesheet">
-    <link href="style/about.css" type="text/css" rel="stylesheet">
-    <link href="style/footer.css" type="text/css" rel="stylesheet">
-    <link href="style/projects.css" type="text/css" rel="stylesheet">
+    <link href="style/main.css" type="text/css" rel="stylesheet">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
@@ -54,7 +49,7 @@
     <meta property="og:image:alt" content="Robin Mia portfolio logo">
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mrun1corn.xyz/">
     <meta property="twitter:title" content="Robin Mia | Network Engineer & IT Support Portfolio">
     <meta property="twitter:description" content="IT Executive and Assistant Network Engineer in Bangladesh with 3+ years in network administration, MikroTik, Cisco, CCTV, servers, and IT support.">
@@ -91,7 +86,8 @@
       ],
       "sameAs": [
         "https://facebook.com/mrun1orn",
-        "https://github.com/mrun1corn"
+        "https://github.com/mrun1corn",
+        "https://linkedin.com/in/robin-unicorn"
       ]
     }
     </script>
@@ -150,7 +146,11 @@
         <div class="wrapper">
             <a href="#top" class="brand gradient">Robin</a>
             <nav id="primary-nav" class="nav">
-                <!-- Rendered in file ./js/renderTemplate > TEMPLATE OPTIONS NAV  <.nav> -->
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#contact">Contact</a>
             </nav>
             <button class="theme-toggle" type="button" aria-label="Switch theme">
                 <i class="fa fa-moon-o theme-icon-dark" aria-hidden="true"></i>
@@ -167,7 +167,23 @@
         <section id="top" class="hero">
             <div class="hero-container">
                 <div class="header-apresentation">
-                    <!-- Rendered in file ./js/renderTemplate > TEMPLATE YOURNAME <.header-apresentation> -->
+                    <p class="eyebrow">IT Executive & Assistant Network Engineer</p>
+                    <h1 class="hero-title">Hi, I'm Robin Mia. I build calm, reliable IT operations.</h1>
+                    <p class="hero-lead">I keep office networks, ISP services, CCTV systems, and support workflows dependable for the people who use them every day.</p>
+                    <p class="hero-summary">Based in Bangladesh, I combine hands-on network administration with practical automation, server care, and calm user support. My work usually sits where uptime, documentation, and fast troubleshooting matter.</p>
+                    <div class="hero-actions" aria-label="Primary actions">
+                        <a class="button primary" href="mailto:robin424123@gmail.com">Email Me</a>
+                        <a class="button ghost" href="assets/Robin_Mia_Resume.pdf">Download Resume</a>
+                    </div>
+                    <div class="hero-meta" aria-label="Portfolio highlights">
+                        <span>Bangladesh</span>
+                        <span>Open to IT, network, and infrastructure roles</span>
+                    </div>
+                    <ul class="hero-highlights">
+                        <li>3+ years hands-on IT experience</li>
+                        <li>Network, CCTV, server, and support operations</li>
+                        <li>Currently completing BSc in CSE</li>
+                    </ul>
                 </div>
                 <div class="hero-visual" aria-label="Infrastructure work preview">
                     <img src="assets/project-alo-network.jpg" alt="Network infrastructure project preview">
@@ -177,7 +193,21 @@
                     </div>
                 </div>
                 <div class="header-icons hero-icons">
-                    <!-- Rendered in file ./js/renderTemplate > TEMPLATE ICONS SOCIAL NETWORKS <.header-icons> -->
+                    <a class="icon hero-icon" aria-label="Email" href="mailto:robin424123@gmail.com">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </a>
+                    <a class="icon hero-icon" aria-label="Phone" href="tel:+8801716708463">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </a>
+                    <a class="icon hero-icon" aria-label="Facebook" href="https://facebook.com/mrun1orn" target="_blank" rel="noopener">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a>
+                    <a class="icon hero-icon" aria-label="Github" href="https://github.com/mrun1corn" target="_blank" rel="noopener">
+                        <i class="fa fa-github-alt" aria-hidden="true"></i>
+                    </a>
+                    <a class="icon hero-icon" aria-label="LinkedIn" href="https://linkedin.com/in/robin-unicorn" target="_blank" rel="noopener">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
             <a class="icon bounce gradient fade" id="down" href="#about" data-scroll
@@ -187,7 +217,38 @@
         </section>
 
         <section id="about" class="section-style">
-            <!-- Rendered in file ./js/renderTemplate > TEMPLATE ABOUT -->
+            <div class="container about-container">
+                <div class="section-kicker">About</div>
+                <div class="about-grid">
+                    <div>
+                        <h2 class="section-title">Reliable infrastructure support with a builder's mindset.</h2>
+                        <p class="description">I work across network administration, IT support, CCTV maintenance, server operations, and small automation tools. I like practical systems: clean documentation, clear escalation paths, steady monitoring, and fixes that reduce repeat incidents.</p>
+                    </div>
+                    <ul class="about-list">
+                        <li>Configured and maintained MikroTik and Cisco network environments for day-to-day connectivity and subscriber support.</li>
+                        <li>Supported users with hardware, software, operating system, printer, and connectivity issues while keeping communication clear.</li>
+                        <li>Installed, replaced, and maintained CCTV systems, including site checks, device setup, and handover support.</li>
+                        <li>Continue to grow through a BSc in CSE, with extra focus on Linux, virtualization, automation, and full-stack project work.</li>
+                    </ul>
+                </div>
+                <div class="focus-grid">
+                    <article class="focus-item">
+                        <p>MikroTik, Cisco, LAN/WAN</p>
+                        <h3>Network Operations</h3>
+                        <span>Monitoring, routing, switching, hotspot support, MikroTik configuration, Cisco basics, and practical network troubleshooting.</span>
+                    </article>
+                    <article class="focus-item">
+                        <p>Windows, Linux, help desk</p>
+                        <h3>IT Support</h3>
+                        <span>User support, OS setup, software issues, hardware diagnosis, printer support, and clear incident documentation.</span>
+                    </article>
+                    <article class="focus-item">
+                        <p>VPS, CCTV, monitoring</p>
+                        <h3>Systems & Security</h3>
+                        <span>Server and VPS administration, CCTV rollout support, backup awareness, access control, and operational hygiene.</span>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section id="skills" class="skills">
@@ -195,7 +256,54 @@
                 <p class="section-kicker">Skills</p>
                 <h2 class="section-title">Skills</h2>
                 <div class="cards-main">
-                    <!-- Rendered in file ./js/renderTemplate > TEMPLATE SKILLS -->
+                    <article class="skill-card">
+                        <img class="img-card" src="assets/icon-it-support.svg" alt="IT Support and Troubleshooting skill icon">
+                        <div>
+                            <p class="skill-level">Daily operations</p>
+                            <h3>IT Support & Troubleshooting</h3>
+                            <span>Resolve user issues, diagnose devices, support operating systems, and communicate fixes in plain language.</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <img class="img-card" src="assets/icon-network.svg" alt="Network Monitoring and Maintenance skill icon">
+                        <div>
+                            <p class="skill-level">Core strength</p>
+                            <h3>Network Monitoring & Maintenance</h3>
+                            <span>Maintain connectivity, inspect faults, support LAN/WAN environments, and keep network changes documented.</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <img class="img-card" src="assets/icon-automation.svg" alt="MikroTik and Cisco Configuration skill icon">
+                        <div>
+                            <p class="skill-level">Hands-on</p>
+                            <h3>MikroTik & Cisco Configuration</h3>
+                            <span>Configure router features, hotspot workflows, profiles, user access, and basic switching or routing tasks.</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <img class="img-card" src="assets/icon-cctv.svg" alt="CCTV Installation and Maintenance skill icon">
+                        <div>
+                            <p class="skill-level">Field work</p>
+                            <h3>CCTV Installation & Maintenance</h3>
+                            <span>Install cameras, replace faulty devices, verify viewing paths, and support handover after deployment.</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <img class="img-card" src="assets/icon-server.svg" alt="Server and VPS Administration skill icon">
+                        <div>
+                            <p class="skill-level">Growing focus</p>
+                            <h3>Server & VPS Administration</h3>
+                            <span>Work with Linux servers, VPS setup, basic service checks, access control, and deployment support.</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <img class="img-card" src="assets/icon-os.svg" alt="Linux and Windows Operations skill icon">
+                        <div>
+                            <p class="skill-level">Everyday tools</p>
+                            <h3>Linux & Windows Operations</h3>
+                            <span>Install, maintain, and troubleshoot desktop and server environments across Windows and Linux.</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -205,7 +313,60 @@
                 <p class="section-kicker">Projects</p>
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-main">
-                    <!-- Rendered in file ./js/renderTemplate > TEMPLATE PROJECT -->
+                    <article class="project-card">
+                        <div class="project-visual" role="presentation">
+                            <img src="assets/mikrotik-icon.png" alt="MikroTik Hotspot Manager project screenshot">
+                        </div>
+                        <div class="project-content">
+                            <h3>MikroTik Hotspot Manager</h3>
+                            <p>A Flask and Telegram automation project for hotspot user provisioning, profile sync, payment approval, and expired-account cleanup without repeating manual WinBox work.</p>
+                            <div class="project-impact">
+                                <strong>Result</strong>
+                                <span>Reduces repetitive account management and makes support actions available from a simple bot workflow.</span>
+                            </div>
+                            <div class="project-tech"><span>Python</span><span>Flask</span><span>Telegram Bot</span><span>MikroTik</span></div>
+                            <a class="project-link" href="https://github.com/mrun1corn/mikrotik-hotspot-manager" target="_blank" rel="noopener">
+                                View on GitHub
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-visual" role="presentation">
+                            <img src="assets/savings.png" alt="Community Savings Platform project screenshot">
+                        </div>
+                        <div class="project-content">
+                            <h3>Community Savings Platform</h3>
+                            <p>A full-stack monorepo for savings groups, covering deposits, dues, CSV exports, authentication, and role-based workflows across API, web, and mobile clients.</p>
+                            <div class="project-impact">
+                                <strong>Result</strong>
+                                <span>Turns group finance tasks into a structured workflow with clearer records and easier reporting.</span>
+                            </div>
+                            <div class="project-tech"><span>Express</span><span>Vite</span><span>Expo</span><span>CSV Export</span></div>
+                            <a class="project-link" href="https://github.com/mrun1corn/mca" target="_blank" rel="noopener">
+                                Explore monorepo
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-visual" role="presentation">
+                            <img src="assets/android.png" alt="ShareBuddy Android app screenshot">
+                        </div>
+                        <div class="project-content">
+                            <h3>ShareBuddy Android Share Target</h3>
+                            <p>A Jetpack Compose app that intercepts Android shares, normalizes links, queues reminders, and can be built from Ubuntu through CLI tooling.</p>
+                            <div class="project-impact">
+                                <strong>Result</strong>
+                                <span>Makes shared links easier to capture, organize, and return to later from an Android workflow.</span>
+                            </div>
+                            <div class="project-tech"><span>Android</span><span>Kotlin</span><span>Compose</span><span>CLI Build</span></div>
+                            <a class="project-link" href="https://github.com/mrun1corn/ShareBuddy" target="_blank" rel="noopener">
+                                See the app
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -215,28 +376,62 @@
                 <p class="section-kicker">Experience</p>
                 <h2 class="section-title">Where the work shows up</h2>
                 <div class="experience-main">
-                    <!-- Rendered in file ./js/renderTemplate > TEMPLATE EXPERIENCE -->
+                    <article class="experience-item">
+                        <div>
+                            <p>3+ years</p>
+                            <h3>IT Executive / Assistant Network Engineer</h3>
+                            <span>Infrastructure and support roles</span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Maintained network availability, handled technical support requests, and helped teams recover from connectivity issues.</li>
+                            <li>Worked with MikroTik and Cisco environments, CCTV systems, operating systems, and server-side tasks.</li>
+                            <li>Documented fixes and recurring issues so future support work became faster and easier to understand.</li>
+                        </ul>
+                    </article>
+                    <article class="experience-item">
+                        <div>
+                            <p>Current</p>
+                            <h3>BSc in Computer Science & Engineering</h3>
+                            <span>Ongoing academic growth</span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Building stronger foundations in software, systems, databases, networking, and problem solving.</li>
+                            <li>Applying study directly through automation, full-stack projects, and Linux-based workflows.</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
             <div class="container contact-panel">
-                <!-- Rendered in file ./js/renderTemplate > TEMPLATE CONTACT -->
+                <div>
+                    <p class="section-kicker">Contact</p>
+                    <h2 class="section-title">Let's make the next system easier to run.</h2>
+                    <p>For network support, IT operations, CCTV work, server administration, or infrastructure-focused roles, email is the best first step.</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:robin424123@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>robin424123@gmail.com</a>
+                    <a href="tel:+8801716708463"><i class="fa fa-phone" aria-hidden="true"></i>+8801716708463</a>
+                    <a href="https://github.com/mrun1corn" target="_blank" rel="noopener"><i class="fa fa-github-alt" aria-hidden="true"></i>GitHub</a>
+                    <a href="https://facebook.com/mrun1orn" target="_blank" rel="noopener"><i class="fa fa-facebook-square" aria-hidden="true"></i>Facebook</a>
+                    <a href="https://linkedin.com/in/robin-unicorn" target="_blank" rel="noopener"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <a title="Go to top" class="icon gradient fade" style="visibility: hidden;" id="top-button" onclick="topFunction()">
+    <a title="Go to top" class="icon gradient fade top-button-hidden" id="top-button">
         <i class="fa fa-angle-double-up" aria-hidden="true"></i>
     </a>
 
     <footer class="footer">
         <div class="footer-inner">
-            <p>&copy; <span class="footer-year"></span> Robin Mia. Built for clarity.</p>
+            <p>&copy; <span class="footer-year">2026</span> Robin Mia. Built for clarity.</p>
             <div class="footer-links">
                 <a href="mailto:robin424123@gmail.com">Email</a>
                 <a href="https://github.com/mrun1corn" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/robin-unicorn" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
     </footer>
@@ -245,19 +440,17 @@
         const topButton = document.getElementById("top-button");
 
         document.addEventListener("scroll", scrollFunction);
+        topButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                topButton.style.visibility = "visible";
+                topButton.classList.remove("top-button-hidden");
             } else {
-                topButton.style.visibility = "hidden";
+                topButton.classList.add("top-button-hidden");
             }
         }
-
-        function topFunction() {
-            document.documentElement.scrollTop = 0;
-        }
-
     </script>
 </body>
 

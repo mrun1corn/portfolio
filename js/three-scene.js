@@ -3,6 +3,27 @@ import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
 class PortfolioScene {
     constructor() {
         this.canvas = document.querySelector('#bg-canvas');
+        if (!this.canvas) return;
+
+        // Check for fallback criteria
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isMobile = window.innerWidth < 768;
+
+        if (prefersReducedMotion || isMobile) {
+            this.applyFallback();
+            return;
+        }
+
+        this.initScene();
+    }
+
+    applyFallback() {
+        if (this.canvas) {
+            this.canvas.classList.add('bg-fallback');
+        }
+    }
+
+    initScene() {
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.canvas,
             antialias: true,
@@ -32,6 +53,7 @@ class PortfolioScene {
     }
 
     onMouseMove(e) {
+        if (!this.targetMouse) return;
         this.targetMouse.x = (e.clientX / window.innerWidth) * 2 - 1;
         this.targetMouse.y = (e.clientY / window.innerHeight) * 2 - 1;
     }
@@ -55,8 +77,8 @@ class PortfolioScene {
 
     updateTheme() {
         const style = getComputedStyle(document.documentElement);
-        const bgColor = style.getPropertyValue('--color-bg').trim();
-        const accentColor = style.getPropertyValue('--color-accent').trim();
+        const bgColor = style.getPropertyValue('--color-bg').trim() || '#f7faf8';
+        const accentColor = style.getPropertyValue('--color-accent').trim() || '#13795b';
         
         this.scene.fog = new THREE.FogExp2(bgColor, 0.05);
         
@@ -71,14 +93,14 @@ class PortfolioScene {
 
     createNetwork() {
         // Create a tunnel/corridor of points
-        const count = 1000; // Increased for better tunnel effect
+        const count = 1000;
         const positions = new Float32Array(count * 3);
         const colors = new Float32Array(count * 3);
         
         for (let i = 0; i < count; i++) {
             const x = (Math.random() - 0.5) * 60;
             const y = (Math.random() - 0.5) * 60;
-            const z = (Math.random() - 1) * 200; // Deeper tunnel
+            const z = (Math.random() - 1) * 200;
             
             positions[i * 3] = x;
             positions[i * 3 + 1] = y;
@@ -137,12 +159,14 @@ class PortfolioScene {
     }
 
     onWindowResize() {
+        if (!this.renderer) return;
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
     animate() {
+        if (!this.renderer) return;
         requestAnimationFrame(() => this.animate());
         const elapsed = this.clock.getElapsedTime();
         
@@ -173,7 +197,24 @@ class PortfolioScene {
     }
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+function initPortfolioScene() {
+    if (window.portfolioScene) return;
     window.portfolioScene = new PortfolioScene();
-});
+}
+
+// Initialize when page is fully loaded or idle
+if (document.readyState === 'complete') {
+    if (window.requestIdleCallback) {
+        requestIdleCallback(() => initPortfolioScene());
+    } else {
+        setTimeout(initPortfolioScene, 1);
+    }
+} else {
+    window.addEventListener('load', () => {
+        if (window.requestIdleCallback) {
+            requestIdleCallback(() => initPortfolioScene());
+        } else {
+            initPortfolioScene();
+        }
+    });
+}

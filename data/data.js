@@ -34,6 +34,11 @@ export const introductionData = {
             icon: "fa fa-github-alt",
             nameSocialNetwork: "Github",
             url: "https://github.com/mrun1corn"
+        },
+        {
+            icon: "fa fa-linkedin",
+            nameSocialNetwork: "LinkedIn",
+            url: "https://linkedin.com/in/robin-unicorn"
         }
     ],
     nav: [
