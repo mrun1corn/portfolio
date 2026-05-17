@@ -1,18 +1,18 @@
 export const introductionData = {
     yourName: "Robin Mia",
-    tagline: "IT Executive & Assistant Network Engineer",
-    headline: "I keep office networks, ISP services, CCTV systems, and support workflows dependable for the people who use them every day.",
-    summary: "Based in Bangladesh, I combine hands-on network administration with practical automation, server care, and calm user support. My work usually sits where uptime, documentation, and fast troubleshooting matter.",
+    tagline: "C++ Developer | Server Administrator | Networking & Infrastructure Engineer",
+    headline: "I build robust C++ applications and manage dependable networks, servers, and infrastructure systems.",
+    summary: "Based in Bangladesh, I combine modern C++ development with hands-on server administration and network engineering. I focus on system-level problem solving, automation, and infrastructure uptime.",
     location: "Bangladesh",
-    availability: "Open to IT, network, and infrastructure roles",
+    availability: "Open to C++ development, server admin, and infrastructure roles",
     contactLink: "mailto:robin424123@gmail.com",
     contactLabel: "Email Me",
     resumeLabel: "Download Resume",
-    resumeLink: "assets/Robin_Mia_Resume.pdf",
+    resumeLink: "assets/Robin_Mia_CV(17-05-2026).pdf",
     highlights: [
-        "3+ years hands-on IT experience",
-        "Network, CCTV, server, and support operations",
-        "Currently completing BSc in CSE"
+        "C++ Developer & System-level programmer",
+        "Server Administrator & Infrastructure Engineer",
+        "3+ years in Network & IT Operations"
     ],
     socialNetwork: [
         {
@@ -68,40 +68,47 @@ export const introductionData = {
 export const aboutMeData = {
     title: "Reliable infrastructure support with a builder's mindset.",
     eyebrow: "About",
-    description: "I work across network administration, IT support, CCTV maintenance, server operations, and small automation tools. I like practical systems: clean documentation, clear escalation paths, steady monitoring, and fixes that reduce repeat incidents.",
+    description: "I am a C++ Developer and Infrastructure Engineer with experience in software development, server administration, and network operations. I specialize in building efficient systems and maintaining high-availability infrastructure using Linux, MikroTik, and virtualization technologies.",
     details: [
+        "Developing software using C++ with a focus on system-level problem solving and debugging at BFIN IT.",
+        "Managing server infrastructure, including VPS, ticketing systems, and Linux-based security systems at Joy Cinemas.",
         "Configured and maintained MikroTik and Cisco network environments for day-to-day connectivity and subscriber support.",
-        "Supported users with hardware, software, operating system, printer, and connectivity issues while keeping communication clear.",
-        "Installed, replaced, and maintained CCTV systems, including site checks, device setup, and handover support.",
-        "Continue to grow through a BSc in CSE, with extra focus on Linux, virtualization, automation, and full-stack project work."
+        "Expertise in virtualization (Proxmox VE, VMware) and containerization (Docker) for modern infrastructure deployment."
     ]
 };
 
 export const focusAreasData = [
     {
-        title: "Network Operations",
-        text: "Monitoring, routing, switching, hotspot support, MikroTik configuration, Cisco basics, and practical network troubleshooting.",
-        meta: "MikroTik, Cisco, LAN/WAN"
-    },
-    {
-        title: "IT Support",
-        text: "User support, OS setup, software issues, hardware diagnosis, printer support, and clear incident documentation.",
-        meta: "Windows, Linux, help desk"
+        title: "Software Development",
+        text: "C++ development, system-level programming, debugging, and building efficient software solutions.",
+        meta: "C++, Python, Linux"
     },
     {
         title: "Systems & Security",
         text: "Server and VPS administration, CCTV rollout support, backup awareness, access control, and operational hygiene.",
         meta: "VPS, CCTV, monitoring"
+    },
+    {
+        title: "Network Operations",
+        text: "Monitoring, routing, switching, hotspot support, MikroTik configuration, Cisco basics, and practical network troubleshooting.",
+        meta: "MikroTik, Cisco, LAN/WAN"
     }
 ];
 
 export const skillsData = [
     {
-        img: "assets/icon-it-support.svg",
-        nameSkill: "IT Support & Troubleshooting",
-        level: "Daily operations",
-        description: "Resolve user issues, diagnose devices, support operating systems, and communicate fixes in plain language.",
-        alt: "IT Support and Troubleshooting skill icon"
+        img: "assets/js.svg",
+        nameSkill: "C++ Development",
+        level: "Active",
+        description: "Develop system-level software, debug complex issues, and optimize application performance.",
+        alt: "C++ Development skill icon"
+    },
+    {
+        img: "assets/icon-server.svg",
+        nameSkill: "Server & VPS Administration",
+        level: "Core strength",
+        description: "Work with Linux servers, Proxmox VE, VMware, VPS setup, and service maintenance.",
+        alt: "Server and VPS Administration skill icon"
     },
     {
         img: "assets/icon-network.svg",
@@ -123,13 +130,6 @@ export const skillsData = [
         level: "Field work",
         description: "Install cameras, replace faulty devices, verify viewing paths, and support handover after deployment.",
         alt: "CCTV Installation and Maintenance skill icon"
-    },
-    {
-        img: "assets/icon-server.svg",
-        nameSkill: "Server & VPS Administration",
-        level: "Growing focus",
-        description: "Work with Linux servers, VPS setup, basic service checks, access control, and deployment support.",
-        alt: "Server and VPS Administration skill icon"
     },
     {
         img: "assets/icon-os.svg",
@@ -175,19 +175,39 @@ export const projectsData = [
 
 export const experienceData = [
     {
-        role: "IT Executive / Assistant Network Engineer",
-        organization: "Infrastructure and support roles",
-        period: "3+ years",
+        role: "C++ Developer",
+        organization: "BFIN IT",
+        period: "April 2026 – Present",
         points: [
-            "Maintained network availability, handled technical support requests, and helped teams recover from connectivity issues.",
-            "Worked with MikroTik and Cisco environments, CCTV systems, operating systems, and server-side tasks.",
-            "Documented fixes and recurring issues so future support work became faster and easier to understand."
+            "Leading software development initiatives using C++.",
+            "Specializing in debugging and solving complex system-level problems.",
+            "Contributing to the development of robust and efficient software applications."
+        ]
+    },
+    {
+        role: "IT Executive / Server Administrator",
+        organization: "Joy Cinemas",
+        period: "July 2024 – Present",
+        points: [
+            "Managing server infrastructure including VPS, ticketing software, and system maintenance.",
+            "Ensuring smooth operation of Linux-based servers and security systems.",
+            "Configuring and monitoring networking, CCTV systems, and IT hardware."
+        ]
+    },
+    {
+        role: "Assistant Network Engineer",
+        organization: "ALO Communication",
+        period: "Sep 2022 – Jul 2024 (1 yr 10 mos)",
+        points: [
+            "Managed home user network infrastructure and provided technical support.",
+            "Configured routers, switches, and firewall security for high availability.",
+            "Assisted in server maintenance and critical updates at the head office."
         ]
     },
     {
         role: "BSc in Computer Science & Engineering",
-        organization: "Ongoing academic growth",
-        period: "Current",
+        organization: "University of South Asia",
+        period: "Current (Expected 2029)",
         points: [
             "Building stronger foundations in software, systems, databases, networking, and problem solving.",
             "Applying study directly through automation, full-stack projects, and Linux-based workflows."
@@ -197,7 +217,7 @@ export const experienceData = [
 
 export const contactData = {
     title: "Let's make the next system easier to run.",
-    text: "For network support, IT operations, CCTV work, server administration, or infrastructure-focused roles, email is the best first step.",
+    text: "For C++ development, server admin, network support, or infrastructure-focused roles, email is the best first step.",
     email: "robin424123@gmail.com",
     phone: "+8801716708463",
     github: "https://github.com/mrun1corn",
