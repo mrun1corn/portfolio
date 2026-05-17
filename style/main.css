@@ -867,7 +867,7 @@ section.is-visible, section.hero {
         gap: 1rem;
     }
     
-    .skills-animation dotlottie-player {
+    .skills-animation lottie-player {
         width: 80px !important;
         height: 80px !important;
     }
@@ -1033,11 +1033,6 @@ section.is-visible, section.hero {
     background: var(--color-line);
 }
 
-.category-cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
-}
 
 .focus-grid {
     display: grid;
@@ -1460,10 +1455,16 @@ section.is-visible, section.hero {
     color: var(--color-ink);
 }
 
+@media (max-width: 640px) {
+    .contact-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Vector Icon styling for Skills */
 .vector-icon {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     margin-top: 5px;
     filter: brightness(0) invert(1);
     opacity: 0.9;
