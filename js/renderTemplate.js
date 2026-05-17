@@ -23,7 +23,5 @@ function updateFooterYear() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setupMenu();
-    updateFooterYear();
-});
+setupMenu();
+updateFooterYear();
