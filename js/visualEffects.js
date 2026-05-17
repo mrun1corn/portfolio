@@ -3,6 +3,58 @@ const themeToggle = document.querySelector('.theme-toggle');
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 const navLinks = [...document.querySelectorAll('.nav-link')];
 const allSections = [...document.querySelectorAll('section')];
+const typingTextElement = document.querySelector('.typing-text');
+
+// Dynamic Typing Effect
+const roles = ["C++ Developer", "Server Administrator", "Infrastructure Engineer", "System Optimizer"];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typeSpeed = 100;
+
+const type = () => {
+    const currentRole = roles[roleIndex];
+    if (isDeleting) {
+        typingTextElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typeSpeed = 50;
+    } else {
+        typingTextElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typeSpeed = 100;
+    }
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        typeSpeed = 2000; // Pause at the end
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
+};
+
+if (typingTextElement) {
+    type();
+}
+
+// Lottie Animation Performance Optimization
+const lottieObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const player = entry.target;
+        if (entry.isIntersecting) {
+            player.play();
+        } else {
+            player.pause();
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('dotlottie-player, lottie-player').forEach(player => {
+    lottieObserver.observe(player);
+});
 
 const updateHeader = () => {
     if (header) {

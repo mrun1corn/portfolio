@@ -26,7 +26,7 @@
     <link href="style/main.css" type="text/css" rel="stylesheet">
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -168,9 +168,10 @@
         <section id="top" class="hero">
             <div class="hero-container">
                 <div class="header-apresentation">
-                    <p class="eyebrow">C++ Developer | Server Administrator | Infrastructure Engineer</p>
+                    <p class="eyebrow">Professional <span class="typing-text"></span></p>
                     <h1 class="hero-title">
-                        <span class="line-1">Building Robust Apps.</span><br>
+                        <span class="line-0">Robin Mia</span>
+                        <span class="line-1">Building Robust Apps.</span>
                         <span class="line-2">Scaling Reliable Systems.</span>
                     </h1>
                     <p class="hero-lead">I build robust C++ applications and manage dependable networks, servers, and infrastructure systems.</p>
@@ -263,58 +264,97 @@
                         <h2 class="section-title">Technical Expertise</h2>
                     </div>
                     <div class="skills-animation">
-                        <lottie-player src="assets/skills-animation.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                        <lottie-player src="assets/hero-animation.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                     </div>
                 </div>
-                <div class="cards-main">
-                    <article class="skill-card">
-                        <img class="img-card" src="assets/icon-automation.svg" alt="C++ Development skill icon">
-                        <div>
-                            <p class="skill-level">Active focus</p>
-                            <h3>C++ Development</h3>
-                            <span>Develop system-level software, debug complex issues, and optimize application performance at BFIN IT.</span>
+                <div class="skills-grid">
+                    <div class="skills-category">
+                        <h3 class="category-title">Software Development</h3>
+                        <div class="category-cards">
+                            <article class="skill-card">
+                                <img src="assets/icon-it-support.svg" class="vector-icon" alt="Development icon">
+                                <div>
+                                    <p class="skill-level">Active focus</p>
+                                    <h3>C++ Development</h3>
+                                    <span>Develop system-level software, debug complex issues, and optimize application performance at BFIN IT.</span>
+                                </div>
+                            </article>
+                            <article class="skill-card">
+                                <img src="assets/icon-os.svg" class="vector-icon" alt="OS icon">
+                                <div>
+                                    <p class="skill-level">Everyday tools</p>
+                                    <h3>Linux & Windows</h3>
+                                    <span>Expertise in deploying and troubleshooting both desktop and server environments.</span>
+                                </div>
+                            </article>
+
+                    </div>
+
+                    <div class="skills-category">
+                        <h3 class="category-title">DevOps & Automation</h3>
+                        <div class="category-cards">
+                            <article class="skill-card">
+                                <img src="assets/icon-server.svg" class="vector-icon" alt="Server icon">
+                                <div>
+                                    <p class="skill-level">Core strength</p>
+                                    <h3>Containerization & CI/CD</h3>
+                                    <span>Docker, GitHub Actions, and environment standardization for reliable deployments.</span>
+                                </div>
+                            </article>
+                            <article class="skill-card">
+                                <img src="assets/icon-automation.svg" class="vector-icon" alt="Automation icon">
+                                <div>
+                                    <p class="skill-level">Everyday tools</p>
+                                    <h3>Scripting & Automation</h3>
+                                    <span>Python and Bash scripting for system maintenance, monitoring, and task automation.</span>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-                    <article class="skill-card">
-                        <img class="img-card" src="assets/icon-server.svg" alt="Server and VPS Administration skill icon">
-                        <div>
-                            <p class="skill-level">Core strength</p>
-                            <h3>Server & VPS Administration</h3>
-                            <span>Manage Linux servers, Proxmox VE, VMware, and cloud infrastructure with a focus on uptime.</span>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3 class="category-title">Infrastructure & Networks</h3>
+                        <div class="category-cards">
+                            <article class="skill-card">
+                                <img src="assets/icon-server.svg" class="vector-icon" alt="Proxmox icon">
+                                <div>
+                                    <p class="skill-level">Core strength</p>
+                                    <h3>Server & VPS Administration</h3>
+                                    <span>Manage Linux servers, Proxmox VE, VMware, and cloud infrastructure with a focus on uptime.</span>
+                                </div>
+                            </article>
+                            <article class="skill-card">
+                                <img src="assets/icon-network.svg" class="vector-icon" alt="Network icon">
+                                <div>
+                                    <p class="skill-level">Core strength</p>
+                                    <h3>Network Operations</h3>
+                                    <span>Maintain connectivity, MikroTik/Cisco configuration, and LAN/WAN infrastructure.</span>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-                    <article class="skill-card">
-                        <img class="img-card" src="assets/icon-network.svg" alt="Network Monitoring and Maintenance skill icon">
-                        <div>
-                            <p class="skill-level">Core strength</p>
-                            <h3>Network Operations</h3>
-                            <span>Maintain connectivity, MikroTik/Cisco configuration, and LAN/WAN infrastructure.</span>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3 class="category-title">Operations & Support</h3>
+                        <div class="category-cards">
+                            <article class="skill-card">
+                                <img src="assets/icon-it-support.svg" class="vector-icon" alt="IT Support icon">
+                                <div>
+                                    <p class="skill-level">Daily operations</p>
+                                    <h3>Technical Support</h3>
+                                    <span>Resolve hardware/software issues and maintain clear documentation for IT workflows.</span>
+                                </div>
+                            </article>
+                            <article class="skill-card">
+                                <img src="assets/icon-cctv.svg" class="vector-icon" alt="CCTV icon">
+                                <div>
+                                    <p class="skill-level">Field work</p>
+                                    <h3>CCTV Systems</h3>
+                                    <span>Install, configure, and maintain surveillance systems and remote viewing paths.</span>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-                    <article class="skill-card">
-                        <img class="img-card" src="assets/icon-it-support.svg" alt="IT Support and Troubleshooting skill icon">
-                        <div>
-                            <p class="skill-level">Daily operations</p>
-                            <h3>Technical Support</h3>
-                            <span>Resolve hardware/software issues and maintain clear documentation for IT workflows.</span>
-                        </div>
-                    </article>
-                    <article class="skill-card">
-                        <img class="img-card" src="assets/icon-cctv.svg" alt="CCTV Installation and Maintenance skill icon">
-                        <div>
-                            <p class="skill-level">Field work</p>
-                            <h3>CCTV Systems</h3>
-                            <span>Install, configure, and maintain surveillance systems and remote viewing paths.</span>
-                        </div>
-                    </article>
-                    <article class="skill-card">
-                        <img class="img-card" src="assets/icon-os.svg" alt="Linux and Windows Operations skill icon">
-                        <div>
-                            <p class="skill-level">Everyday tools</p>
-                            <h3>Linux & Windows</h3>
-                            <span>Expertise in deploying and troubleshooting both desktop and server environments.</span>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -326,7 +366,7 @@
                 <div class="projects-main">
                     <article class="project-card">
                         <div class="project-visual" role="presentation">
-                            <img src="assets/mikrotik-icon.png" alt="MikroTik Hotspot Manager project screenshot">
+                            <img src="assets/mikrotik_hotspot.png" alt="MikroTik Hotspot Manager">
                         </div>
                         <div class="project-content">
                             <h3>MikroTik Hotspot Manager</h3>
@@ -344,7 +384,7 @@
                     </article>
                     <article class="project-card">
                         <div class="project-visual" role="presentation">
-                            <img src="assets/savings.png" alt="Community Savings Platform project screenshot">
+                            <img src="assets/community_savings.png" alt="Community Savings Platform">
                         </div>
                         <div class="project-content">
                             <h3>Community Savings Platform</h3>
@@ -362,7 +402,7 @@
                     </article>
                     <article class="project-card">
                         <div class="project-visual" role="presentation">
-                            <img src="assets/android.png" alt="ShareBuddy Android app screenshot">
+                            <img src="assets/sharebuddy_android.png" alt="ShareBuddy Android">
                         </div>
                         <div class="project-content">
                             <h3>ShareBuddy Android Share Target</h3>
@@ -374,6 +414,42 @@
                             <div class="project-tech"><span>Android</span><span>Kotlin</span><span>Compose</span><span>CLI Build</span></div>
                             <a class="project-link" href="https://github.com/mrun1corn/ShareBuddy" target="_blank" rel="noopener">
                                 See the app
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-visual" role="presentation">
+                            <img src="assets/smart_restaurant.png" alt="Smart Restaurant">
+                        </div>
+                        <div class="project-content">
+                            <h3>Smart Restaurant System</h3>
+                            <p>A full-stack digital menu and order management system. Customers scan QR codes to order, while staff manage tables and active orders in real-time.</p>
+                            <div class="project-impact">
+                                <strong>Result</strong>
+                                <span>Modernizes restaurant workflows with digital menus and live order tracking.</span>
+                            </div>
+                            <div class="project-tech"><span>React</span><span>Node.js</span><span>Prisma</span><span>Socket.io</span></div>
+                            <a class="project-link" href="https://github.com/mrun1corn/smart_restuarant" target="_blank" rel="noopener">
+                                View Repository
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-visual" role="presentation">
+                            <img src="assets/security_news.png" alt="Security News">
+                        </div>
+                        <div class="project-content">
+                            <h3>Security News</h3>
+                            <p>An application to fetch and display the latest security news and vulnerability alerts for cybersecurity professionals.</p>
+                            <div class="project-impact">
+                                <strong>Result</strong>
+                                <span>Provides a streamlined feed for staying updated on critical infosec developments.</span>
+                            </div>
+                            <div class="project-tech"><span>Dart</span><span>Flutter</span><span>API</span></div>
+                            <a class="project-link" href="https://github.com/mrun1corn/security_news" target="_blank" rel="noopener">
+                                View Repository
                                 <i class="fa fa-external-link" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -440,20 +516,39 @@
 
         <section id="contact" class="contact-section">
             <div class="container contact-panel">
-                <div>
-                    <p class="section-kicker">Contact</p>
-                    <h2 class="section-title">Let's make the next system easier to run.</h2>
-                    <p>For C++ development, server admin, network support, or infrastructure-focused roles, email is the best first step.</p>
-                    <div class="contact-animation">
-                        <lottie-player src="assets/contact-animation.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player>
+                <div class="contact-visual-side">
+                    <div>
+                        <p class="section-kicker">Contact</p>
+                        <h2 class="section-title">Let's make the next system easier to run.</h2>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <lottie-player src="assets/contact-animation.json" background="transparent" speed="1" style="width: 100%; max-width: 300px; height: auto;" loop autoplay></lottie-player>
                     </div>
                 </div>
-                <div class="contact-links">
-                    <a href="mailto:robin424123@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>robin424123@gmail.com</a>
-                    <a href="tel:+8801716708463"><i class="fa fa-phone" aria-hidden="true"></i>+8801716708463</a>
-                    <a href="https://github.com/mrun1corn" target="_blank" rel="noopener"><i class="fa fa-github-alt" aria-hidden="true"></i>GitHub</a>
-                    <a href="https://facebook.com/mrun1orn" target="_blank" rel="noopener"><i class="fa fa-facebook-square" aria-hidden="true"></i>Facebook</a>
-                    <a href="https://linkedin.com/in/robin-unicorn" target="_blank" rel="noopener"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+                <div class="contact-action-side">
+                    <p class="contact-lead">For C++ development, server admin, network support, or infrastructure roles, reaching out is the first step.</p>
+                    <div class="contact-buttons">
+                        <a class="contact-btn email" href="mailto:robin424123@gmail.com">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <span>Email Me</span>
+                        </a>
+                        <a class="contact-btn phone" href="tel:+8801716708463">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>+8801716708463</span>
+                        </a>
+                        <a class="contact-btn github" href="https://github.com/mrun1corn" target="_blank" rel="noopener">
+                            <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a class="contact-btn linkedin" href="https://linkedin.com/in/robin-unicorn" target="_blank" rel="noopener">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a class="contact-btn facebook" href="https://facebook.com/mrun1orn" target="_blank" rel="noopener">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
