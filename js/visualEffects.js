@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const darkMeta = document.querySelector('meta[name="theme-color"][media*="dark"]');
         if (!lightMeta || !darkMeta) return;
 
-        const activeColor = theme === 'dark' ? '#101713' : '#f7faf8';
+        const activeColor = theme === 'dark' ? '#020617' : '#f8fafc';
         lightMeta.setAttribute('content', activeColor);
         darkMeta.setAttribute('content', activeColor);
     };
@@ -64,18 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const setActiveLink = (id) => {
-        const links = [...document.querySelectorAll('.nav-link')];
-        links.forEach((link) => {
+        navLinks.forEach((link) => {
             link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
         });
     };
 
     const updateActiveSection = () => {
         const headerOffset = (header?.offsetHeight || 0) + 80;
-        const currentSection = allSections.reduce((activeSection, section) => {
-            const sectionTop = section.offsetTop - headerOffset;
-            return window.scrollY >= sectionTop ? section : activeSection;
-        }, allSections[0]);
+        
+        // Find the last section that has been scrolled past
+        const currentSection = [...allSections].reverse().find(section => 
+            window.scrollY >= (section.offsetTop - headerOffset)
+        ) || allSections[0];
 
         if (currentSection) {
             setActiveLink(currentSection.id);

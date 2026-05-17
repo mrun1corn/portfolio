@@ -77,8 +77,8 @@ class PortfolioScene {
 
     updateTheme() {
         const style = getComputedStyle(document.documentElement);
-        const bgColor = style.getPropertyValue('--color-bg').trim() || '#f7faf8';
-        const accentColor = style.getPropertyValue('--color-accent').trim() || '#13795b';
+        const bgColor = style.getPropertyValue('--color-bg').trim() || '#f8fafc';
+        const accentColor = style.getPropertyValue('--color-accent').trim() || '#0ea5e9';
         
         this.scene.fog = new THREE.FogExp2(bgColor, 0.05);
         
@@ -144,7 +144,7 @@ class PortfolioScene {
         
         const lineGeo = new THREE.BufferGeometry();
         lineGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePositions), 3));
-        const lineMat = new THREE.LineBasicMaterial({ color: 0x62d6a7, transparent: true, opacity: 0.2 });
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x0ea5e9, transparent: true, opacity: 0.2 });
         this.lines = new THREE.LineSegments(lineGeo, lineMat);
         this.scene.add(this.lines);
     }
@@ -153,7 +153,7 @@ class PortfolioScene {
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
         this.scene.add(ambientLight);
         
-        this.pointLight = new THREE.PointLight(0x62d6a7, 1);
+        this.pointLight = new THREE.PointLight(0x0ea5e9, 1);
         this.pointLight.position.set(5, 5, 5);
         this.scene.add(this.pointLight);
     }
@@ -198,23 +198,22 @@ class PortfolioScene {
 }
 
 function initPortfolioScene() {
-    if (window.portfolioScene) return;
-    window.portfolioScene = new PortfolioScene();
+    if (!window.portfolioScene) {
+        window.portfolioScene = new PortfolioScene();
+    }
+}
+
+function scheduleInit() {
+    if (window.requestIdleCallback) {
+        requestIdleCallback(initPortfolioScene);
+    } else {
+        setTimeout(initPortfolioScene, 1);
+    }
 }
 
 // Initialize when page is fully loaded or idle
 if (document.readyState === 'complete') {
-    if (window.requestIdleCallback) {
-        requestIdleCallback(() => initPortfolioScene());
-    } else {
-        setTimeout(initPortfolioScene, 1);
-    }
+    scheduleInit();
 } else {
-    window.addEventListener('load', () => {
-        if (window.requestIdleCallback) {
-            requestIdleCallback(() => initPortfolioScene());
-        } else {
-            initPortfolioScene();
-        }
-    });
+    window.addEventListener('load', scheduleInit);
 }
