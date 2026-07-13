@@ -69,7 +69,7 @@ const initLottieObserver = () => {
 };
 
 if (customElements) {
-    customElements.whenDefined('dotlottie-wc').then(initLottieObserver);
+    customElements.whenDefined('lottie-player').then(initLottieObserver);
 } else {
     window.addEventListener('DOMContentLoaded', initLottieObserver);
 }
