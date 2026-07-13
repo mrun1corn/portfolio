@@ -58,9 +58,22 @@ const lottieObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('dotlottie-player, lottie-player').forEach(player => {
-    lottieObserver.observe(player);
-});
+const initLottieObserver = () => {
+    document.querySelectorAll('dotlottie-player, lottie-player').forEach(player => {
+        lottieObserver.observe(player);
+        // If it's already in the viewport and upgraded, trigger play
+        if (typeof player.play === 'function') {
+            player.play();
+        }
+    });
+};
+
+if (customElements) {
+    customElements.whenDefined('lottie-player').then(initLottieObserver);
+} else {
+    window.addEventListener('DOMContentLoaded', initLottieObserver);
+}
+
 
 const updateHeader = () => {
     if (header) {
