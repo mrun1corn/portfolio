@@ -592,7 +592,7 @@
 
     <script src="js/scroll-top.js"></script>
 
-            <!-- Dynamic Lottie Player Loader for CORS & CSP Compatibility -->
+                    <!-- Dynamic Lottie Player Loader for CORS & CSP Compatibility -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const isLocal = window.location.protocol === 'file:';
@@ -606,7 +606,11 @@
                         const dataSrc = player.getAttribute('data-src');
                         if (dataSrc) {
                             const filename = dataSrc.split('/').pop();
-                            player.load(basePath + filename);
+                            const targetPath = basePath + filename;
+                            player.setAttribute('src', targetPath);
+                            if (typeof player.load === 'function') {
+                                player.load(targetPath);
+                            }
                         }
                     });
                 });
