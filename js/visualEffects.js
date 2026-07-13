@@ -59,7 +59,7 @@ const lottieObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 const initLottieObserver = () => {
-    document.querySelectorAll('dotlottie-player, lottie-player').forEach(player => {
+    document.querySelectorAll('dotlottie-wc, dotlottie-player, lottie-player').forEach(player => {
         lottieObserver.observe(player);
         // If it's already in the viewport and upgraded, trigger play
         if (typeof player.play === 'function') {
@@ -69,7 +69,7 @@ const initLottieObserver = () => {
 };
 
 if (customElements) {
-    customElements.whenDefined('lottie-player').then(initLottieObserver);
+    customElements.whenDefined('dotlottie-wc').then(initLottieObserver);
 } else {
     window.addEventListener('DOMContentLoaded', initLottieObserver);
 }
