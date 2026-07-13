@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
+const THREE = window.THREE;
 
 class PortfolioScene {
     constructor() {

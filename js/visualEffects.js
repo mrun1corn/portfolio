@@ -37,6 +37,8 @@ const type = () => {
 };
 
 if (typingTextElement) {
+    // Clear the fallback text immediately when JS runs to initiate clean typing loop
+    typingTextElement.textContent = "";
     type();
 }
 

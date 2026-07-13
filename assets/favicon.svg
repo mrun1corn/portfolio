@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Robin Mia">
-  <defs>
-    <linearGradient id="markGradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#13795b"/>
-      <stop offset="0.52" stop-color="#276c9f"/>
-      <stop offset="1" stop-color="#c94f3d"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#101713"/>
-  <text x="31.5" y="42.5" text-anchor="middle" fill="#f7faf8" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900" letter-spacing="-3">RM</text>
-  <path d="M47 18v25" stroke="url(#markGradient)" stroke-width="3.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Rounded dark background -->
+  <rect width="64" height="64" rx="16" fill="#101713" stroke="#1f2c25" stroke-width="2"/>
+  <!-- Glowing green code bracket design -->
+  <path d="M18 16 H14 V48 H18" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+  <path d="M46 16 H50 V48 H46" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+  <!-- Stylized geometric letter R -->
+  <path d="M26 22 H36 C40 22 40 28 36 28 H26" stroke="#f7faf8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 22 V42" stroke="#f7faf8" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M30 28 H34 L38 42" stroke="#f7faf8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
