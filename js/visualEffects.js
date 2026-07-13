@@ -47,9 +47,13 @@ const lottieObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         const player = entry.target;
         if (entry.isIntersecting) {
-            player.play();
+            if (typeof player.play === 'function') {
+                player.play();
+            }
         } else {
-            player.pause();
+            if (typeof player.pause === 'function') {
+                player.pause();
+            }
         }
     });
 }, { threshold: 0.1 });

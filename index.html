@@ -8,12 +8,7 @@
     <meta name="author" content="Robin (mrun1corn)">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7faf8">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101713">
-    <script>
-        const savedTheme = localStorage.getItem("portfolio-theme");
-        if (savedTheme === "light" || savedTheme === "dark") {
-            document.documentElement.dataset.theme = savedTheme;
-        }
-    </script>
+    <script src="js/theme-init.js"></script>
     <link rel="canonical" href="https://mrun1corn.xyz/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/avatar.png">
@@ -624,22 +619,7 @@
         </div>
     </footer>
 
-    <script>
-        const topButton = document.getElementById("top-button");
-
-        document.addEventListener("scroll", scrollFunction);
-        topButton.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                topButton.classList.remove("top-button-hidden");
-            } else {
-                topButton.classList.add("top-button-hidden");
-            }
-        }
-    </script>
+    <script src="js/scroll-top.js"></script>
 </body>
 
 </html>
