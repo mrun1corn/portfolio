@@ -1517,4 +1517,68 @@ lottie-player.vector-icon {
     transform: scale(1.15);
 }
 
+/* Custom scaling for Lottie players to crop transparent padding */
+lottie-player[src*="cpp.json"] {
+    transform: scale(1.35);
+}
+
+lottie-player[src*="container.json"] {
+    transform: scale(1.65);
+}
+
+lottie-player[src*="os.json"] {
+    transform: scale(1.35);
+}
+
+lottie-player[src*="server.json"] {
+    transform: scale(1.35);
+}
+
+lottie-player[src*="project-savings.json"] {
+    transform: scale(1.5);
+}
+
+lottie-player[src*="project-expense.json"] {
+    transform: scale(1.55);
+}
+
+lottie-player[src*="project-sharebuddy.json"] {
+    transform: scale(1.55);
+}
+
+lottie-player[src*="project-restaurant.json"] {
+    transform: scale(1.6);
+}
+
+lottie-player[src*="project-web.json"] {
+    transform: scale(1.35);
+}
+
+/* Hover combination overrides */
+.skill-card:hover lottie-player[src*="cpp.json"] {
+    transform: scale(1.55) rotate(4deg);
+}
+.skill-card:hover lottie-player[src*="container.json"] {
+    transform: scale(1.9) rotate(4deg);
+}
+.skill-card:hover lottie-player[src*="os.json"] {
+    transform: scale(1.55) rotate(4deg);
+}
+.skill-card:hover lottie-player[src*="server.json"] {
+    transform: scale(1.55) rotate(4deg);
+}
+.project-card:hover .project-visual lottie-player[src*="project-savings.json"] {
+    transform: scale(1.7);
+}
+.project-card:hover .project-visual lottie-player[src*="project-expense.json"] {
+    transform: scale(1.75);
+}
+.project-card:hover .project-visual lottie-player[src*="project-sharebuddy.json"] {
+    transform: scale(1.75);
+}
+.project-card:hover .project-visual lottie-player[src*="project-restaurant.json"] {
+    transform: scale(1.8);
+}
+
+
 
