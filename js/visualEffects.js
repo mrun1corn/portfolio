@@ -95,7 +95,7 @@ const updateThemeColor = (theme) => {
     const darkMeta = document.querySelector('meta[name="theme-color"][media*="dark"]');
     if (!lightMeta || !darkMeta) return;
 
-    const activeColor = theme === 'dark' ? '#020617' : '#f8fafc';
+    const activeColor = theme === 'dark' ? '#030712' : '#f9fafb';
     lightMeta.setAttribute('content', activeColor);
     darkMeta.setAttribute('content', activeColor);
 };

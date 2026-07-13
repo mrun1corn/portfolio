@@ -1493,3 +1493,28 @@ section.is-visible, section.hero {
     filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--color-accent));
 }
 
+/* Lottie Player custom styles & interactions */
+lottie-player {
+    display: block;
+}
+
+lottie-player.vector-icon {
+    filter: none !important;
+    opacity: 1 !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.skill-card:hover lottie-player.vector-icon {
+    filter: none !important;
+    transform: scale(1.22) rotate(4deg);
+}
+
+.project-visual lottie-player {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .project-visual lottie-player {
+    transform: scale(1.15);
+}
+
+
