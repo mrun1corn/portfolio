@@ -84,8 +84,8 @@ export default function Home() {
         id="top-button"
         className={`icon ${showTopBtn ? "is-visible" : ""}`}
         style={{
-          display: showTopBtn ? "flex" : "none",
           opacity: showTopBtn ? 1 : 0,
+          visibility: showTopBtn ? "visible" : "hidden",
           transition: "opacity 0.3s ease, visibility 0.3s ease",
         }}
         aria-label="Scroll to top"

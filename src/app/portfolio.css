@@ -1613,3 +1613,17 @@ lottie-player[src*="project-web.json"] {
 
 
 
+
+@media (max-width: 768px) {
+  /* Disable expensive backdrop-filter on mobile to eliminate scroll stuttering */
+  .about-list li, .focus-item, .skill-card, .project-card, .experience-item, .hero-visual, .contact-btn {
+    backdrop-filter: none !important;
+    background: var(--color-surface) !important;
+  }
+  
+  /* Disable heavy continuous screen-wide CSS gradient animation on mobile to save GPU cycles */
+  #bg-canvas.bg-fallback {
+    animation: none !important;
+    background: var(--color-bg) !important;
+  }
+}
