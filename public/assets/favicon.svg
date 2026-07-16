@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Rounded dark background -->
+  <rect width="64" height="64" rx="16" fill="#101713" stroke="#1f2c25" stroke-width="2"/>
+  <!-- Glowing green code bracket design -->
+  <path d="M18 16 H14 V48 H18" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+  <path d="M46 16 H50 V48 H46" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+  <!-- Stylized geometric letter R -->
+  <path d="M26 22 H36 C40 22 40 28 36 28 H26" stroke="#f7faf8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 22 V42" stroke="#f7faf8" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M30 28 H34 L38 42" stroke="#f7faf8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

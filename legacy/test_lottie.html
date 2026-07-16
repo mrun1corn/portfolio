@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/lottie-player.js"></script>
+</head>
+<body>
+    <lottie-player id="test-player" src="assets/os.json" speed="1" loop autoplay style="width:100px; height:100px;"></lottie-player>
+    <script>
+        // After 1.5 seconds, dynamically change the src attribute
+        setTimeout(() => {
+            const player = document.getElementById('test-player');
+            player.setAttribute('src', 'assets/cpp.json');
+        }, 1500);
+    </script>
+</body>
+</html>
