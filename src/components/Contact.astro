@@ -1,0 +1,88 @@
+---
+import profile from '../data/profile.json';
+---
+
+<section id="contact" class="py-16 md:py-24 bg-gradient-to-b from-zinc-950 to-zinc-900 border-t border-zinc-800/80">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+    
+    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-xs font-mono">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span>AVAILABLE FOR SRE & INFRASTRUCTURE ROLES</span>
+    </div>
+
+    <div class="space-y-3">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-100">
+        Let's Connect & Collaborate
+      </h2>
+      <p class="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+        Interested in discussing high-performance C++ systems tooling, server administration, network infrastructure, or SRE opportunities?
+      </p>
+    </div>
+
+    <!-- Contact Cards / Buttons Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto pt-4">
+      
+      <a
+        href={`mailto:${profile.contact.email}`}
+        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
+      >
+        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">✉</div>
+        <div class="text-xs text-zinc-500 font-mono">Email</div>
+        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
+          {profile.contact.email}
+        </div>
+      </a>
+
+      <a
+        href={profile.contact.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
+      >
+        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">🐙</div>
+        <div class="text-xs text-zinc-500 font-mono">GitHub</div>
+        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
+          github.com/mrun1corn
+        </div>
+      </a>
+
+      <a
+        href={profile.contact.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
+      >
+        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">🌐</div>
+        <div class="text-xs text-zinc-500 font-mono">Website</div>
+        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
+          mrun1corn.xyz
+        </div>
+      </a>
+
+      <a
+        href={profile.contact.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
+      >
+        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">𝕏</div>
+        <div class="text-xs text-zinc-500 font-mono">Twitter / X</div>
+        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
+          @Robin33090740
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Footer Copyright -->
+    <div class="pt-12 border-t border-zinc-800/40 text-xs text-zinc-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © {new Date().getFullYear()} Robin Mia (mrun1corn). All rights reserved.
+      </div>
+      <div>
+        Built with Astro, Tailwind CSS & C++ Systems Passion.
+      </div>
+    </div>
+
+  </div>
+</section>

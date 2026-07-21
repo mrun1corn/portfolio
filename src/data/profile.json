@@ -1,0 +1,65 @@
+{
+  "name": "Robin Mia",
+  "username": "mrun1corn",
+  "location": "Mohammadpur, Dhaka, Bangladesh",
+  "company": "BFIN IT",
+  "contact": {
+    "email": "robin424123@gmail.com",
+    "github": "https://github.com/mrun1corn",
+    "website": "https://mrun1corn.xyz",
+    "twitter": "https://x.com/Robin33090740"
+  },
+  "organizations": ["Anyn0te"],
+  "portfolio_identity": "Infrastructure & Security Engineer",
+  "cv_original_title": "C++ Developer | Server Administrator | Networking & Infrastructure Engineer",
+  "target_roles": ["SRE", "Production Engineer", "Infrastructure Engineer"],
+  "target_companies": ["Meta", "Google"],
+  "education": [
+    {
+      "credential": "BSc in Computer Science and Engineering",
+      "institution": "University of South Asia",
+      "status": "In progress",
+      "expected": 2029
+    },
+    {
+      "credential": "Diploma in Engineering, Computer Technology",
+      "institution": "Uttara Engineering College",
+      "result": "CGPA 3.47/4",
+      "year": 2022
+    }
+  ],
+  "certifications": [
+    {
+      "name": "IT Support Technician (IST)",
+      "institution": "BRAC Institute of Skills Development",
+      "year": 2022,
+      "duration": "3 months",
+      "covered": [
+        "Server configuration & OS installation (Windows/Linux)",
+        "Networking: Mikrotik, Cisco routers & switches",
+        "Network security & troubleshooting",
+        "Cloud & virtualization basics (VM, VPS)"
+      ]
+    }
+  ],
+  "portfolio_exclude": {
+    "note": "Fields below are from the source CV but must never appear on the portfolio site. Kept here only for traceability.",
+    "expected_salary": "Tk. 30,000",
+    "preferred_countries": ["India", "Saudi Arabia", "Singapore"],
+    "preferred_locations_bd": ["Dhaka", "Chattogram", "Sylhet", "Barishal"],
+    "personal_details": {
+      "father_name": "Saiful Islam",
+      "mother_name": "Ruma Begum",
+      "dob": "24 Apr 2000",
+      "gender": "Male",
+      "height": "5'5\"",
+      "marital_status": "Unmarried",
+      "nationality": "Bangladeshi",
+      "blood_group": "O+"
+    },
+    "references": [
+      {"name": "Imran Molla", "org": "BRAC Institute of Skills Development", "title": "IT Instructor"},
+      {"name": "Shakil Imran", "org": "Lions Cinemas", "title": "IT Executive"}
+    ]
+  }
+}

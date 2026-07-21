@@ -1,0 +1,77 @@
+[
+  {
+    "id": "portview",
+    "name": "portview",
+    "type": "flagship",
+    "github_url": "https://github.com/mrun1corn/portview",
+    "language": "C++",
+    "tech_stack": [
+      "C++17",
+      "Windows SDK"
+    ],
+    "one_liner": "Windows CLI tool to list open ports, map them to processes, and display per-connection traffic stats \u2014 built with C++17 and Windows SDK."
+  },
+  {
+    "id": "mca",
+    "name": "mca",
+    "type": "pinned",
+    "github_url": "https://github.com/mrun1corn/mca",
+    "language": "TypeScript",
+    "tech_stack": [
+      "TypeScript",
+      "Next.js",
+      "Vercel"
+    ],
+    "one_liner": "Modern web application built with TypeScript \u2014 deployed on Vercel."
+  },
+  {
+    "id": "expense",
+    "name": "expense",
+    "type": "pinned",
+    "github_url": "https://github.com/mrun1corn/expense",
+    "language": "Dart",
+    "tech_stack": [
+      "Dart",
+      "Flutter"
+    ],
+    "one_liner": "Expense tracking app built with Dart and Flutter."
+  },
+  {
+    "id": "ShareBuddy",
+    "name": "ShareBuddy",
+    "type": "pinned",
+    "github_url": "https://github.com/mrun1corn/ShareBuddy",
+    "language": "Kotlin",
+    "tech_stack": [
+      "Kotlin",
+      "Android SDK"
+    ],
+    "one_liner": "Android expense-sharing app built with Kotlin \u2014 split bills and track balances."
+  },
+  {
+    "id": "hello-streamer",
+    "name": "hello-streamer",
+    "type": "pinned",
+    "github_url": "https://github.com/mrun1corn/hello-streamer",
+    "language": "HTML",
+    "stars": 2,
+    "tech_stack": [
+      "HTML",
+      "JavaScript",
+      "IPTV"
+    ],
+    "one_liner": "Lightweight IPTV streaming web app \u2014 live channels in the browser."
+  },
+  {
+    "id": "smart_restuarant",
+    "name": "smart_restuarant",
+    "type": "pinned",
+    "github_url": "https://github.com/mrun1corn/smart_restuarant",
+    "language": "JavaScript",
+    "tech_stack": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "one_liner": "Smart restaurant management system."
+  }
+]
