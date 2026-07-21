@@ -8,38 +8,40 @@ const pinnedList = projects.filter((p) => p.id !== 'portview');
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="max-w-3xl mb-12">
-      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded border border-purple-500/20 bg-purple-500/10 text-purple-400 text-xs font-mono mb-3">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 text-xs font-mono mb-3">
         <span>// GITHUB PINNED REPOSITORIES</span>
       </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-100">
-        Open Source & Software Engineering
+        Open Source & Software Projects
       </h2>
       <p class="mt-3 text-zinc-400 text-base sm:text-lg leading-relaxed">
-        Featured open-source software, mobile applications, web tools, and full-stack projects directly pinned on GitHub (<a href="https://github.com/mrun1corn" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">@mrun1corn</a>).
+        Featured open-source software, mobile applications, web tools, and full-stack projects directly pinned on GitHub (<a href="https://github.com/mrun1corn" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline font-mono">@mrun1corn</a>).
       </p>
     </div>
 
-    <!-- Pinned Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Pinned Responsive Grid with Micro-Interactions -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {pinnedList.map((project) => (
-        <div class="group p-6 rounded-xl bg-zinc-900/70 border border-zinc-800 hover:border-purple-500/40 hover:bg-zinc-900 transition-all duration-300 flex flex-col justify-between">
+        <div class="interactive-card p-6 rounded-2xl bg-zinc-900/70 border border-zinc-800/80 flex flex-col justify-between group hover:border-purple-500/40 hover:shadow-purple-950/20">
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center space-x-2">
-                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
-                </svg>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-2.5">
+                <span class="p-2 rounded-lg bg-zinc-800/90 text-purple-400 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                  </svg>
+                </span>
                 <h3 class="text-lg font-bold text-zinc-100 group-hover:text-purple-400 transition-colors font-mono">
                   {project.name}
                 </h3>
               </div>
               {project.stars ? (
-                <span class="inline-flex items-center space-x-1 text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20 text-amber-300">
+                <span class="inline-flex items-center space-x-1 text-xs font-mono px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300">
                   <span>★</span>
                   <span>{project.stars}</span>
                 </span>
               ) : (
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-zinc-800/90 text-zinc-400 border border-zinc-700/40">
                   {project.language}
                 </span>
               )}
@@ -53,7 +55,7 @@ const pinnedList = projects.filter((p) => p.id !== 'portview');
           <div class="pt-4 border-t border-zinc-800/60 flex items-center justify-between">
             <div class="flex flex-wrap gap-1.5">
               {project.tech_stack?.map((tech) => (
-                <span class="px-2 py-0.5 rounded bg-zinc-800/80 text-zinc-400 text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-zinc-800/80 text-zinc-400 text-xs font-mono border border-zinc-700/30">
                   {tech}
                 </span>
               ))}
@@ -62,7 +64,7 @@ const pinnedList = projects.filter((p) => p.id !== 'portview');
               href={project.github_url}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs font-mono text-purple-400 hover:text-purple-300 transition-colors inline-flex items-center space-x-1"
+              class="text-xs font-mono text-purple-400 hover:text-purple-300 transition-all inline-flex items-center space-x-1 group-hover:translate-x-0.5"
             >
               <span>GitHub</span>
               <span>↗</span>

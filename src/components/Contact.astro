@@ -6,7 +6,7 @@ import profile from '../data/profile.json';
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
     
     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-xs font-mono">
-      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
       <span>AVAILABLE FOR SRE & INFRASTRUCTURE ROLES</span>
     </div>
 
@@ -19,70 +19,87 @@ import profile from '../data/profile.json';
       </p>
     </div>
 
-    <!-- Contact Cards / Buttons Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto pt-4">
+    <!-- Contact Cards Grid (No mrun1corn.xyz) -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto pt-4">
       
-      <a
-        href={`mailto:${profile.contact.email}`}
-        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
+      <!-- Email Card with Copy Feature -->
+      <div
+        id="copy-email-btn"
+        class="interactive-card p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 text-center cursor-pointer group hover:border-emerald-500/50"
       >
-        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">✉</div>
-        <div class="text-xs text-zinc-500 font-mono">Email</div>
+        <div class="text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">✉</div>
+        <div class="text-xs text-zinc-500 font-mono">Email Contact</div>
         <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
           {profile.contact.email}
         </div>
-      </a>
+        <div id="email-toast" class="mt-2 text-[10px] font-mono text-emerald-400 opacity-0 transition-opacity">
+          ✓ Copied to clipboard!
+        </div>
+      </div>
 
+      <!-- GitHub Card -->
       <a
         href={profile.contact.github}
         target="_blank"
         rel="noopener noreferrer"
-        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
+        class="interactive-card p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 text-center group hover:border-emerald-500/50"
       >
-        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">🐙</div>
-        <div class="text-xs text-zinc-500 font-mono">GitHub</div>
+        <div class="text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">🐙</div>
+        <div class="text-xs text-zinc-500 font-mono">GitHub Profile</div>
         <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
           github.com/mrun1corn
         </div>
-      </a>
-
-      <a
-        href={profile.contact.website}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
-      >
-        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">🌐</div>
-        <div class="text-xs text-zinc-500 font-mono">Website</div>
-        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
-          mrun1corn.xyz
+        <div class="mt-2 text-[10px] font-mono text-zinc-500 group-hover:text-emerald-400/80 transition-colors">
+          View Repos ↗
         </div>
       </a>
 
+      <!-- X / Twitter Card -->
       <a
         href={profile.contact.twitter}
         target="_blank"
         rel="noopener noreferrer"
-        class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-900 transition-all text-center group"
+        class="interactive-card p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 text-center group hover:border-emerald-500/50"
       >
-        <div class="text-emerald-400 text-lg mb-1 group-hover:scale-110 transition-transform">𝕏</div>
+        <div class="text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">𝕏</div>
         <div class="text-xs text-zinc-500 font-mono">Twitter / X</div>
         <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
           @Robin33090740
+        </div>
+        <div class="mt-2 text-[10px] font-mono text-zinc-500 group-hover:text-emerald-400/80 transition-colors">
+          Follow ↗
         </div>
       </a>
 
     </div>
 
     <!-- Footer Copyright -->
-    <div class="pt-12 border-t border-zinc-800/40 text-xs text-zinc-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="pt-12 border-t border-zinc-800/60 text-xs text-zinc-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        © {new Date().getFullYear()} Robin Mia (mrun1corn). All rights reserved.
+        © {new Date().getFullYear()} Robin Mia (@mrun1corn). All rights reserved.
       </div>
-      <div>
-        Built with Astro, Tailwind CSS & C++ Systems Passion.
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>Astro 5 + Tailwind CSS</span>
       </div>
     </div>
 
   </div>
 </section>
+
+<script>
+  const emailBtn = document.getElementById('copy-email-btn');
+  const toast = document.getElementById('email-toast');
+
+  if (emailBtn && toast) {
+    emailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('robin424123@gmail.com');
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 2000);
+    });
+  }
+</script>
