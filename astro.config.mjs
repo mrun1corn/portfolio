@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://portfolionew-one-mocha.vercel.app',
+  site: 'https://mrun1corn.xyz',
   integrations: [
     tailwind(),
     sitemap()

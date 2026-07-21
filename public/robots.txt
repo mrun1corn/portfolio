@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolionew-one-mocha.vercel.app/sitemap-index.xml
-Sitemap: https://portfolionew-one-mocha.vercel.app/sitemap-0.xml
+Sitemap: https://mrun1corn.xyz/sitemap-index.xml
+Sitemap: https://mrun1corn.xyz/sitemap-0.xml
