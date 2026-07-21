@@ -10,6 +10,26 @@ const {
   title = "Robin Mia | Infrastructure & Security Engineer",
   description = "Portfolio of Robin Mia (mrun1corn) — C++ Developer, Server Administrator, and Infrastructure Engineer specializing in high-performance networking, systems tooling, and automation."
 } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Robin Mia",
+  "alternateName": "mrun1corn",
+  "jobTitle": "C++ Developer & Infrastructure Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "BFIN IT"
+  },
+  "url": "https://portfolionew-one-mocha.vercel.app",
+  "sameAs": [
+    "https://github.com/mrun1corn",
+    "https://x.com/Robin33090740"
+  ],
+  "knowsAbout": [
+    "C++", "Systems Programming", "Server Administration", "Mikrotik", "Cisco", "Linux", "Proxmox VE", "Astro", "Tailwind CSS"
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -25,14 +45,19 @@ const {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://portfolionew-one-mocha.vercel.app" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolionew-one-mocha.vercel.app" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Robin Mia Portfolio" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://portfolionew-one-mocha.vercel.app" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
 
@@ -40,6 +65,9 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data for Google Search Console -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300">
     <slot />
