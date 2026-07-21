@@ -49,7 +49,7 @@ Secondary: Engineers doing a deeper technical review after the recruiter pass
    administration, VPS deployment & management
 3. **Networking & Security** — Mikrotik/Cisco configuration, firewalls,
    network security, troubleshooting
-4. **Flagship C++ Project: portview** — deep-dive technical breakdown of the Windows CLI socket & traffic inspector (C++17, Windows SDK)
+4. **Flagship C++ Project: portview** — deep-dive technical breakdown of the Windows CLI socket & traffic inspector (C++, Windows SDK)
 5. **GitHub Pinned Projects Showcase** — grid showcasing mca (TypeScript/Vercel), expense (Dart/Flutter), ShareBuddy (Kotlin/Android), hello-streamer (HTML IPTV), and smart_restuarant (JavaScript)
 
 5. **Software Engineering** — C++ (current role, BFIN IT), Python, plus

@@ -6,10 +6,10 @@
     "github_url": "https://github.com/mrun1corn/portview",
     "language": "C++",
     "tech_stack": [
-      "C++17",
+      "C++",
       "Windows SDK"
     ],
-    "one_liner": "Windows CLI tool to list open ports, map them to processes, and display per-connection traffic stats \u2014 built with C++17 and Windows SDK."
+    "one_liner": "Windows CLI tool to list open ports, map them to processes, and display per-connection traffic stats \u2014 built with C++ and Windows SDK."
   },
   {
     "id": "mca",

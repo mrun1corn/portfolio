@@ -36,7 +36,7 @@ Framing: this is the credibility bridge to "SRE" — most SRE-adjacent
 portfolios skip real networking experience entirely, so this is a
 differentiator, not a footnote.
 
-## Flagship Project: portview (C++17 / Windows SDK)
+## Flagship Project: portview (C++ / Windows SDK)
 
 ### Overview
 `portview` is a high-performance Windows CLI utility designed for port and socket inspection, mapping active network connections directly to process IDs and per-connection traffic stats.
@@ -44,7 +44,7 @@ differentiator, not a footnote.
 ### Structure & Highlights
 - **Role**: System-level C++ developer.
 - **Key Features**: Live port listing, PID process mapping, connection status monitoring, per-connection byte/packet traffic counters.
-- **Tech Stack**: C++17, Windows SDK (`IPHLPAPI`, Winsock), STL.
+- **Tech Stack**: C++, Windows SDK (`IPHLPAPI`, Winsock), STL.
 - **Open Source**: MIT Licensed on GitHub ([mrun1corn/portview](https://github.com/mrun1corn/portview)).
 
 ---
