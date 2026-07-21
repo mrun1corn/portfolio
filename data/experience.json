@@ -1,0 +1,41 @@
+[
+  {
+    "role": "C++ Developer",
+    "org": "BFIN IT",
+    "start": "2026-04",
+    "end": "present",
+    "raw_bullets": [
+      "Software development using C++",
+      "Debugging and system-level problem solving"
+    ],
+    "portfolio_section": "Software Engineering",
+    "notes": "Current role. Pair with open-source C++ projects (portview) for technical depth."
+  },
+  {
+    "role": "IT Executive",
+    "org": "Joy Cinemas",
+    "start": "2024-07-07",
+    "end": "2026-03",
+    "raw_bullets": [
+      "Managed server infrastructure including VPS, ticketing software, and system maintenance",
+      "Configured and monitored networking, CCTV systems, and IT hardware",
+      "Ensured smooth operation of Linux-based servers and security systems"
+    ],
+    "portfolio_section": "Infrastructure & Systems",
+    "notes": "CCTV/hardware bullet should be minimized or omitted per CONTENT_MAP.md exclusions; VPS/Linux server maintenance is the relevant part."
+  },
+  {
+    "role": "Assistant Network Engineer",
+    "org": "ALO Communication",
+    "start": "2022-09-01",
+    "end": "2024-07-06",
+    "duration": "1 yr 10 mos",
+    "raw_bullets": [
+      "Managed home user network infrastructure and provided technical support",
+      "Configured routers, switches, and firewall security",
+      "Assisted in server maintenance and updates at the head office"
+    ],
+    "portfolio_section": "Networking & Security",
+    "notes": "Strongest real networking credibility on the CV. Use specifics (router/switch config, firewall) not generic phrasing."
+  }
+]

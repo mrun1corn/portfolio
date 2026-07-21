@@ -1,0 +1,31 @@
+{
+  "programming": [
+    {"name": "C++", "level": "active", "context": "Software development, debugging, system-level programming; primary language for systems & portview"},
+    {"name": "Python", "level": "basic", "context": "Scripting, bots, automation — do not overstate in copy"}
+  ],
+  "infrastructure": [
+    {"name": "Proxmox VE", "level": "working", "context": "Virtualization platform"},
+    {"name": "VMware", "level": "working", "context": "Virtual machines"},
+    {"name": "RAID Configuration", "level": "basic", "context": "Storage configuration"},
+    {"name": "Server OS Installation", "level": "working", "context": "Windows Server, Linux/Ubuntu"},
+    {"name": "VPS Deployment & Management", "level": "working", "context": "Joy Cinemas role"},
+    {"name": "Linux (Ubuntu) Administration", "level": "working", "context": "Cross-role"}
+  ],
+  "networking_security": [
+    {"name": "Mikrotik Router/Switch Configuration", "level": "working", "context": "ALO Communication role"},
+    {"name": "Cisco Router/Switch Configuration", "level": "working", "context": "ALO Communication role"},
+    {"name": "Firewall & Network Security", "level": "working", "context": "ALO Communication role"},
+    {"name": "Network Troubleshooting", "level": "working", "context": "Cross-role"}
+  ],
+  "cloud_containers": [
+    {"name": "Docker & Container Management", "level": "working", "context": ""}
+  ],
+  "portfolio_deprioritized": {
+    "note": "Real skills but not relevant to SRE/infra positioning per CONTENT_MAP.md — omit or minimize",
+    "items": [
+      {"name": "CCTV Installation & Maintenance"},
+      {"name": "Hardware & Software Troubleshooting"},
+      {"name": "WordPress Installation & Server Optimization"}
+    ]
+  }
+}
