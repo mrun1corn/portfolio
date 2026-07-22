@@ -2,11 +2,11 @@
 import profile from '../data/profile.json';
 ---
 
-<section id="hero" class="relative py-16 md:py-28 border-b border-zinc-800/60 bg-gradient-to-b from-zinc-950 via-zinc-950 to-zinc-900/60 overflow-hidden">
+<section id="hero" class="relative py-16 md:py-28 border-b border-[var(--color-border)]/60 bg-[var(--bg-gradient-hero)] overflow-hidden transition-all duration-300">
   
   <!-- Background Glow FX -->
-  <div class="absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
-  <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+  <div class="absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/[var(--opacity-glow)] rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+  <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/[var(--opacity-glow)] rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -15,30 +15,30 @@ import profile from '../data/profile.json';
       <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
         
         <!-- Target Badge -->
-        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[var(--color-badge-emerald-bg)] border border-[var(--color-badge-emerald-border)] text-[var(--color-badge-emerald-text)] text-xs font-mono shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
           <span>Meta / Google SRE & Infrastructure Engineering</span>
         </div>
 
         <!-- Title & Headline -->
         <div class="space-y-3">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-100">
-            {profile.name} <span class="text-zinc-500 text-2xl sm:text-3xl font-mono font-normal">(@{profile.username})</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-text-primary)]">
+            {profile.name} <span class="text-[var(--color-text-tertiary)] text-2xl sm:text-3xl font-mono font-normal">(@{profile.username})</span>
           </h1>
-          <p class="text-xl sm:text-2xl font-mono text-emerald-400 font-semibold leading-snug">
+          <p class="text-xl sm:text-2xl font-mono text-emerald-600 dark:text-emerald-400 font-semibold leading-snug">
             {profile.cv_original_title}
           </p>
         </div>
 
-        <p class="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-          Infrastructure Engineer at <strong class="text-zinc-200 font-semibold">{profile.company}</strong> ({profile.location}). 
+        <p class="text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed max-w-2xl">
+          Infrastructure Engineer at <strong class="text-[var(--color-text-primary)] font-semibold">{profile.company}</strong> ({profile.location}). 
           Specializing in high-performance C++ systems tooling, server administration, enterprise networking, and production reliability.
         </p>
 
         <!-- Target Roles Badges -->
         <div class="pt-1 flex flex-wrap gap-2">
           {profile.target_roles.map((role) => (
-            <span class="px-3 py-1 rounded-md bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs font-mono hover:border-emerald-500/40 hover:text-emerald-300 transition-all cursor-default">
+            <span class="px-3 py-1 rounded-md bg-[var(--color-bg-surface)] border border-[var(--color-border)] text-[var(--color-text-secondary)] text-xs font-mono hover:border-emerald-500/40 hover:text-emerald-500 transition-all cursor-default shadow-sm">
               #{role}
             </span>
           ))}
@@ -48,7 +48,7 @@ import profile from '../data/profile.json';
         <div class="pt-4 flex flex-wrap items-center gap-4">
           <a
             href="#portview"
-            class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-semibold font-mono text-sm transition-all shadow-lg shadow-emerald-950/50 hover:shadow-emerald-500/20 hover:-translate-y-0.5 flex items-center space-x-2.5 group"
+            class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-semibold font-mono text-sm transition-all shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-0.5 flex items-center space-x-2.5 group cursor-pointer"
           >
             <span>Explore C++ Tools</span>
             <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ import profile from '../data/profile.json';
             href="/Robin_Mia_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-3 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 border border-emerald-500/40 text-emerald-400 font-mono text-sm transition-all hover:-translate-y-0.5 flex items-center space-x-2 shadow-sm"
+            class="px-6 py-3 rounded-xl bg-[var(--color-bg-surface)] hover:bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] hover:border-emerald-500/40 text-emerald-600 dark:text-emerald-400 font-mono text-sm transition-all hover:-translate-y-0.5 flex items-center space-x-2 shadow-sm"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -73,10 +73,10 @@ import profile from '../data/profile.json';
             href={profile.contact.github}
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-3 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-200 font-mono text-sm transition-all hover:-translate-y-0.5 flex items-center space-x-2"
+            class="px-6 py-3 rounded-xl bg-[var(--color-bg-surface)] hover:bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] text-[var(--color-text-primary)] font-mono text-sm transition-all hover:-translate-y-0.5 flex items-center space-x-2 shadow-sm"
           >
             <span>GitHub Profile</span>
-            <span class="text-xs text-zinc-400">↗</span>
+            <span class="text-xs text-[var(--color-text-tertiary)]">↗</span>
           </a>
         </div>
 

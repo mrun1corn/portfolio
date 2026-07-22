@@ -3,17 +3,17 @@ import experience from '../data/experience.json';
 import profile from '../data/profile.json';
 ---
 
-<section id="experience" class="py-16 md:py-24 border-b border-zinc-800/60 bg-zinc-950">
+<section id="experience" class="py-16 md:py-24 border-b border-[var(--color-border)]/60 bg-[var(--bg-gradient-section)] transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="max-w-3xl mb-12">
-      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-xs font-mono mb-3">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded border border-[var(--color-badge-emerald-border)] bg-[var(--color-badge-emerald-bg)] text-[var(--color-badge-emerald-text)] text-xs font-mono mb-3">
         <span>// CAREER & EXPERIENCE</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-100">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)]">
         Professional Experience & Education
       </h2>
-      <p class="mt-3 text-zinc-400 text-base sm:text-lg leading-relaxed">
+      <p class="mt-3 text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed">
         Engineering roles in IT infrastructure, system administration, and technical support.
       </p>
     </div>
@@ -23,32 +23,32 @@ import profile from '../data/profile.json';
       
       <!-- Left Column: Work Experience -->
       <div class="lg:col-span-8 space-y-8">
-        <h3 class="text-xl font-bold text-zinc-200 border-b border-zinc-800 pb-3 font-mono">
+        <h3 class="text-xl font-bold text-[var(--color-text-primary)] border-b border-[var(--color-border)] pb-3 font-mono">
           Work History
         </h3>
 
         <div class="space-y-6">
           {experience.map((item) => (
-            <div class="relative pl-6 sm:pl-8 border-l-2 border-zinc-800 hover:border-emerald-500 transition-colors group">
-              <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-zinc-700 group-hover:border-emerald-400 group-hover:bg-emerald-500/20 transition-all"></div>
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[var(--color-border)] hover:border-emerald-500 transition-colors group">
+              <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[var(--color-bg-base)] border-2 border-[var(--color-text-tertiary)] group-hover:border-emerald-400 group-hover:bg-emerald-500/20 transition-all"></div>
               
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h4 class="text-lg font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">
-                  {item.role} <span class="text-emerald-400 font-normal">@ {item.org}</span>
+                <h4 class="text-lg font-bold text-[var(--color-text-primary)] group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+                  {item.role} <span class="text-emerald-600 dark:text-emerald-400 font-normal">@ {item.org}</span>
                 </h4>
-                <span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 w-max">
+                <span class="text-xs font-mono px-2.5 py-1 rounded bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] text-[var(--color-text-secondary)] w-max">
                   {item.start} — {item.end}
                 </span>
               </div>
 
               {item.portfolio_section && (
-                <p class="text-xs text-zinc-500 font-mono mb-3">// {item.portfolio_section}</p>
+                <p class="text-xs text-[var(--color-text-tertiary)] font-mono mb-3">// {item.portfolio_section}</p>
               )}
 
-              <ul class="space-y-2 text-sm text-zinc-300">
+              <ul class="space-y-2 text-sm text-[var(--color-text-secondary)]">
                 {(item.raw_bullets || []).map((resp) => (
                   <li class="flex items-start space-x-2">
-                    <span class="text-emerald-400 mt-1">▸</span>
+                    <span class="text-emerald-500 mt-1">▸</span>
                     <span>{resp}</span>
                   </li>
                 ))}
@@ -61,33 +61,33 @@ import profile from '../data/profile.json';
       <!-- Right Column: Education & Certifications -->
       <div class="lg:col-span-4 space-y-8">
         <div>
-          <h3 class="text-xl font-bold text-zinc-200 border-b border-zinc-800 pb-3 font-mono">
+          <h3 class="text-xl font-bold text-[var(--color-text-primary)] border-b border-[var(--color-border)] pb-3 font-mono">
             Education
           </h3>
           <div class="mt-6 space-y-4">
             {profile.education.map((edu) => (
-              <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 space-y-1">
-                <h4 class="text-sm font-bold text-zinc-100">{edu.credential}</h4>
-                <p class="text-xs text-emerald-400 font-mono">{edu.institution}</p>
-                <p class="text-xs text-zinc-500">{edu.status ? `${edu.status} (Expected ${edu.expected})` : `${edu.result} — ${edu.year}`}</p>
+              <div class="p-4 rounded-xl bg-[var(--color-bg-surface)] border border-[var(--color-border)] space-y-1 shadow-sm">
+                <h4 class="text-sm font-bold text-[var(--color-text-primary)]">{edu.credential}</h4>
+                <p class="text-xs text-emerald-600 dark:text-emerald-400 font-mono">{edu.institution}</p>
+                <p class="text-xs text-[var(--color-text-tertiary)]">{edu.status ? `${edu.status} (Expected ${edu.expected})` : `${edu.result} — ${edu.year}`}</p>
               </div>
             ))}
           </div>
         </div>
 
         <div>
-          <h3 class="text-xl font-bold text-zinc-200 border-b border-zinc-800 pb-3 font-mono">
+          <h3 class="text-xl font-bold text-[var(--color-text-primary)] border-b border-[var(--color-border)] pb-3 font-mono">
             Certifications
           </h3>
           <div class="mt-6 space-y-4">
             {profile.certifications.map((cert) => (
-              <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 space-y-2">
+              <div class="p-4 rounded-xl bg-[var(--color-bg-surface)] border border-[var(--color-border)] space-y-2 shadow-sm">
                 <div class="flex items-center justify-between">
-                  <h4 class="text-sm font-bold text-zinc-100">{cert.name}</h4>
-                  <span class="text-xs font-mono text-zinc-500">{cert.year}</span>
+                  <h4 class="text-sm font-bold text-[var(--color-text-primary)]">{cert.name}</h4>
+                  <span class="text-xs font-mono text-[var(--color-text-tertiary)]">{cert.year}</span>
                 </div>
-                <p class="text-xs text-emerald-400 font-mono">{cert.institution} ({cert.duration})</p>
-                <ul class="text-xs text-zinc-400 space-y-1 pt-1">
+                <p class="text-xs text-emerald-600 dark:text-emerald-400 font-mono">{cert.institution} ({cert.duration})</p>
+                <ul class="text-xs text-[var(--color-text-secondary)] space-y-1 pt-1">
                   {(cert.covered || []).map((cov) => (
                     <li>• {cov}</li>
                   ))}

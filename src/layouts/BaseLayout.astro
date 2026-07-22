@@ -85,7 +85,7 @@ const jsonLd = {
     <!-- JSON-LD Structured Data for Google Search Console -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
-  <body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300">
+  <body class="bg-[var(--color-bg-base)] text-[var(--color-text-primary)] font-sans min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300 transition-colors duration-300">
     <slot />
   </body>
 </html>

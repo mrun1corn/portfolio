@@ -2,25 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg-base: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-hover: rgba(16, 185, 129, 0.4);
+  
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  
+  --color-badge-emerald-bg: rgba(16, 185, 129, 0.08);
+  --color-badge-emerald-border: rgba(16, 185, 129, 0.25);
+  --color-badge-emerald-text: #047857;
+
+  --color-badge-cyan-bg: rgba(6, 182, 212, 0.08);
+  --color-badge-cyan-border: rgba(6, 182, 212, 0.25);
+  --color-badge-cyan-text: #0e7490;
+
+  --color-badge-purple-bg: rgba(168, 85, 247, 0.08);
+  --color-badge-purple-border: rgba(168, 85, 247, 0.25);
+  --color-badge-purple-text: #6d28d9;
+
+  --bg-gradient-hero: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  --bg-gradient-section: #f8fafc;
+  --bg-gradient-section-alt: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --opacity-glow: 0.15;
+}
+
+.dark {
+  --color-bg-base: #09090b;
+  --color-bg-surface: rgba(24, 24, 27, 0.7);
+  --color-bg-surface-hover: rgba(39, 39, 42, 0.8);
+  --color-border: rgba(39, 39, 42, 0.8);
+  --color-border-hover: rgba(16, 185, 129, 0.4);
+
+  --color-text-primary: #f4f4f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #71717a;
+
+  --color-badge-emerald-bg: rgba(16, 185, 129, 0.1);
+  --color-badge-emerald-border: rgba(16, 185, 129, 0.3);
+  --color-badge-emerald-text: #34d399;
+
+  --color-badge-cyan-bg: rgba(6, 182, 212, 0.1);
+  --color-badge-cyan-border: rgba(6, 182, 212, 0.3);
+  --color-badge-cyan-text: #22d3ee;
+
+  --color-badge-purple-bg: rgba(168, 85, 247, 0.1);
+  --color-badge-purple-border: rgba(168, 85, 247, 0.3);
+  --color-badge-purple-text: #c084fc;
+
+  --bg-gradient-hero: linear-gradient(180deg, #09090b 0%, #09090b 60%, rgba(24, 24, 27, 0.6) 100%);
+  --bg-gradient-section: #09090b;
+  --bg-gradient-section-alt: linear-gradient(180deg, #09090b 0%, rgba(24, 24, 27, 0.5) 100%);
+  
+  --shadow-card: none;
+  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+  --opacity-glow: 0.05;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  /* Dark theme defaults */
-  html.dark body {
-    @apply bg-zinc-950 text-zinc-200 antialiased selection:bg-emerald-500/30 selection:text-emerald-300 overflow-x-hidden transition-colors duration-300;
-  }
-
-  /* Light theme overrides */
-  html.light body {
-    @apply bg-slate-50 text-zinc-800 antialiased selection:bg-emerald-500/20 selection:text-emerald-700 overflow-x-hidden transition-colors duration-300;
-  }
-
-  /* Fallback body when no explicit class is set yet */
   body {
-    @apply bg-zinc-950 text-zinc-200 antialiased selection:bg-emerald-500/30 selection:text-emerald-300 overflow-x-hidden transition-colors duration-300;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    @apply antialiased overflow-x-hidden transition-colors duration-300;
   }
 }
 
@@ -57,7 +112,14 @@
 
 /* Hover Cards Micro-Interactions */
 .interactive-card {
-  @apply transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/20 hover:border-emerald-500/40;
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+  @apply transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:border-emerald-500/40;
+}
+
+.dark .interactive-card {
+  box-shadow: var(--shadow-card-hover);
 }
 
 .glow-border {
@@ -79,7 +141,8 @@
 
 /* Active Nav Indicator Styling */
 .nav-link {
-  @apply text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-emerald-400 transition-all py-1 relative font-medium text-sm;
+  color: var(--color-text-secondary);
+  @apply hover:text-emerald-500 transition-all py-1 relative font-medium text-sm;
 }
 
 .nav-link::after {
@@ -102,84 +165,17 @@
   width: 100%;
 }
 
-/* Light mode card adjustments */
-html.light .bg-zinc-950 {
-  background-color: #f8fafc !important;
-}
-
-html.light .bg-zinc-900 {
-  background-color: #ffffff !important;
-}
-
-html.light .bg-zinc-900\/90 {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-}
-
-html.light .bg-zinc-900\/80 {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-}
-
-html.light .bg-zinc-900\/70 {
-  background-color: rgba(255, 255, 255, 0.7) !important;
-}
-
-html.light .bg-zinc-900\/50 {
-  background-color: rgba(255, 255, 255, 0.5) !important;
-}
-
-html.light .bg-zinc-950\/85 {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-}
-
-html.light .bg-zinc-950\/95 {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-}
-
-html.light .border-zinc-800 {
-  border-color: #e2e8f0 !important;
-}
-
-html.light .border-zinc-800\/80 {
-  border-color: rgba(226, 232, 240, 0.8) !important;
-}
-
-html.light .border-zinc-800\/60 {
-  border-color: rgba(226, 232, 240, 0.6) !important;
-}
-
-html.light .text-zinc-100 {
-  color: #0f172a !important;
-}
-
-html.light .text-zinc-200 {
-  color: #1e293b !important;
-}
-
-html.light .text-zinc-300 {
-  color: #334155 !important;
-}
-
-html.light .text-zinc-400 {
-  color: #64748b !important;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
-}
-html.light ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--color-bg-base);
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: var(--color-border);
   border-radius: 4px;
-}
-html.light ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #10b981;

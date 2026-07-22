@@ -2,19 +2,19 @@
 import profile from '../data/profile.json';
 ---
 
-<section id="contact" class="py-16 md:py-24 bg-gradient-to-b from-zinc-950 to-zinc-900 border-t border-zinc-800/80">
+<section id="contact" class="py-16 md:py-24 bg-[var(--bg-gradient-section-alt)] border-t border-[var(--color-border)]/80 transition-all duration-300">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
     
-    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-xs font-mono">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-[var(--color-badge-emerald-border)] bg-[var(--color-badge-emerald-bg)] text-[var(--color-badge-emerald-text)] text-xs font-mono">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
       <span>AVAILABLE FOR SRE & INFRASTRUCTURE ROLES</span>
     </div>
 
     <div class="space-y-3">
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-100">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)]">
         Let's Connect & Collaborate
       </h2>
-      <p class="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+      <p class="text-[var(--color-text-secondary)] text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
         Interested in discussing high-performance C++ systems tooling, server administration, network infrastructure, or SRE opportunities?
       </p>
     </div>
@@ -25,14 +25,14 @@ import profile from '../data/profile.json';
       <!-- Email Card with Copy Feature -->
       <div
         id="copy-email-btn"
-        class="interactive-card p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 text-center cursor-pointer group hover:border-emerald-500/50"
+        class="interactive-card p-5 rounded-2xl flex flex-col justify-between text-center cursor-pointer group hover:border-emerald-500/50 border"
       >
-        <div class="text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">✉</div>
-        <div class="text-xs text-zinc-500 font-mono">Email Contact</div>
-        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
+        <div class="text-emerald-500 dark:text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">✉</div>
+        <div class="text-xs text-[var(--color-text-tertiary)] font-mono">Email Contact</div>
+        <div class="text-xs font-mono font-semibold text-[var(--color-text-primary)] truncate mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
           {profile.contact.email}
         </div>
-        <div id="email-toast" class="mt-2 text-[10px] font-mono text-emerald-400 opacity-0 transition-opacity">
+        <div id="email-toast" class="mt-2 text-[10px] font-mono text-emerald-600 dark:text-emerald-400 opacity-0 transition-opacity">
           ✓ Copied to clipboard!
         </div>
       </div>
@@ -42,14 +42,14 @@ import profile from '../data/profile.json';
         href={profile.contact.github}
         target="_blank"
         rel="noopener noreferrer"
-        class="interactive-card p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 text-center group hover:border-emerald-500/50"
+        class="interactive-card p-5 rounded-2xl flex flex-col justify-between text-center group hover:border-emerald-500/50 border"
       >
-        <div class="text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">🐙</div>
-        <div class="text-xs text-zinc-500 font-mono">GitHub Profile</div>
-        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
+        <div class="text-emerald-500 dark:text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">🐙</div>
+        <div class="text-xs text-[var(--color-text-tertiary)] font-mono">GitHub Profile</div>
+        <div class="text-xs font-mono font-semibold text-[var(--color-text-primary)] truncate mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
           github.com/mrun1corn
         </div>
-        <div class="mt-2 text-[10px] font-mono text-zinc-500 group-hover:text-emerald-400/80 transition-colors">
+        <div class="mt-2 text-[10px] font-mono text-[var(--color-text-tertiary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400/80 transition-colors">
           View Repos ↗
         </div>
       </a>
@@ -59,14 +59,14 @@ import profile from '../data/profile.json';
         href={profile.contact.twitter}
         target="_blank"
         rel="noopener noreferrer"
-        class="interactive-card p-5 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 text-center group hover:border-emerald-500/50"
+        class="interactive-card p-5 rounded-2xl flex flex-col justify-between text-center group hover:border-emerald-500/50 border"
       >
-        <div class="text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">𝕏</div>
-        <div class="text-xs text-zinc-500 font-mono">Twitter / X</div>
-        <div class="text-xs font-mono font-semibold text-zinc-200 truncate mt-1 group-hover:text-emerald-300">
+        <div class="text-emerald-500 dark:text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">𝕏</div>
+        <div class="text-xs text-[var(--color-text-tertiary)] font-mono">Twitter / X</div>
+        <div class="text-xs font-mono font-semibold text-[var(--color-text-primary)] truncate mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
           @Robin33090740
         </div>
-        <div class="mt-2 text-[10px] font-mono text-zinc-500 group-hover:text-emerald-400/80 transition-colors">
+        <div class="mt-2 text-[10px] font-mono text-[var(--color-text-tertiary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400/80 transition-colors">
           Follow ↗
         </div>
       </a>
@@ -74,12 +74,12 @@ import profile from '../data/profile.json';
     </div>
 
     <!-- Footer Copyright -->
-    <div class="pt-12 border-t border-zinc-800/60 text-xs text-zinc-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="pt-12 border-t border-[var(--color-border)]/60 text-xs text-[var(--color-text-tertiary)] font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         © {new Date().getFullYear()} Robin Mia (@mrun1corn). All rights reserved.
       </div>
       <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
         <span>Astro + Tailwind CSS</span>
       </div>
     </div>

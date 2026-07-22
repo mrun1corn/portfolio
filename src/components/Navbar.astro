@@ -12,10 +12,10 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-zinc-950/85 backdrop-blur-lg border-b border-zinc-800/80 transition-all duration-300">
+<header class="sticky top-0 z-50 bg-[var(--color-bg-base)]/85 backdrop-blur-lg border-b border-[var(--color-border)] transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <!-- Brand -->
-    <a href="#hero" class="flex items-center space-x-2.5 text-zinc-100 hover:text-emerald-400 transition-all group">
+    <a href="#hero" class="flex items-center space-x-2.5 text-[var(--color-text-primary)] hover:text-emerald-400 transition-all group">
       <span class="relative flex h-3 w-3">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
         <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
@@ -31,7 +31,7 @@ const navItems = [
         <a
           href={item.href}
           data-nav-target={item.id}
-          class="nav-link text-zinc-400 hover:text-emerald-400 transition-colors py-1 relative"
+          class="nav-link py-1 relative"
         >
           {item.label}
         </a>
@@ -47,7 +47,7 @@ const navItems = [
         type="button"
         aria-label="Toggle Light and Dark Theme"
         title="Toggle Light/Dark Theme"
-        class="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm flex items-center justify-center cursor-pointer"
+        class="p-2 rounded-lg bg-[var(--color-bg-surface)] border border-[var(--color-border)] text-[var(--color-text-primary)] hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm flex items-center justify-center cursor-pointer"
       >
         <!-- Sun icon (visible in Dark Mode) -->
         <svg id="theme-icon-sun" class="w-4 h-4 text-amber-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ const navItems = [
         href={profile.contact.github}
         target="_blank"
         rel="noopener noreferrer"
-        class="hidden sm:inline-flex px-3.5 py-1.5 rounded-lg bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 hover:text-emerald-300 hover:border-emerald-500/50 hover:scale-105 transition-all shadow-sm flex items-center space-x-2"
+        class="hidden sm:inline-flex px-3.5 py-1.5 rounded-lg bg-[var(--color-bg-surface)] border border-[var(--color-border)] text-xs font-mono text-[var(--color-text-primary)] hover:text-emerald-300 hover:border-emerald-500/50 hover:scale-105 transition-all shadow-sm flex items-center space-x-2"
       >
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
@@ -91,7 +91,7 @@ const navItems = [
         id="mobile-menu-btn"
         type="button"
         aria-label="Toggle Navigation Menu"
-        class="md:hidden p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-emerald-400 transition"
+        class="md:hidden p-2 rounded-lg bg-[var(--color-bg-surface)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-emerald-400 transition"
       >
         <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -104,17 +104,17 @@ const navItems = [
   </div>
 
   <!-- Mobile Dropdown Nav Drawer -->
-  <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-800 bg-zinc-950/95 px-4 pt-3 pb-6 space-y-3 font-mono text-sm">
+  <div id="mobile-menu" class="hidden md:hidden border-b border-[var(--color-border)] bg-[var(--color-bg-base)]/95 px-4 pt-3 pb-6 space-y-3 font-mono text-sm">
     {navItems.map((item) => (
       <a
         href={item.href}
         data-nav-target={item.id}
-        class="mobile-nav-link block px-3 py-2 rounded-lg text-zinc-300 hover:text-emerald-400 hover:bg-zinc-900 transition-colors"
+        class="mobile-nav-link block px-3 py-2 rounded-lg text-[var(--color-text-secondary)] hover:text-emerald-400 hover:bg-[var(--color-bg-surface-hover)] transition-colors"
       >
         {item.label}
       </a>
     ))}
-    <div class="pt-2 border-t border-zinc-800 flex items-center justify-between">
+    <div class="pt-2 border-t border-[var(--color-border)] flex items-center justify-between">
       <a
         href={profile.contact.github}
         target="_blank"
@@ -128,7 +128,7 @@ const navItems = [
         href="/Robin_Mia_CV.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-3 py-2 rounded-lg text-zinc-300 bg-zinc-900 border border-zinc-800 text-xs font-mono"
+        class="px-3 py-2 rounded-lg text-[var(--color-text-secondary)] bg-[var(--color-bg-surface)] border border-[var(--color-border)] text-xs font-mono"
       >
         View CV
       </a>
