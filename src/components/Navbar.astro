@@ -2,17 +2,17 @@
 import profile from '../data/profile.json';
 
 const navItems = [
-  { label: 'Overview', href: '#hero' },
-  { label: 'Infrastructure', href: '#infrastructure' },
-  { label: 'Networking', href: '#networking' },
-  { label: 'portview (C++)', href: '#portview' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Overview', href: '#hero', id: 'hero' },
+  { label: 'Infrastructure', href: '#infrastructure', id: 'infrastructure' },
+  { label: 'Networking', href: '#networking', id: 'networking' },
+  { label: 'portview (C++)', href: '#portview', id: 'portview' },
+  { label: 'Projects', href: '#projects', id: 'projects' },
+  { label: 'Experience', href: '#experience', id: 'experience' },
+  { label: 'Contact', href: '#contact', id: 'contact' },
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-zinc-950/85 backdrop-blur-lg border-b border-zinc-800/80 transition-all">
+<header class="sticky top-0 z-50 bg-zinc-950/85 backdrop-blur-lg border-b border-zinc-800/80 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <!-- Brand -->
     <a href="#hero" class="flex items-center space-x-2.5 text-zinc-100 hover:text-emerald-400 transition-all group">
@@ -25,20 +25,41 @@ const navItems = [
       </span>
     </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+    <!-- Desktop Nav with Active Section Indicator -->
+    <nav id="desktop-nav" class="hidden md:flex items-center space-x-6 text-sm font-medium">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="text-zinc-400 hover:text-emerald-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-400 hover:after:w-full after:transition-all"
+          data-nav-target={item.id}
+          class="nav-link text-zinc-400 hover:text-emerald-400 transition-colors py-1 relative"
         >
           {item.label}
         </a>
       ))}
     </nav>
 
-    <!-- Right Actions & Mobile Hamburger -->
-    <div class="flex items-center space-x-3">
+    <!-- Right Actions: Theme Toggle, View CV, GitHub & Mobile Hamburger -->
+    <div class="flex items-center space-x-2 sm:space-x-3">
+      
+      <!-- Light / Dark Mode Toggle Button -->
+      <button
+        id="theme-toggle-btn"
+        type="button"
+        aria-label="Toggle Light and Dark Theme"
+        title="Toggle Light/Dark Theme"
+        class="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm flex items-center justify-center cursor-pointer"
+      >
+        <!-- Sun icon (visible in Dark Mode) -->
+        <svg id="theme-icon-sun" class="w-4 h-4 text-amber-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <!-- Moon icon (visible in Light Mode) -->
+        <svg id="theme-icon-moon" class="w-4 h-4 text-emerald-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
+      <!-- View CV Button -->
       <a
         href="/Robin_Mia_CV.pdf"
         target="_blank"
@@ -52,6 +73,7 @@ const navItems = [
         <span>View CV</span>
       </a>
 
+      <!-- GitHub Profile Button -->
       <a
         href={profile.contact.github}
         target="_blank"
@@ -86,26 +108,36 @@ const navItems = [
     {navItems.map((item) => (
       <a
         href={item.href}
-        class="block px-3 py-2 rounded-lg text-zinc-300 hover:text-emerald-400 hover:bg-zinc-900 transition-colors"
+        data-nav-target={item.id}
+        class="mobile-nav-link block px-3 py-2 rounded-lg text-zinc-300 hover:text-emerald-400 hover:bg-zinc-900 transition-colors"
       >
         {item.label}
       </a>
     ))}
-    <div class="pt-2 border-t border-zinc-800">
+    <div class="pt-2 border-t border-zinc-800 flex items-center justify-between">
       <a
         href={profile.contact.github}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center space-x-2 px-3 py-2 rounded-lg text-emerald-400 bg-emerald-950/40 border border-emerald-800/60"
+        class="flex items-center space-x-2 px-3 py-2 rounded-lg text-emerald-400 bg-emerald-950/40 border border-emerald-800/60 text-xs"
       >
-        <span>GitHub Profile (@mrun1corn)</span>
+        <span>GitHub (@mrun1corn)</span>
         <span>↗</span>
+      </a>
+      <a
+        href="/Robin_Mia_CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-3 py-2 rounded-lg text-zinc-300 bg-zinc-900 border border-zinc-800 text-xs font-mono"
+      >
+        View CV
       </a>
     </div>
   </div>
 </header>
 
 <script>
+  // --- 1. Mobile Menu Toggle ---
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const openIcon = document.getElementById('menu-icon-open');
@@ -118,7 +150,6 @@ const navItems = [
       closeIcon.classList.toggle('hidden');
     });
 
-    // Close menu when clicking a link
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         menu.classList.add('hidden');
@@ -127,4 +158,111 @@ const navItems = [
       });
     });
   }
+
+  // --- 2. Light / Dark Theme Toggle Logic ---
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  const sunIcon = document.getElementById('theme-icon-sun');
+  const moonIcon = document.getElementById('theme-icon-moon');
+
+  function updateThemeUI() {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
+      sunIcon?.classList.remove('hidden');
+      moonIcon?.classList.add('hidden');
+    } else {
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
+    }
+  }
+
+  updateThemeUI();
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeUI();
+    });
+  }
+
+  // --- 3. Active Nav Section Indicator (IntersectionObserver) & Smooth Scroll Offset ---
+  const desktopLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+  const mobileLinks = document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link');
+
+  const sectionIds = ['hero', 'infrastructure', 'networking', 'portview', 'projects', 'experience', 'contact'];
+  const sectionElements: HTMLElement[] = [];
+
+  sectionIds.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) sectionElements.push(el);
+  });
+
+  function setActiveNavLink(currentId: string) {
+    desktopLinks.forEach((link) => {
+      const target = link.getAttribute('data-nav-target');
+      if (target === currentId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    mobileLinks.forEach((link) => {
+      const target = link.getAttribute('data-nav-target');
+      if (target === currentId) {
+        link.classList.add('text-emerald-400', 'font-semibold', 'bg-zinc-900');
+      } else {
+        link.classList.remove('text-emerald-400', 'font-semibold', 'bg-zinc-900');
+      }
+    });
+  }
+
+  // Set up IntersectionObserver
+  if (sectionElements.length > 0) {
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '-20% 0px -50% 0px',
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveNavLink(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sectionElements.forEach((sec) => observer.observe(sec));
+  }
+
+  // Smooth scroll handler with header offset
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href')?.substring(1);
+      if (!targetId) return;
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const headerOffset = 70;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+
+        setActiveNavLink(targetId);
+      }
+    });
+  });
 </script>

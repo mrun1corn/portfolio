@@ -7,9 +7,20 @@
     scroll-behavior: smooth;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
-  
+
+  /* Dark theme defaults */
+  html.dark body {
+    @apply bg-zinc-950 text-zinc-200 antialiased selection:bg-emerald-500/30 selection:text-emerald-300 overflow-x-hidden transition-colors duration-300;
+  }
+
+  /* Light theme overrides */
+  html.light body {
+    @apply bg-slate-50 text-zinc-800 antialiased selection:bg-emerald-500/20 selection:text-emerald-700 overflow-x-hidden transition-colors duration-300;
+  }
+
+  /* Fallback body when no explicit class is set yet */
   body {
-    @apply bg-zinc-950 text-zinc-300 antialiased selection:bg-emerald-500/30 selection:text-emerald-300 overflow-x-hidden;
+    @apply bg-zinc-950 text-zinc-200 antialiased selection:bg-emerald-500/30 selection:text-emerald-300 overflow-x-hidden transition-colors duration-300;
   }
 }
 
@@ -66,7 +77,93 @@
   opacity: 1;
 }
 
-/* Custom scrollbar for terminal aesthetic */
+/* Active Nav Indicator Styling */
+.nav-link {
+  @apply text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-emerald-400 transition-all py-1 relative font-medium text-sm;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #10b981;
+  transition: width 0.3s ease;
+  border-radius: 9999px;
+}
+
+.nav-link.active {
+  @apply text-emerald-600 dark:text-emerald-400 font-semibold;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Light mode card adjustments */
+html.light .bg-zinc-950 {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-zinc-900 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-zinc-900\/90 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html.light .bg-zinc-900\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html.light .bg-zinc-900\/70 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html.light .bg-zinc-900\/50 {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+html.light .bg-zinc-950\/85 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html.light .bg-zinc-950\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light .border-zinc-800 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .border-zinc-800\/80 {
+  border-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+html.light .border-zinc-800\/60 {
+  border-color: rgba(226, 232, 240, 0.6) !important;
+}
+
+html.light .text-zinc-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-zinc-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-zinc-300 {
+  color: #334155 !important;
+}
+
+html.light .text-zinc-400 {
+  color: #64748b !important;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -74,9 +171,15 @@
 ::-webkit-scrollbar-track {
   background: #09090b;
 }
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
 ::-webkit-scrollbar-thumb {
   background: #27272a;
   border-radius: 4px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #10b981;
