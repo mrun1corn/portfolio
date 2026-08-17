@@ -218,9 +218,9 @@ const navItems = [
     mobileLinks.forEach((link) => {
       const target = link.getAttribute('data-nav-target');
       if (target === currentId) {
-        link.classList.add('text-emerald-400', 'font-semibold', 'bg-zinc-900');
+        link.classList.add('text-emerald-600', 'dark:text-emerald-400', 'font-semibold', 'bg-[var(--color-bg-surface-hover)]');
       } else {
-        link.classList.remove('text-emerald-400', 'font-semibold', 'bg-zinc-900');
+        link.classList.remove('text-emerald-600', 'dark:text-emerald-400', 'font-semibold', 'bg-[var(--color-bg-surface-hover)]');
       }
     });
   }

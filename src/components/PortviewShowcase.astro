@@ -61,9 +61,59 @@ const portview = projects.find((p) => p.id === 'portview') || projects[0];
           </div>
         </div>
 
+        <!-- Architecture Flow Diagram (SVG) -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-[var(--color-bg-surface)] border border-emerald-500/30 dark:border-emerald-500/20 space-y-4 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-[var(--color-text-primary)] flex items-center space-x-2">
+              <span class="text-emerald-600 dark:text-emerald-400 font-mono">02.</span>
+              <span>Low-Level Architecture Flow</span>
+            </h3>
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+              Zero Dependencies
+            </span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-zinc-950/80 border border-zinc-800 text-zinc-300 font-mono text-xs overflow-x-auto">
+            <svg class="w-full min-w-[500px] h-36" viewBox="0 0 600 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Flow Nodes -->
+              <!-- Node 1: CLI Args -->
+              <rect x="10" y="35" width="100" height="60" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+              <text x="60" y="60" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold" font-family="monospace">CLI Input</text>
+              <text x="60" y="78" text-anchor="middle" fill="#a1a1aa" font-size="9" font-family="monospace">--stats --pid</text>
+
+              <!-- Arrow 1 -->
+              <path d="M110 65 L138 65" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <polygon points="142,65 135,61 135,69" fill="#10b981"/>
+
+              <!-- Node 2: Win32 API -->
+              <rect x="145" y="35" width="125" height="60" rx="8" fill="#18181b" stroke="#059669" stroke-width="1.5"/>
+              <text x="207" y="60" text-anchor="middle" fill="#34d399" font-size="11" font-weight="bold" font-family="monospace">IPHLPAPI</text>
+              <text x="207" y="78" text-anchor="middle" fill="#a1a1aa" font-size="9" font-family="monospace">GetExtendedTcpTable</text>
+
+              <!-- Arrow 2 -->
+              <path d="M270 65 L298 65" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <polygon points="302,65 295,61 295,69" fill="#10b981"/>
+
+              <!-- Node 3: Socket Resolver -->
+              <rect x="305" y="35" width="130" height="60" rx="8" fill="#18181b" stroke="#0891b2" stroke-width="1.5"/>
+              <text x="370" y="60" text-anchor="middle" fill="#22d3ee" font-size="11" font-weight="bold" font-family="monospace">Process Mapping</text>
+              <text x="370" y="78" text-anchor="middle" fill="#a1a1aa" font-size="9" font-family="monospace">PID → QueryName</text>
+
+              <!-- Arrow 3 -->
+              <path d="M435 65 L463 65" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <polygon points="467,65 460,61 460,69" fill="#10b981"/>
+
+              <!-- Node 4: Stream Output -->
+              <rect x="470" y="35" width="115" height="60" rx="8" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+              <text x="527" y="60" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="bold" font-family="monospace">CLI Stream</text>
+              <text x="527" y="78" text-anchor="middle" fill="#a1a1aa" font-size="9" font-family="monospace">Tabular Output</text>
+            </svg>
+          </div>
+        </div>
+
         <div class="p-6 sm:p-8 rounded-2xl bg-[var(--color-bg-surface)] border border-[var(--color-border)] space-y-4 shadow-sm">
           <h3 class="text-xl font-bold text-[var(--color-text-primary)] flex items-center space-x-2">
-            <span class="text-emerald-600 dark:text-emerald-400 font-mono">02.</span>
+            <span class="text-emerald-600 dark:text-emerald-400 font-mono">03.</span>
             <span>Key Engineering Capabilities</span>
           </h3>
           <ul class="space-y-3 text-sm text-[var(--color-text-secondary)]">
@@ -85,7 +135,6 @@ const portview = projects.find((p) => p.id === 'portview') || projects[0];
             </li>
           </ul>
         </div>
-      </div>
 
       <!-- Right Column: Interactive Terminal Preview (Kept dark for terminal realism) -->
       <div class="lg:col-span-5">

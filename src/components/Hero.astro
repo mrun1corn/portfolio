@@ -17,7 +17,7 @@ import profile from '../data/profile.json';
         <!-- Target Badge -->
         <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[var(--color-badge-emerald-bg)] border border-[var(--color-badge-emerald-border)] text-[var(--color-badge-emerald-text)] text-xs font-mono shadow-sm">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-          <span>Meta / Google SRE & Infrastructure Engineering</span>
+          <span>C++ Development · Server Administration · Networking</span>
         </div>
 
         <!-- Title & Headline -->
@@ -26,13 +26,15 @@ import profile from '../data/profile.json';
             {profile.name} <span class="text-[var(--color-text-tertiary)] text-2xl sm:text-3xl font-mono font-normal">(@{profile.username})</span>
           </h1>
           <p class="text-xl sm:text-2xl font-mono text-emerald-600 dark:text-emerald-400 font-semibold leading-snug">
-            {profile.cv_original_title}
+            {profile.portfolio_identity}
           </p>
-        </div>
+          <p class="text-xs sm:text-sm font-mono text-[var(--color-text-tertiary)]">
+            Specializing in C++ Systems Tooling & Server Administration
+          </p>
 
         <p class="text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed max-w-2xl">
-          Infrastructure Engineer at <strong class="text-[var(--color-text-primary)] font-semibold">{profile.company}</strong> ({profile.location}). 
-          Specializing in high-performance C++ systems tooling, server administration, enterprise networking, and production reliability.
+          C++ Developer at <strong class="text-[var(--color-text-primary)] font-semibold">{profile.company}</strong> ({profile.location}). 
+          Hands-on experience in software development, Linux (Ubuntu) server management, virtualization (Proxmox VE, VMware), and enterprise networking.
         </p>
 
         <!-- Target Roles Badges -->

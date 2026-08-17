@@ -24,3 +24,7 @@ pnpm-debug.log*
 .idea/
 
 .vercel
+
+# tool artifacts
+graphify-out/
+.repowise/
