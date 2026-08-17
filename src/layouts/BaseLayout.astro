@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SectionNavDeck from '../components/SectionNavDeck.astro';
 
 interface Props {
   title?: string;
@@ -87,5 +88,6 @@ const jsonLd = {
   </head>
   <body class="bg-[var(--color-bg-base)] text-[var(--color-text-primary)] font-sans min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300 transition-colors duration-300">
     <slot />
+    <SectionNavDeck />
   </body>
 </html>
