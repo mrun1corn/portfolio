@@ -25,18 +25,6 @@ const navItems = [
       </span>
     </a>
 
-    <!-- Desktop Nav with Active Section Indicator -->
-    <nav id="desktop-nav" class="hidden md:flex items-center space-x-6 text-sm font-medium">
-      {navItems.map((item) => (
-        <a
-          href={item.href}
-          data-nav-target={item.id}
-          class="nav-link py-1 relative"
-        >
-          {item.label}
-        </a>
-      ))}
-    </nav>
 
     <!-- Right Actions: Theme Toggle, View CV, GitHub & Mobile Hamburger -->
     <div class="flex items-center space-x-2 sm:space-x-3">
