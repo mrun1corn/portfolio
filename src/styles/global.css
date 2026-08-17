@@ -3,70 +3,70 @@
 @tailwind utilities;
 
 :root {
-  /* Premium Professional Light Mode (GitHub / Stripe inspired clean neutral theme) */
-  --color-bg-base: #ffffff;
+  /* Premium Technical Light Mode (High contrast slate & crisp surfaces) */
+  --color-bg-base: #f8fafc;
   --color-bg-surface: #ffffff;
-  --color-bg-surface-hover: #f6f8fa;
-  --color-border: #d0d7de;
-  --color-border-hover: #0969da;
+  --color-bg-surface-hover: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-hover: #059669;
   
-  --color-text-primary: #24292f;
-  --color-text-secondary: #57606a;
-  --color-text-tertiary: #6e7781;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-tertiary: #64748b;
   
-  /* Badges - clean and legible */
-  --color-badge-emerald-bg: #dafbe1;
+  /* Badges - AAA compliant high contrast */
+  --color-badge-emerald-bg: #ecfdf5;
   --color-badge-emerald-border: #a7f3d0;
-  --color-badge-emerald-text: #116329;
+  --color-badge-emerald-text: #047857;
 
-  --color-badge-cyan-bg: #ddf4ff;
-  --color-badge-cyan-border: #b3e6ff;
-  --color-badge-cyan-text: #0550ae;
+  --color-badge-cyan-bg: #f0f9ff;
+  --color-badge-cyan-border: #bae6fd;
+  --color-badge-cyan-text: #0369a1;
 
-  --color-badge-purple-bg: #fbe8ff;
-  --color-badge-purple-border: #f3c2ff;
-  --color-badge-purple-text: #8250df;
+  --color-badge-purple-bg: #faf5ff;
+  --color-badge-purple-border: #e9d5ff;
+  --color-badge-purple-text: #7e22ce;
 
-  --bg-gradient-hero: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
-  --bg-gradient-section: #ffffff;
-  --bg-gradient-section-alt: #f6f8fa;
+  --bg-gradient-hero: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+  --bg-gradient-section: #f8fafc;
+  --bg-gradient-section-alt: #f1f5f9;
   
-  --shadow-card: 0 1px 3px 0 rgba(31, 35, 40, 0.075);
-  --shadow-card-hover: 0 8px 24px rgba(140, 149, 159, 0.2);
-  --opacity-glow: 0.15;
+  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.08);
+  --shadow-card-hover: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+  --opacity-glow: 0.12;
 }
 
 .dark {
-  /* Premium Sleek Dark Mode */
-  --color-bg-base: #09090b;
-  --color-bg-surface: rgba(24, 24, 27, 0.75);
-  --color-bg-surface-hover: rgba(39, 39, 42, 0.85);
-  --color-border: rgba(39, 39, 42, 0.8);
-  --color-border-hover: rgba(16, 185, 129, 0.5);
+  /* Premium Obsidian Zinc Dark Mode */
+  --color-bg-base: #0b0f14;
+  --color-bg-surface: #121824;
+  --color-bg-surface-hover: #1a2232;
+  --color-border: #242f42;
+  --color-border-hover: rgba(16, 185, 129, 0.6);
 
-  --color-text-primary: #f4f4f5;
-  --color-text-secondary: #a1a1aa;
-  --color-text-tertiary: #71717a;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-tertiary: #64748b;
 
-  --color-badge-emerald-bg: rgba(16, 185, 129, 0.1);
-  --color-badge-emerald-border: rgba(16, 185, 129, 0.3);
+  --color-badge-emerald-bg: rgba(16, 185, 129, 0.12);
+  --color-badge-emerald-border: rgba(16, 185, 129, 0.35);
   --color-badge-emerald-text: #34d399;
 
-  --color-badge-cyan-bg: rgba(6, 182, 212, 0.1);
-  --color-badge-cyan-border: rgba(6, 182, 212, 0.3);
+  --color-badge-cyan-bg: rgba(6, 182, 212, 0.12);
+  --color-badge-cyan-border: rgba(6, 182, 212, 0.35);
   --color-badge-cyan-text: #22d3ee;
 
-  --color-badge-purple-bg: rgba(168, 85, 247, 0.1);
-  --color-badge-purple-border: rgba(168, 85, 247, 0.3);
+  --color-badge-purple-bg: rgba(168, 85, 247, 0.12);
+  --color-badge-purple-border: rgba(168, 85, 247, 0.35);
   --color-badge-purple-text: #c084fc;
 
-  --bg-gradient-hero: linear-gradient(180deg, #09090b 0%, #09090b 60%, rgba(24, 24, 27, 0.6) 100%);
-  --bg-gradient-section: #09090b;
-  --bg-gradient-section-alt: linear-gradient(180deg, #09090b 0%, rgba(24, 24, 27, 0.5) 100%);
+  --bg-gradient-hero: linear-gradient(180deg, #0b0f14 0%, #0d1219 60%, #121824 100%);
+  --bg-gradient-section: #0b0f14;
+  --bg-gradient-section-alt: linear-gradient(180deg, #0b0f14 0%, #101622 100%);
   
-  --shadow-card: none;
-  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.3);
-  --opacity-glow: 0.05;
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 12px 28px -4px rgba(0, 0, 0, 0.5), 0 0 15px -2px rgba(16, 185, 129, 0.1);
+  --opacity-glow: 0.08;
 }
 
 @layer base {

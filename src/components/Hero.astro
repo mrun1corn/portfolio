@@ -2,7 +2,7 @@
 import profile from '../data/profile.json';
 ---
 
-<section id="hero" class="relative py-16 md:py-28 border-b border-[var(--color-border)]/60 bg-[var(--bg-gradient-hero)] overflow-hidden transition-all duration-300">
+<section id="hero" class="relative py-16 md:py-24 border-b border-[var(--color-border)]/60 bg-[var(--bg-gradient-hero)] overflow-hidden transition-all duration-300">
   
   <!-- Background Glow FX -->
   <div class="absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/[var(--opacity-glow)] rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
@@ -11,46 +11,53 @@ import profile from '../data/profile.json';
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <!-- Left Hero Column -->
+      <!-- Left Hero Column: Value Proposition & HR Quick-Scan -->
       <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
         
         <!-- Target Badge -->
         <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[var(--color-badge-emerald-bg)] border border-[var(--color-badge-emerald-border)] text-[var(--color-badge-emerald-text)] text-xs font-mono shadow-sm">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-          <span>C++ Development · Server Administration · Networking</span>
+          <span>C++ Development · Server Administration · Linux Operations</span>
         </div>
 
-        <!-- Title & Headline -->
-        <div class="space-y-3">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-text-primary)]">
-            {profile.name} <span class="text-[var(--color-text-tertiary)] text-2xl sm:text-3xl font-mono font-normal">(@{profile.username})</span>
+        <!-- Punchy 2-Line Headline -->
+        <div class="space-y-2">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-text-primary)] leading-[1.15]">
+            Building Robust Software.<br/>
+            <span class="text-emerald-600 dark:text-emerald-400">Scaling Resilient Systems.</span>
           </h1>
-          <p class="text-xl sm:text-2xl font-mono text-emerald-600 dark:text-emerald-400 font-semibold leading-snug">
-            {profile.portfolio_identity}
+          <p class="text-lg sm:text-xl font-mono text-[var(--color-text-secondary)] font-semibold pt-1">
+            {profile.name} <span class="text-[var(--color-text-tertiary)] font-normal text-base">(@{profile.username})</span> — {profile.portfolio_identity}
           </p>
-          <p class="text-xs sm:text-sm font-mono text-[var(--color-text-tertiary)]">
-            Specializing in C++ Systems Tooling & Server Administration
-          </p>
+        </div>
 
+        <!-- Summary Description -->
         <p class="text-[var(--color-text-secondary)] text-base sm:text-lg leading-relaxed max-w-2xl">
           C++ Developer at <strong class="text-[var(--color-text-primary)] font-semibold">{profile.company}</strong> ({profile.location}). 
-          Hands-on experience in software development, Linux (Ubuntu) server management, virtualization (Proxmox VE, VMware), and enterprise networking.
+          Hands-on background spanning system-level software, Linux hypervisors, and enterprise networks.
         </p>
 
-        <!-- Target Roles Badges -->
-        <div class="pt-1 flex flex-wrap gap-2">
-          {profile.target_roles.map((role) => (
-            <span class="px-3 py-1 rounded-md bg-[var(--color-bg-surface)] border border-[var(--color-border)] text-[var(--color-text-secondary)] text-xs font-mono hover:border-emerald-500/40 hover:text-emerald-500 transition-all cursor-default shadow-sm">
-              #{role}
-            </span>
-          ))}
+        <!-- 3-Point Qualification Bullets (For Tech Leads & HR 30s Scan) -->
+        <div class="p-4 rounded-2xl bg-[var(--color-bg-surface)] border border-[var(--color-border)] shadow-sm space-y-2.5 font-mono text-xs text-[var(--color-text-secondary)]">
+          <div class="flex items-start space-x-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">▹</span>
+            <span><strong class="text-[var(--color-text-primary)]">Active C++ Developer:</strong> System-level programming, debugging, and Windows/Linux tools at BFIN IT.</span>
+          </div>
+          <div class="flex items-start space-x-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">▹</span>
+            <span><strong class="text-[var(--color-text-primary)]">Server Administration:</strong> Linux (Ubuntu), Proxmox VE, VMware hypervisors, RAID, and VPS maintenance.</span>
+          </div>
+          <div class="flex items-start space-x-2.5">
+            <span class="text-emerald-500 font-bold mt-0.5">▹</span>
+            <span><strong class="text-[var(--color-text-primary)]">3+ Years IT Operations:</strong> Mikrotik & Cisco routers/switches, firewall policies, and CCTV infrastructure.</span>
+          </div>
         </div>
 
         <!-- Action Buttons -->
-        <div class="pt-4 flex flex-wrap items-center gap-4">
+        <div class="pt-2 flex flex-wrap items-center gap-4">
           <a
             href="#portview"
-            class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-semibold font-mono text-sm transition-all shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-0.5 flex items-center space-x-2.5 group cursor-pointer"
+            class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold font-mono text-sm transition-all shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-0.5 flex items-center space-x-2.5 group cursor-pointer"
           >
             <span>Explore C++ Tools</span>
             <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,67 +69,117 @@ import profile from '../data/profile.json';
             href="/Robin_Mia_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-3 rounded-xl bg-[var(--color-bg-surface)] hover:bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] hover:border-emerald-500/40 text-emerald-600 dark:text-emerald-400 font-mono text-sm transition-all hover:-translate-y-0.5 flex items-center space-x-2 shadow-sm"
+            class="px-6 py-3 rounded-xl bg-[var(--color-bg-surface)] hover:bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] hover:border-emerald-500/50 text-[var(--color-text-primary)] font-semibold font-mono text-sm transition-all shadow-sm flex items-center space-x-2 cursor-pointer"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
-            <span>View CV</span>
+            <span>Download CV</span>
           </a>
 
           <a
-            href={profile.contact.github}
+            href="https://github.com/mrun1corn"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-6 py-3 rounded-xl bg-[var(--color-bg-surface)] hover:bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] text-[var(--color-text-primary)] font-mono text-sm transition-all hover:-translate-y-0.5 flex items-center space-x-2 shadow-sm"
+            class="px-4 py-3 rounded-xl text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] font-mono text-sm transition-colors flex items-center space-x-1.5"
           >
-            <span>GitHub Profile</span>
-            <span class="text-xs text-[var(--color-text-tertiary)]">↗</span>
+            <span>GitHub</span>
+            <span class="text-xs">↗</span>
           </a>
         </div>
 
       </div>
 
-      <!-- Right Interactive CLI Widget -->
+      <!-- Right Column: Interactive Tabbed Terminal CLI Widget -->
       <div class="lg:col-span-5">
-        <div class="rounded-2xl border border-zinc-800 bg-zinc-950/90 shadow-2xl overflow-hidden font-mono text-xs text-zinc-300 glow-border hover:border-emerald-500/40 transition-all duration-300">
-          <div class="bg-zinc-900/90 px-4 py-3 border-b border-zinc-800/80 flex items-center justify-between">
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden font-mono text-xs text-zinc-300 glow-border hover:border-emerald-500/40 transition-all duration-300">
+          
+          <!-- Terminal Header & Tab Switcher -->
+          <div class="bg-zinc-900/95 px-4 py-2.5 border-b border-zinc-800 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-              <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-red-500/90 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/90 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/90 inline-block"></span>
             </div>
-            <span class="text-zinc-500 text-xs">robin@bfin-it:~ (zsh)</span>
+
+            <!-- Terminal Tabs -->
+            <div class="flex items-center space-x-1 bg-zinc-950 p-1 rounded-lg border border-zinc-800 text-[11px]">
+              <button
+                type="button"
+                data-tab="sysinfo"
+                class="tab-btn px-2.5 py-0.5 rounded bg-zinc-800 text-emerald-400 font-bold transition-all cursor-pointer"
+              >
+                sysinfo.sh
+              </button>
+              <button
+                type="button"
+                data-tab="skills"
+                class="tab-btn px-2.5 py-0.5 rounded text-zinc-400 hover:text-zinc-200 transition-all cursor-pointer"
+              >
+                skills.json
+              </button>
+              <button
+                type="button"
+                data-tab="portview"
+                class="tab-btn px-2.5 py-0.5 rounded text-zinc-400 hover:text-zinc-200 transition-all cursor-pointer"
+              >
+                portview
+              </button>
+            </div>
           </div>
 
-          <div class="p-6 space-y-4 font-mono leading-relaxed">
+          <!-- Tab Content Panes -->
+          <div class="p-5 font-mono leading-relaxed min-h-[290px] flex flex-col justify-between">
             
-            <div class="flex items-center space-x-2 text-emerald-400">
-              <span>robin@bfin-it:~$</span>
-              <span class="text-zinc-100 font-semibold">whoami</span>
-            </div>
-            <div class="text-zinc-300 pl-4 border-l-2 border-emerald-500/60 space-y-1">
-              <p><span class="text-zinc-500">Name:</span> {profile.name} (@{profile.username})</p>
-              <p><span class="text-zinc-500">Org:</span> {profile.company} ({profile.location})</p>
-              <p><span class="text-zinc-500">Identity:</span> {profile.portfolio_identity}</p>
-              <p><span class="text-zinc-500">Status:</span> {profile.education[0].credential}</p>
-            </div>
-
-            <div class="flex items-center space-x-2 text-emerald-400 pt-2">
-              <span>robin@bfin-it:~$</span>
-              <span class="text-zinc-100 font-semibold">cat skills.json</span>
-            </div>
-            <div class="text-zinc-400 pl-4 border-l-2 border-zinc-800 space-y-1">
-              <p>{'{'}</p>
-              <p class="pl-3"><span class="text-emerald-300">"languages"</span>: ["C++", "Kotlin", "Dart", "Java", "Python", "HTML", "CSS", "JS", "React"],</p>
-              <p class="pl-3"><span class="text-emerald-300">"infrastructure"</span>: ["Proxmox VE", "VMware", "Server OS"],</p>
-              <p class="pl-3"><span class="text-emerald-300">"networking"</span>: ["Mikrotik", "Cisco Routers/Switches", "WAF"]</p>
-              <p>{'}'}</p>
+            <!-- Pane 1: Sysinfo / Telemetry -->
+            <div id="pane-sysinfo" class="tab-pane space-y-3">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <span>robin@mrun1corn:~$</span>
+                <span class="text-zinc-100 font-bold">./sysinfo.sh</span>
+              </div>
+              <div class="text-zinc-300 pl-3 border-l-2 border-emerald-500/60 space-y-1.5 text-[11px]">
+                <p><span class="text-zinc-500">OPERATOR:</span> Robin Mia (@mrun1corn)</p>
+                <p><span class="text-zinc-500">ROLE:</span> C++ Developer @ BFIN IT</p>
+                <p><span class="text-zinc-500">SYSTEM:</span> Linux (Ubuntu) · Proxmox VE · VMware</p>
+                <p><span class="text-zinc-500">NETWORKING:</span> Mikrotik · Cisco · Firewall Security</p>
+                <p><span class="text-zinc-500">TOOLING:</span> C++20, GDB, Win32 IPHLPAPI, Python, Docker</p>
+                <p><span class="text-zinc-500">STATUS:</span> <span class="text-emerald-400 font-bold">● Active & Available for Opportunities</span></p>
+              </div>
             </div>
 
-            <div class="flex items-center space-x-2 text-emerald-400 pt-2">
-              <span>robin@bfin-it:~$</span>
+            <!-- Pane 2: Skills JSON -->
+            <div id="pane-skills" class="tab-pane hidden space-y-3">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <span>robin@mrun1corn:~$</span>
+                <span class="text-zinc-100 font-bold">cat skills.json</span>
+              </div>
+              <div class="text-zinc-300 pl-3 border-l-2 border-zinc-700 space-y-1 text-[11px]">
+                <p>{'{'}</p>
+                <p class="pl-2"><span class="text-emerald-300">"languages"</span>: ["C++", "Python", "SQL"],</p>
+                <p class="pl-2"><span class="text-emerald-300">"hypervisors"</span>: ["Proxmox VE", "VMware", "KVM"],</p>
+                <p class="pl-2"><span class="text-emerald-300">"routing"</span>: ["Mikrotik RouterOS", "Cisco IOS"],</p>
+                <p class="pl-2"><span class="text-emerald-300">"systems"</span>: ["RAID Storage", "VPS", "Docker"]</p>
+                <p>{'}'}</p>
+              </div>
+            </div>
+
+            <!-- Pane 3: Portview Stream -->
+            <div id="pane-portview" class="tab-pane hidden space-y-2 text-[10.5px]">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <span>C:\tools></span>
+                <span class="text-zinc-100 font-bold">portview.exe --stats --pid</span>
+              </div>
+              <div class="text-zinc-400 pl-3 border-l-2 border-emerald-500/60 space-y-0.5 leading-snug">
+                <p class="text-zinc-500">PROTO LOCAL_ADDR FOREIGN_ADDR PID PROCESS</p>
+                <p><span class="text-cyan-400">TCP</span>   127.0.0.1:8080 0.0.0.0:0   4212 <span class="text-emerald-300">nginx.exe</span></p>
+                <p><span class="text-cyan-400">TCP</span>   192.168.1.5:22 10.0.0.1:52 9012 <span class="text-zinc-200">sshd.exe</span></p>
+                <p class="text-emerald-400 font-bold pt-1">[+] Socket table mapped via IPHLPAPI</p>
+              </div>
+            </div>
+
+            <!-- Bottom Prompt Line -->
+            <div class="flex items-center space-x-2 text-emerald-400 pt-3 border-t border-zinc-900">
+              <span>robin@mrun1corn:~$</span>
               <span class="text-zinc-100 font-semibold animate-pulse">_</span>
             </div>
 
@@ -133,3 +190,35 @@ import profile from '../data/profile.json';
     </div>
   </div>
 </section>
+
+<script>
+  // Terminal Tab Switching Logic
+  const tabBtns = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+  const panes = document.querySelectorAll<HTMLElement>('.tab-pane');
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
+
+      // Update button states
+      tabBtns.forEach((b) => {
+        if (b === btn) {
+          b.classList.add('bg-zinc-800', 'text-emerald-400', 'font-bold');
+          b.classList.remove('text-zinc-400');
+        } else {
+          b.classList.remove('bg-zinc-800', 'text-emerald-400', 'font-bold');
+          b.classList.add('text-zinc-400');
+        }
+      });
+
+      // Update pane states
+      panes.forEach((pane) => {
+        if (pane.id === `pane-${targetTab}`) {
+          pane.classList.remove('hidden');
+        } else {
+          pane.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
