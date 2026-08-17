@@ -76,14 +76,24 @@ const sections: SectionPreview[] = [
 ];
 ---
 
-<!-- Permanently Visible Right-Side Stack Overview (Desktop xl+) -->
+<!-- Right-Side Stack Overview (60% Hidden from right by default, reveals on hover) -->
 <aside
   id="section-nav-deck"
   aria-label="Stack Overview Section Navigator"
-  class="fixed right-6 2xl:right-10 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-end select-none font-mono pointer-events-auto"
+  class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden xl:flex items-center select-none font-mono pointer-events-auto translate-x-[60%] hover:translate-x-0 transition-transform duration-300 ease-out group/dock"
 >
-  <!-- Card Stack Column -->
-  <nav class="flex flex-col space-y-2 w-56 2xl:w-64">
+  <!-- Peeking Handle / Accent Rail -->
+  <div class="py-3 px-1.5 rounded-l-xl bg-emerald-500 text-zinc-950 flex flex-col items-center justify-center shadow-lg cursor-pointer group-hover/dock:opacity-0 transition-opacity">
+    <span class="text-[9px] font-extrabold uppercase tracking-widest [writing-mode:vertical-rl] rotate-180 py-1">
+      NAV
+    </span>
+    <span class="w-1.5 h-1.5 rounded-full bg-zinc-950 animate-pulse my-1"></span>
+  </div>
+
+  <!-- Main Dock Container -->
+  <div class="p-4 rounded-l-3xl bg-white/95 dark:bg-zinc-950/95 backdrop-blur-2xl border-l-2 border-y-2 border-zinc-300 dark:border-zinc-800 shadow-2xl flex flex-col items-end">
+    <!-- Card Stack Column -->
+    <nav class="flex flex-col space-y-2 w-56 2xl:w-64">
     {sections.map((sec) => (
       <div class="relative group/stack flex items-center justify-end">
         
