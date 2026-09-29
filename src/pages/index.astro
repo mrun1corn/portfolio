@@ -7,7 +7,7 @@ import NetworkingSecurity from '../components/NetworkingSecurity.astro';
 import PortviewShowcase from '../components/PortviewShowcase.astro';
 import PinnedProjects from '../components/PinnedProjects.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
-import Contact from '../components/Contact.astro';
+import profile from '../data/profile.json';
 ---
 
 <BaseLayout title="Robin Mia | C++ Developer & Server Administrator">
@@ -19,6 +19,83 @@ import Contact from '../components/Contact.astro';
     <PortviewShowcase />
     <PinnedProjects />
     <ExperienceTimeline />
-    <Contact />
   </main>
+
+  <!-- Clean Direct Contact Strip & Footer -->
+  <footer class="py-12 bg-[var(--bg-gradient-section-alt)] border-t border-[var(--color-border)] transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-[var(--color-bg-surface)] border border-[var(--color-border)] shadow-sm">
+        <div class="space-y-1 text-center md:text-left">
+          <h3 class="text-lg font-bold text-[var(--color-text-primary)] font-mono flex items-center justify-center md:justify-start space-x-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span>Let's Connect & Collaborate</span>
+          </h3>
+          <p class="text-xs text-[var(--color-text-secondary)]">Available for C++ engineering, Linux server administration, and infrastructure roles.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <button
+            id="footer-copy-email-btn"
+            type="button"
+            class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold font-mono text-xs transition-all shadow-sm flex items-center space-x-2 cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span id="footer-email-text">{profile.contact.email}</span>
+          </button>
+
+          <a
+            href={profile.contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 rounded-xl bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] text-[var(--color-text-primary)] hover:border-emerald-500/50 font-mono text-xs transition-all flex items-center space-x-1.5"
+          >
+            <span>GitHub</span>
+            <span class="text-[10px]">↗</span>
+          </a>
+
+          <a
+            href={profile.contact.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 rounded-xl bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] text-[var(--color-text-primary)] hover:border-emerald-500/50 font-mono text-xs transition-all flex items-center space-x-1.5"
+          >
+            <span>Twitter / X</span>
+            <span class="text-[10px]">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-[var(--color-border)]/60 text-xs text-[var(--color-text-tertiary)] font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          © {new Date().getFullYear()} Robin Mia (@mrun1corn). All rights reserved.
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Astro + Tailwind CSS</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
 </BaseLayout>
+
+<script>
+  const footerEmailBtn = document.getElementById('footer-copy-email-btn');
+  const footerEmailText = document.getElementById('footer-email-text');
+
+  if (footerEmailBtn && footerEmailText) {
+    const originalEmail = footerEmailText.textContent;
+    footerEmailBtn.addEventListener('click', () => {
+      if (originalEmail) {
+        navigator.clipboard.writeText(originalEmail);
+        footerEmailText.textContent = '✓ Copied Email!';
+        setTimeout(() => {
+          footerEmailText.textContent = originalEmail;
+        }, 2000);
+      }
+    });
+  }
+</script>

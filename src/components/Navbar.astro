@@ -8,7 +8,6 @@ const navItems = [
   { label: 'portview (C++)', href: '#portview', id: 'portview' },
   { label: 'Projects', href: '#projects', id: 'projects' },
   { label: 'Experience', href: '#experience', id: 'experience' },
-  { label: 'Contact', href: '#contact', id: 'contact' },
 ];
 ---
 
@@ -46,6 +45,17 @@ const navItems = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       </button>
+
+      <!-- Email Contact Button -->
+      <a
+        href={`mailto:${profile.contact.email}`}
+        class="hidden sm:inline-flex px-3.5 py-1.5 rounded-lg bg-emerald-500 text-zinc-950 hover:bg-emerald-400 text-xs font-mono font-bold transition-all shadow-sm flex items-center space-x-1.5 cursor-pointer"
+      >
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <span>Email Me</span>
+      </a>
 
       <!-- View CV Button -->
       <a
@@ -185,7 +195,7 @@ const navItems = [
   const desktopLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
   const mobileLinks = document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link');
 
-  const sectionIds = ['hero', 'infrastructure', 'networking', 'portview', 'projects', 'experience', 'contact'];
+  const sectionIds = ['hero', 'infrastructure', 'networking', 'portview', 'projects', 'experience'];
   const sectionElements: HTMLElement[] = [];
 
   sectionIds.forEach((id) => {

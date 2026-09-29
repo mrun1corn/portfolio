@@ -6,7 +6,7 @@ interface SectionPreview {
   tag: string;
   description: string;
   stack: string;
-  previewType: 'hero' | 'infra' | 'net' | 'portview' | 'projects' | 'timeline' | 'contact';
+  previewType: 'hero' | 'infra' | 'net' | 'portview' | 'projects' | 'timeline';
 }
 
 const sections: SectionPreview[] = [
@@ -63,16 +63,7 @@ const sections: SectionPreview[] = [
     description: 'Work history at BFIN IT, Joy Cinemas & ALO',
     stack: '3+ Years · BSc CSE',
     previewType: 'timeline',
-  },
-  {
-    id: 'contact',
-    num: '07',
-    label: 'Contact',
-    tag: '// DIRECT CHANNELS',
-    description: 'Direct message form & email contact',
-    stack: 'Available for Roles',
-    previewType: 'contact',
-  },
+  }
 ];
 ---
 
@@ -187,18 +178,6 @@ const sections: SectionPreview[] = [
               <div class="text-[10px] text-zinc-400 font-mono">2022–2026</div>
             </div>
           )}
-
-          {sec.previewType === 'contact' && (
-            <div class="h-full flex items-center justify-between px-1">
-              <div class="space-y-1">
-                <div class="text-emerald-400 font-bold text-xs">Direct Message</div>
-                <div class="text-[10px] text-zinc-300">Available for Opportunities</div>
-              </div>
-              <div class="px-2.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-[10px] font-bold">
-                ✉ Send
-              </div>
-            </div>
-          )}
         </div>
 
         <div class="pt-2 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs">
@@ -240,7 +219,7 @@ const sections: SectionPreview[] = [
     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 shadow-lg text-[11px] font-bold text-zinc-600 dark:text-zinc-300">
       <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
       <span class="text-emerald-600 dark:text-emerald-400">// STACK</span>
-      <span id="stack-counter" class="font-mono text-zinc-800 dark:text-zinc-200">01/07</span>
+      <span id="stack-counter" class="font-mono text-zinc-800 dark:text-zinc-200">01/06</span>
     </div>
   </div>
 </aside>
@@ -256,7 +235,6 @@ const sections: SectionPreview[] = [
     portview: { num: '04', label: 'portview (C++)', index: 4 },
     projects: { num: '05', label: 'Projects', index: 5 },
     experience: { num: '06', label: 'Experience', index: 6 },
-    contact: { num: '07', label: 'Contact', index: 7 },
   };
 
   const sectionElements: HTMLElement[] = [];
@@ -268,7 +246,7 @@ const sections: SectionPreview[] = [
   function updateActiveStack(currentId: string) {
     const meta = sectionMeta[currentId];
     if (meta && stackCounter) {
-      stackCounter.textContent = `${meta.num}/07`;
+      stackCounter.textContent = `${meta.num}/06`;
     }
 
     stackCards.forEach((card) => {
