@@ -5,86 +5,87 @@ interface Props {
   publicId?: string;
 }
 
-const { publicId = 'frm_7f21a6920aa2' } = Astro.props;
-const submitUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}/submit`;
-const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
+const { publicId = 'frm_baff7bee2941' } = Astro.props;
+const submitUrl = `https://bitssc.bitss.one/api/forms/${publicId}/submit`;
+const apiUrl = `https://bitssc.bitss.one/api/forms/${publicId}`;
 ---
 
-<section id="contact" class="py-16 md:py-24 bg-[var(--bg-gradient-section-alt)] border-t border-[var(--color-border)]/80 transition-all duration-300">
+<section id="contact" class="py-16 md:py-24 bg-[var(--bg-gradient-section-alt)] border-t border-[var(--color-border)] transition-all duration-300">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
     
     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-[var(--color-badge-emerald-border)] bg-[var(--color-badge-emerald-bg)] text-[var(--color-badge-emerald-text)] text-xs font-mono">
-      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-      <span>AVAILABLE FOR C++ & SERVER ADMINISTRATION ROLES</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span>07 // CONTACT & DISCUSSIONS</span>
     </div>
 
     <div class="space-y-3">
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)]">
-        Let's Connect & Collaborate
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--color-text-primary)] font-mono">
+        Let's Build Something Resilient
       </h2>
-      <p class="text-[var(--color-text-secondary)] text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-        Interested in discussing C++ software development, Linux server management, virtualization, network infrastructure, or engineering opportunities?
+      <p class="text-sm sm:text-base text-[var(--color-text-secondary)] max-w-xl mx-auto">
+        Available for full-time engineering roles, security architecture consulting, or technical advisory.
       </p>
     </div>
 
     <!-- Contact cards -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto pt-4">
-      
-      <!-- Email card with copy feature -->
       <div
         id="copy-email-btn"
-        class="interactive-card p-5 rounded-2xl flex flex-col justify-between text-center cursor-pointer group hover:border-emerald-500/50 border"
+        class="group p-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] hover:border-emerald-500/40 hover:bg-[var(--color-bg-surface-hover)] transition-all cursor-pointer relative"
       >
-        <div class="text-emerald-500 dark:text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">✉</div>
-        <div class="text-xs text-[var(--color-text-tertiary)] font-mono">Email Contact</div>
-        <div class="text-xs font-mono font-semibold text-[var(--color-text-primary)] truncate mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
-          {profile.contact.email}
+        <div class="w-10 h-10 mx-auto rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
         </div>
-        <div id="email-toast" class="mt-2 text-[10px] font-mono text-emerald-600 dark:text-emerald-400 opacity-0 transition-opacity">
-          ✓ Copied to clipboard!
+        <div class="mt-3 text-xs font-mono text-[var(--color-text-tertiary)] uppercase tracking-wider">Email</div>
+        <div class="mt-1 text-sm font-mono text-[var(--color-text-primary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+          robin424123@gmail.com
+        </div>
+        <div id="email-toast" class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-emerald-600 text-white text-[10px] font-mono rounded opacity-0 transition-opacity pointer-events-none shadow-lg">
+          Copied!
         </div>
       </div>
 
-      <!-- GitHub card -->
       <a
-        href={profile.contact.github}
+        href="https://t.me/mrun1corn"
         target="_blank"
         rel="noopener noreferrer"
-        class="interactive-card p-5 rounded-2xl flex flex-col justify-between text-center group hover:border-emerald-500/50 border"
+        class="group p-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] hover:border-emerald-500/40 hover:bg-[var(--color-bg-surface-hover)] transition-all"
       >
-        <div class="text-emerald-500 dark:text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">🐙</div>
-        <div class="text-xs text-[var(--color-text-tertiary)] font-mono">GitHub Profile</div>
-        <div class="text-xs font-mono font-semibold text-[var(--color-text-primary)] truncate mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
-          github.com/mrun1corn
+        <div class="w-10 h-10 mx-auto rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
         </div>
-        <div class="mt-2 text-[10px] font-mono text-[var(--color-text-tertiary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400/80 transition-colors">
-          View Repos ↗
+        <div class="mt-3 text-xs font-mono text-[var(--color-text-tertiary)] uppercase tracking-wider">Telegram</div>
+        <div class="mt-1 text-sm font-mono text-[var(--color-text-primary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+          @mrun1corn
         </div>
       </a>
 
-      <!-- X / Twitter card -->
       <a
-        href={profile.contact.twitter}
+        href="https://github.com/mrun1corn"
         target="_blank"
         rel="noopener noreferrer"
-        class="interactive-card p-5 rounded-2xl flex flex-col justify-between text-center group hover:border-emerald-500/50 border"
+        class="group p-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] hover:border-emerald-500/40 hover:bg-[var(--color-bg-surface-hover)] transition-all"
       >
-        <div class="text-emerald-500 dark:text-emerald-400 text-2xl mb-2 group-hover:scale-110 transition-transform">𝕏</div>
-        <div class="text-xs text-[var(--color-text-tertiary)] font-mono">Twitter / X</div>
-        <div class="text-xs font-mono font-semibold text-[var(--color-text-primary)] truncate mt-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
-          @Robin33090740
+        <div class="w-10 h-10 mx-auto rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
         </div>
-        <div class="mt-2 text-[10px] font-mono text-[var(--color-text-tertiary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400/80 transition-colors">
-          Follow ↗
+        <div class="mt-3 text-xs font-mono text-[var(--color-text-tertiary)] uppercase tracking-wider">GitHub</div>
+        <div class="mt-1 text-sm font-mono text-[var(--color-text-primary)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+          mrun1corn
         </div>
       </a>
-
     </div>
 
     <!-- Contact form with Live Google Map Layout -->
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch font-sans text-left">
       <!-- Left Column: Interactive Form -->
-      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+      <div class="p-6 bg-[var(--color-bg-surface)] rounded-xl border border-[var(--color-border)] shadow-sm flex flex-col justify-between">
         <div id="astro-alert" class="hidden p-4 rounded-lg text-sm mb-4"></div>
 
         <form id="astro-contact-form" class="space-y-4">
@@ -93,50 +94,85 @@ const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
           <input type="hidden" name="_bcf_ts" id="astro-bcf-ts" value="" />
 
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Your Name *</label>
-            <input type="text" name="name" id="astro-name" required placeholder="John Doe" class="w-full px-3 py-2 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition" />
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Your Name *</label>
+            <input type="text" name="name" id="astro-name" required placeholder="Gordon Freeman" class="w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm" />
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Email Address *</label>
-            <input type="email" name="email" id="astro-email" required placeholder="john@example.com" class="w-full px-3 py-2 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition" />
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Email Address *</label>
+            <input type="email" name="email" id="astro-email" required placeholder="gordon@example.com" class="w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm" />
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Country *</label>
-            <select name="country" id="astro-country" data-country-select required class="w-full px-3 py-2 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition">
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Country *</label>
+            <select name="country" id="astro-country" data-country-select required class="w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm">
               <option value="">-- Select Country --</option>
             </select>
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Phone Number *</label>
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Whatsapp Number *</label>
             <div class="flex gap-2 items-stretch">
-              <span id="astro-dial-badge" class="inline-flex items-center justify-center px-3 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 select-none min-w-[54px]">+1</span>
-              <input type="tel" name="phone" id="astro-phone" placeholder="+1 (555) 000-0000" required class="flex-1 w-full px-3 py-2 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition" />
+              <span id="astro-whatsapp-badge" class="astro-dial-badge inline-flex items-center justify-center px-3 bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] rounded-lg text-xs font-semibold text-[var(--color-text-secondary)] select-none min-w-[54px]">+1</span>
+              <input type="tel" name="whatsapp" id="astro-whatsapp" data-type="phone" placeholder="+1 (555) 000-0000" required class="flex-1 w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm" />
             </div>
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Your Message *</label>
-            <textarea name="message" id="astro-message" rows={4} required placeholder="How can I help you?" class="w-full px-3 py-2 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition"></textarea>
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Telegram Number *</label>
+            <div class="flex gap-2 items-stretch">
+              <span id="astro-telegram-badge" class="astro-dial-badge inline-flex items-center justify-center px-3 bg-[var(--color-bg-surface-hover)] border border-[var(--color-border)] rounded-lg text-xs font-semibold text-[var(--color-text-secondary)] select-none min-w-[54px]">+1</span>
+              <input type="tel" name="telegram" id="astro-telegram" data-type="phone" placeholder="+1 (555) 000-0000" required class="flex-1 w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm" />
+            </div>
           </div>
 
-          <button type="submit" id="astro-submit-btn" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow transition duration-150 disabled:opacity-50">
+          <div>
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Subject / Query *</label>
+            <input type="text" name="subject" id="astro-subject" required placeholder="Security Architecture Consultation" class="w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Crypto / Token Name *</label>
+            <input type="text" name="token_name" id="astro-token-name" required placeholder="e.g. BTC, ETH, VWAR" class="w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-[var(--color-text-secondary)] mb-1">Your Message *</label>
+            <textarea name="message" id="astro-message" rows={4} required placeholder="Tell me about your project scope, timeline, and deliverables..." class="w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-base)] border-[var(--color-border)] text-[var(--color-text-primary)] focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition text-sm"></textarea>
+          </div>
+
+          <!-- Dynamic Anti-Spam Math CAPTCHA -->
+          <div class="p-3.5 bg-[var(--color-bg-base)] rounded-lg border border-[var(--color-border)]">
+            <label for="astro-captcha-answer" class="block text-sm font-semibold text-[var(--color-text-secondary)] mb-1.5">
+              Security Check: <strong id="astro-captcha-q" class="text-red-600 dark:text-red-400">Loading challenge...</strong> <span class="text-red-500">*</span>
+            </label>
+            <input type="hidden" name="_captcha_token" id="astro-captcha-tok" value="" />
+            <input
+              type="text"
+              name="_captcha_answer"
+              id="astro-captcha-answer"
+              placeholder="Enter answer (e.g. 10 or ten)"
+              required
+              autocomplete="off"
+              class="w-full px-3 py-2 border rounded-lg bg-[var(--color-bg-surface)] border-[var(--color-border)] text-[var(--color-text-primary)] text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition"
+            />
+          </div>
+
+          <button type="submit" id="astro-submit-btn" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow transition duration-150 disabled:opacity-50 text-sm">
             Send Message
           </button>
 
           <!-- BITSS branding footer -->
-          <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 text-center font-sans">
-            <img src="https://form.mrun1corn.xyz/assets/image.png" alt="BITSS Cyber Security" class="h-10 w-auto mx-auto mb-2 object-contain" />
-            <p class="text-xs text-slate-500 dark:text-slate-400 mb-0.5">This form is powered by <strong>BITSS Cyber Security</strong></p>
-            <p class="text-[11px] text-slate-400 dark:text-slate-500">&copy; {new Date().getFullYear()} BFIN. BITSS by BFIN. All rights reserved.</p>
+          <div class="mt-6 pt-5 border-t border-[var(--color-border)] text-center font-sans">
+            <img src="https://bitssc.bitss.one/assets/image.png" alt="BITSS Cyber Security" class="h-10 w-auto mx-auto mb-2 object-contain" />
+            <p class="text-xs text-[var(--color-text-tertiary)] mb-0.5">This form is powered by <strong>BITSS Cyber Security</strong></p>
+            <p class="text-[11px] text-[var(--color-text-tertiary)]">&copy; {new Date().getFullYear()} BFIN. BITSS by BFIN. All rights reserved.</p>
           </div>
         </form>
       </div>
 
       <!-- Right Column: Live Google Map -->
-      <div id="astro-map-wrapper" class="w-full flex flex-col h-full min-h-[360px] rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 shadow-sm">
+      <div id="astro-map-wrapper" class="w-full flex flex-col h-full min-h-[360px] rounded-xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-2 shadow-sm">
         <iframe
           id="astro-map-iframe"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.6336418306787!2d90.3627956!3d23.7604404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf58f978a217%3A0x92b804bef87dea46!2s23%2C%202%20Razia%20Sultana%20Rd%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1787124650061!5m2!1sen!2sbd"
@@ -147,7 +183,7 @@ const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        <div id="astro-map-address" class="mt-2 px-2 py-1 text-xs text-slate-500 dark:text-slate-400 font-medium text-left">
+        <div id="astro-map-address" class="mt-2 px-2 py-1 text-xs text-[var(--color-text-tertiary)] font-medium text-left">
           📍 23, 2 Razia Sultana Rd, Mohammadpur, Dhaka
         </div>
       </div>
@@ -157,31 +193,35 @@ const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
       document.getElementById('astro-bcf-ts').value = Date.now();
 
       const countrySelect = document.getElementById('astro-country');
-      const phoneInput = document.getElementById('astro-phone');
-      const dialBadge = document.getElementById('astro-dial-badge');
+      const phoneInputs = document.querySelectorAll('input[data-type="phone"]');
+      const dialBadges = document.querySelectorAll('.astro-dial-badge');
       const mapIframe = document.getElementById('astro-map-iframe');
       const mapAddress = document.getElementById('astro-map-address');
+      const captchaTok = document.getElementById('astro-captcha-tok');
+      const captchaQ = document.getElementById('astro-captcha-q');
 
       let countryData = [];
 
-      // Function to sync phone dialing code with active country
+      // Function to sync phone dialing code with active country across all phone fields
       function syncDialCode(dialCode) {
         if (!dialCode) return;
-        if (dialBadge) dialBadge.textContent = dialCode;
-        if (phoneInput) {
-          const currentVal = phoneInput.value.trim();
-          if (!currentVal || phoneInput.dataset.autoPrefilled === 'true') {
-            phoneInput.value = dialCode + ' ';
-            phoneInput.dataset.autoPrefilled = 'true';
+        dialBadges.forEach(badge => {
+          badge.textContent = dialCode;
+        });
+        phoneInputs.forEach(input => {
+          const currentVal = input.value.trim();
+          if (!currentVal || input.dataset.autoPrefilled === 'true') {
+            input.value = dialCode + ' ';
+            input.dataset.autoPrefilled = 'true';
           } else if (currentVal.startsWith('+')) {
             const match = currentVal.match(/^\+\d+\s*(.*)$/);
             const rest = match ? match[1] : '';
-            phoneInput.value = dialCode + (rest ? ' ' + rest : ' ');
+            input.value = dialCode + (rest ? ' ' + rest : ' ');
           }
-        }
+        });
       }
 
-      // Dynamically load countries & form settings from API
+      // Dynamically load countries, CAPTCHA, & form settings from API in single fetch
       fetch(apiUrl)
         .then((res) => res.json())
         .then((data) => {
@@ -202,19 +242,27 @@ const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
               data.form.countries.forEach((country) => {
                 const flag = country.flag ? `${country.flag} ` : '';
                 const dial = country.dial_code ? ` (${country.dial_code})` : '';
+                const isSelected = country.name === 'United States' ? 'selected' : '';
                 const option = document.createElement('option');
                 option.value = country.name;
+                if (isSelected) option.selected = true;
                 option.setAttribute('data-dial', country.dial_code || '+1');
                 option.setAttribute('data-iso', country.iso2 || '');
                 option.textContent = `${flag}${country.name}${dial}`;
                 countrySelect.appendChild(option);
               });
             }
+
+            // 3. Populate Math Security CAPTCHA Challenge
+            if (data.form.captcha) {
+              if (captchaTok) captchaTok.value = data.form.captcha.token;
+              if (captchaQ) captchaQ.textContent = data.form.captcha.question;
+            }
           }
         })
         .catch(() => {});
 
-      // Auto-update phone dialing code when user changes country
+      // Auto-update phone dialing codes when user changes country
       if (countrySelect) {
         countrySelect.addEventListener('change', () => {
           const selectedOpt = countrySelect.selectedOptions[0];
@@ -224,6 +272,26 @@ const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
           }
         });
       }
+
+      phoneInputs.forEach(phoneIn => {
+        phoneIn.addEventListener('focus', function () {
+          let currentDial = '+1';
+          const badge = this.parentElement ? this.parentElement.querySelector('.astro-dial-badge') : null;
+          if (badge && badge.textContent.trim()) {
+            currentDial = badge.textContent.trim();
+          }
+          if (!this.value || this.value.trim() === '') {
+            this.value = currentDial + ' ';
+            this.dataset.autoPrefilled = 'true';
+          }
+        });
+
+        phoneIn.addEventListener('input', function () {
+          if (this.value && this.value.trim().length > 4) {
+            this.dataset.autoPrefilled = 'false';
+          }
+        });
+      });
 
       const form = document.getElementById('astro-contact-form');
       const alertBox = document.getElementById('astro-alert');
@@ -259,10 +327,20 @@ const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
             alertBox.classList.add('bg-emerald-50', 'text-emerald-700', 'border', 'border-emerald-200');
             alertBox.textContent = data.message || 'Thank you! Your message has been sent.';
             form.reset();
-            if (dialBadge) dialBadge.textContent = '+1';
+            dialBadges.forEach(b => { b.textContent = '+1'; });
+            // Fetch fresh CAPTCHA for subsequent submissions
+            fetch(apiUrl)
+              .then(r => r.json())
+              .then(d => {
+                if (d.form?.captcha) {
+                  if (captchaTok) captchaTok.value = d.form.captcha.token;
+                  if (captchaQ) captchaQ.textContent = d.form.captcha.question;
+                }
+              })
+              .catch(() => {});
           } else {
             alertBox.classList.add('bg-red-50', 'text-red-700', 'border', 'border-red-200');
-            alertBox.textContent = data.message || 'Submission failed.';
+            alertBox.textContent = data.message || (data.errors ? Object.values(data.errors).join(', ') : 'Submission failed. Please check inputs.');
           }
         } catch {
           alertBox.classList.remove('hidden');
@@ -275,13 +353,13 @@ const apiUrl = `https://form.mrun1corn.xyz/api/forms/${publicId}`;
       });
     </script>
     <!-- Footer copyright -->
-    <div class="pt-12 border-t border-[var(--color-border)]/60 text-xs text-[var(--color-text-tertiary)] font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="pt-12 border-t border-[var(--color-border)] text-xs text-[var(--color-text-tertiary)] font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         © {new Date().getFullYear()} Robin Mia (@mrun1corn). All rights reserved.
       </div>
       <div class="flex items-center space-x-2">
         <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Astro + Tailwind CSS</span>
+        <span>Systems Nominal</span>
       </div>
     </div>
 
