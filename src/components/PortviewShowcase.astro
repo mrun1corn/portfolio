@@ -135,35 +135,179 @@ const portview = projects.find((p) => p.id === 'portview') || projects[0];
             </li>
           </ul>
         </div>
+      </div>
 
-      <!-- Right Column: Interactive Terminal Preview (Kept dark for terminal realism) -->
-      <div class="lg:col-span-5">
-        <div class="rounded-2xl border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden font-mono text-xs h-full flex flex-col justify-between">
-          <div>
-            <div class="bg-zinc-900 px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
-              <div class="flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                <span class="w-3 h-3 rounded-full bg-green-500"></span>
-              </div>
-              <span class="text-zinc-400 text-xs">portview.exe -v</span>
+      <!-- Right Column: Interactive Terminal Preview & CLI Inspector -->
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden font-mono text-xs flex flex-col glow-border hover:border-emerald-500/40 transition-all duration-300">
+          <!-- Terminal Titlebar & Command Tabs -->
+          <div class="bg-zinc-900 px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/90 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/90 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/90 inline-block"></span>
             </div>
-            <div class="p-5 font-mono text-zinc-300 space-y-2 overflow-x-auto leading-relaxed">
-              <p class="text-emerald-400 font-bold">C:\> portview.exe --stats --pid</p>
-              <p class="text-zinc-500">Scanning TCP/UDP sockets via IPHLPAPI...</p>
-              <p class="text-zinc-400">========================================================</p>
-              <p><span class="text-zinc-500">PROTO</span>  <span class="text-zinc-300">LOCAL ADDRESS</span>    <span class="text-zinc-300">FOREIGN ADDRESS</span>  <span class="text-zinc-300">PID</span>   <span class="text-emerald-300">PROCESS</span></p>
-              <p><span class="text-cyan-400">TCP</span>    127.0.0.1:8080   0.0.0.0:0        4212  <span class="text-zinc-200">nginx.exe</span></p>
-              <p><span class="text-cyan-400">TCP</span>    192.168.1.5:443  104.16.2.1:443   8190  <span class="text-zinc-200">chrome.exe</span></p>
-              <p><span class="text-yellow-400">UDP</span>    0.0.0.0:53       0.0.0.0:0        1044  <span class="text-zinc-200">svchost.exe</span></p>
-              <p><span class="text-cyan-400">TCP</span>    192.168.1.5:22   192.168.1.1:5212 9012  <span class="text-zinc-200">sshd.exe</span></p>
-              <p class="text-zinc-400">========================================================</p>
-              <p class="text-emerald-400 font-bold">[+] 4 active sockets mapped across 4 distinct processes.</p>
+            <div class="flex items-center space-x-1 bg-zinc-950 p-1 rounded-lg border border-zinc-800 text-[11px]">
+              <button
+                type="button"
+                data-pv-tab="scan"
+                class="pv-tab-btn px-2.5 py-0.5 rounded bg-zinc-800 text-emerald-400 font-bold transition-all cursor-pointer"
+              >
+                --stats
+              </button>
+              <button
+                type="button"
+                data-pv-tab="pid"
+                class="pv-tab-btn px-2.5 py-0.5 rounded text-zinc-400 hover:text-zinc-200 transition-all cursor-pointer"
+              >
+                --pid
+              </button>
+              <button
+                type="button"
+                data-pv-tab="help"
+                class="pv-tab-btn px-2.5 py-0.5 rounded text-zinc-400 hover:text-zinc-200 transition-all cursor-pointer"
+              >
+                --help
+              </button>
             </div>
           </div>
-          <div class="p-4 bg-zinc-900/60 border-t border-zinc-800/80 text-zinc-400 text-xs flex justify-between items-center">
-            <span>Built with C++</span>
-            <span class="text-emerald-400 font-semibold">Open Source (MIT)</span>
+
+          <!-- Terminal Screen Body -->
+          <div class="p-5 font-mono text-zinc-300 min-h-[300px] flex flex-col justify-between space-y-4">
+            <!-- Tab 1: --stats view -->
+            <div id="pv-pane-scan" class="pv-tab-pane space-y-2.5">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <span>C:\tools></span>
+                <span class="text-zinc-100 font-bold">portview.exe --stats</span>
+              </div>
+              <p class="text-zinc-500 text-[11px]">Enumerating active network endpoints via IPHLPAPI...</p>
+              <div class="border-t border-zinc-800/80 pt-2 font-mono text-[11px] space-y-1">
+                <div class="text-zinc-500 font-bold flex justify-between">
+                  <span>PROTO / ENDPOINT</span>
+                  <span>STATE</span>
+                  <span>SPEED</span>
+                </div>
+                <div class="flex justify-between items-center text-zinc-300">
+                  <span><strong class="text-cyan-400">TCP</strong> 0.0.0.0:8080</span>
+                  <span class="text-emerald-400 font-semibold">LISTENING</span>
+                  <span class="text-zinc-500">0 B/s</span>
+                </div>
+                <div class="flex justify-between items-center text-zinc-300">
+                  <span><strong class="text-cyan-400">TCP</strong> 192.168.1.5:443</span>
+                  <span class="text-emerald-400 font-semibold">ESTABLISHED</span>
+                  <span class="text-emerald-300">1.4 MB/s</span>
+                </div>
+                <div class="flex justify-between items-center text-zinc-300">
+                  <span><strong class="text-cyan-400">TCP</strong> 192.168.1.5:22</span>
+                  <span class="text-emerald-400 font-semibold">ESTABLISHED</span>
+                  <span class="text-emerald-300">42 KB/s</span>
+                </div>
+                <div class="flex justify-between items-center text-zinc-300">
+                  <span><strong class="text-yellow-400">UDP</strong> 0.0.0.0:53</span>
+                  <span class="text-zinc-400 font-semibold">STATELESS</span>
+                  <span class="text-zinc-500">2.1 KB/s</span>
+                </div>
+              </div>
+              <div class="pt-2 text-emerald-400 font-bold text-[11px] flex items-center space-x-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>[OK] Zero-packet drop rate · Polling latency &lt;0.4ms</span>
+              </div>
+            </div>
+
+            <!-- Tab 2: --pid view -->
+            <div id="pv-pane-pid" class="pv-tab-pane hidden space-y-2.5">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <span>C:\tools></span>
+                <span class="text-zinc-100 font-bold">portview.exe --pid --all</span>
+              </div>
+              <p class="text-zinc-500 text-[11px]">Resolving socket owners using QueryFullProcessImageNameW...</p>
+              <div class="border-t border-zinc-800/80 pt-2 font-mono text-[11px] space-y-1">
+                <div class="text-zinc-500 font-bold flex justify-between">
+                  <span>PID / PROCESS</span>
+                  <span>PORT</span>
+                  <span>BOUND IP</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-emerald-300">4212 <span class="text-zinc-400">nginx.exe</span></span>
+                  <span class="text-cyan-300 font-mono">:8080</span>
+                  <span class="text-zinc-400">127.0.0.1</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-emerald-300">8190 <span class="text-zinc-400">chrome.exe</span></span>
+                  <span class="text-cyan-300 font-mono">:443</span>
+                  <span class="text-zinc-400">192.168.1.5</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-emerald-300">9012 <span class="text-zinc-400">sshd.exe</span></span>
+                  <span class="text-cyan-300 font-mono">:22</span>
+                  <span class="text-zinc-400">0.0.0.0</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-emerald-300">1044 <span class="text-zinc-400">svchost.exe</span></span>
+                  <span class="text-cyan-300 font-mono">:53</span>
+                  <span class="text-zinc-400">127.0.0.53</span>
+                </div>
+              </div>
+              <div class="pt-2 text-cyan-400 font-semibold text-[11px]">
+                ✔ 4 processes matched with elevated user privileges.
+              </div>
+            </div>
+
+            <!-- Tab 3: --help view -->
+            <div id="pv-pane-help" class="pv-tab-pane hidden space-y-2 text-[11px]">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <span>C:\tools></span>
+                <span class="text-zinc-100 font-bold">portview.exe --help</span>
+              </div>
+              <p class="text-zinc-400">PORTVIEW v1.2 — High-Performance Windows Socket Inspector</p>
+              <div class="border-t border-zinc-800/80 pt-2 space-y-1 text-zinc-300 font-mono">
+                <p><span class="text-emerald-400 font-bold">-s, --stats</span>   Display live bandwidth &amp; transfer metrics</p>
+                <p><span class="text-emerald-400 font-bold">-p, --pid</span>     Resolve PID to process name &amp; binary path</p>
+                <p><span class="text-emerald-400 font-bold">-f, --filter</span>  Filter by protocol (tcp4, tcp6, udp4, udp6)</p>
+                <p><span class="text-emerald-400 font-bold">-j, --json</span>    Output telemetry as NDJSON / structured data</p>
+              </div>
+              <p class="text-zinc-500 pt-2 text-[10px]">Zero external runtimes or DLL dependencies required.</p>
+            </div>
+
+            <!-- Bottom Prompt Line -->
+            <div class="pt-3 border-t border-zinc-900 flex items-center justify-between text-[11px]">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <span>C:\tools></span>
+                <span class="text-zinc-100 font-semibold animate-pulse">_</span>
+              </div>
+              <span class="text-zinc-600 font-mono text-[10px]">Win32 Native · MSVC x64</span>
+            </div>
+          </div>
+
+          <!-- Bottom Status Bar -->
+          <div class="p-3.5 bg-zinc-900/80 border-t border-zinc-800/80 text-zinc-400 text-xs flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="font-mono text-zinc-300">Target: Windows 10/11, Server</span>
+            </div>
+            <a
+              href="https://github.com/mrun1corn/portview"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-emerald-400 hover:text-emerald-300 font-mono font-semibold flex items-center space-x-1"
+            >
+              <span>GitHub Repo</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Capability Cards below the terminal -->
+        <div class="grid grid-cols-2 gap-3 mt-4">
+          <div class="p-3.5 rounded-xl bg-[var(--color-bg-surface)] border border-[var(--color-border)] shadow-sm">
+            <div class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold uppercase">Performance</div>
+            <div class="text-xs font-bold text-[var(--color-text-primary)] mt-0.5">&lt; 15ms Execution</div>
+            <div class="text-[11px] text-[var(--color-text-tertiary)] mt-1">Direct kernel memory read without WMI overhead.</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-[var(--color-bg-surface)] border border-[var(--color-border)] shadow-sm">
+            <div class="text-[11px] font-mono text-cyan-600 dark:text-cyan-400 font-semibold uppercase">Portability</div>
+            <div class="text-xs font-bold text-[var(--color-text-primary)] mt-0.5">Single Portable .EXE</div>
+            <div class="text-[11px] text-[var(--color-text-tertiary)] mt-1">Zero runtime or VC++ redistributable setup needed.</div>
           </div>
         </div>
       </div>
@@ -172,3 +316,25 @@ const portview = projects.find((p) => p.id === 'portview') || projects[0];
 
   </div>
 </section>
+
+<script>
+  const pvTabs = document.querySelectorAll('[data-pv-tab]');
+  const pvPanes = document.querySelectorAll('.pv-tab-pane');
+
+  pvTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-pv-tab');
+
+      pvTabs.forEach((t) => {
+        t.classList.remove('bg-zinc-800', 'text-emerald-400', 'font-bold');
+        t.classList.add('text-zinc-400');
+      });
+      tab.classList.add('bg-zinc-800', 'text-emerald-400', 'font-bold');
+      tab.classList.remove('text-zinc-400');
+
+      pvPanes.forEach((p) => p.classList.add('hidden'));
+      const activePane = document.getElementById(`pv-pane-${target}`);
+      if (activePane) activePane.classList.remove('hidden');
+    });
+  });
+</script>
