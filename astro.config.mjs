@@ -8,6 +8,10 @@ export default defineConfig({
   site: 'https://mrun1corn.xyz',
   integrations: [
     tailwind(),
-    sitemap()
+    sitemap({
+      changefreq: 'weekly',
+      priority: 1.0,
+      lastmod: new Date(),
+    })
   ]
 });

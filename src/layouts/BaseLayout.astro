@@ -12,23 +12,84 @@ const {
   description = "Portfolio of Robin Mia (mrun1corn) — C++ Developer, Server Administrator, and Infrastructure Engineer specializing in C++ software development, Linux server management, virtualization, and networking."
 } = Astro.props;
 
+const siteUrl = "https://mrun1corn.xyz";
+const ogImageUrl = `${siteUrl}/og-image.png`;
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Robin Mia",
-  "alternateName": "mrun1corn",
-  "jobTitle": "C++ Developer & Server Administrator",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "BFIN IT"
-  },
-  "url": "https://mrun1corn.xyz",
-  "sameAs": [
-    "https://github.com/mrun1corn",
-    "https://x.com/Robin33090740"
-  ],
-  "knowsAbout": [
-    "C++", "Systems Programming", "Server Administration", "Mikrotik", "Cisco", "Linux", "Proxmox VE", "Astro", "Tailwind CSS"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Robin Mia | C++ Developer & Server Administrator",
+      "description": description,
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": `${siteUrl}/#person`
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}/#profilepage`,
+      "url": siteUrl,
+      "name": title,
+      "isPartOf": {
+        "@id": `${siteUrl}/#website`
+      },
+      "mainEntity": {
+        "@id": `${siteUrl}/#person`
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      "name": "Robin Mia",
+      "alternateName": ["mrun1corn", "robin mia"],
+      "url": siteUrl,
+      "image": ogImageUrl,
+      "jobTitle": "C++ Developer & Server Administrator",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "BFIN IT",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mohammadpur, Dhaka",
+          "addressCountry": "BD"
+        }
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of South Asia"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Uttara Engineering College"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/mrun1corn",
+        "https://x.com/Robin33090740",
+        "https://t.me/mrun1corn"
+      ],
+      "knowsAbout": [
+        "C++",
+        "C++20",
+        "Systems Programming",
+        "Linux",
+        "Ubuntu",
+        "Server Administration",
+        "Proxmox VE",
+        "VMware",
+        "Mikrotik RouterOS",
+        "Cisco IOS",
+        "Network Engineering",
+        "Win32 API",
+        "Astro",
+        "Tailwind CSS"
+      ]
+    }
   ]
 };
 ---
@@ -62,22 +123,41 @@ const jsonLd = {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Robin Mia (mrun1corn)" />
+    <meta name="keywords" content="Robin Mia, mrun1corn, C++ Developer, Server Administrator, Linux Administrator, Infrastructure Engineer, Systems Programming, Proxmox VE, VMware, Mikrotik, Cisco, Portview, BFIN IT, Dhaka Bangladesh" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://mrun1corn.xyz" />
+    <link rel="alternate" hreflang="x-default" href="https://mrun1corn.xyz/" />
+    <link rel="alternate" hreflang="en" href="https://mrun1corn.xyz/" />
+    <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://mrun1corn.xyz" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Robin Mia Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Robin Mia — C++ Developer & Server Administrator" />
+    <meta property="profile:first_name" content="Robin" />
+    <meta property="profile:last_name" content="Mia" />
+    <meta property="profile:username" content="mrun1corn" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://mrun1corn.xyz" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Robin33090740" />
+    <meta name="twitter:creator" content="@Robin33090740" />
+    <meta name="twitter:url" content="https://mrun1corn.xyz" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content="Robin Mia — C++ Developer & Server Administrator" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
